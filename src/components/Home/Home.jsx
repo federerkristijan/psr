@@ -24,7 +24,7 @@ const Home = () => {
           alt="Team"
           title="Team"
           href={<Team />}
-          coords="342,1534,461,1541,452,1880,337,1841"
+          coords="73,320,95,388"
           shape="poly"
         />
         <area
@@ -32,7 +32,7 @@ const Home = () => {
           alt="Media"
           title="Media"
           href={<Media />}
-          coords="561,1333,604,1329,664,1450,671,1660,614,1794,557,1784,509,1665,509,1441"
+          coords="114,282,126,282,140,302,139,345,124,370,106,350,105,303"
           shape="poly"
         />
         <area
@@ -40,7 +40,7 @@ const Home = () => {
           alt="Partners"
           title="Partners"
           href={<Partners />}
-          coords="752,1536,998,1546,991,2015,757,1946"
+          coords="159,320,206,409"
           shape="poly"
         />
         <area
@@ -48,7 +48,7 @@ const Home = () => {
           alt="Events"
           title="Events"
           href={<Events />}
-          coords="1165,1762,1160,2005,1217,2005,1224,1759"
+          coords="241,366,254,418"
           shape="poly"
         />
         <area
@@ -56,7 +56,7 @@ const Home = () => {
           alt="Shop"
           title="Shop"
           href={<Shop />}
-          coords="1310,1702,1458,2142"
+          coords="272,352,301,451"
           shape="rect"
         />
         <area
@@ -64,7 +64,7 @@ const Home = () => {
           alt="About"
           title="About"
           href={<About />}
-          coords="1635,1989,2126,1555"
+          coords="343,326,437,406"
           shape="rect"
         />
         <area
@@ -72,7 +72,7 @@ const Home = () => {
           alt="Contact"
           title="Contact"
           href={<Contact />}
-          coords="2157,1686,2262,1746"
+          coords="448,351,469,363"
           shape="rect"
         />
         <area
@@ -80,7 +80,7 @@ const Home = () => {
           alt="Impressum"
           title="Impressum"
           href={<Impressum />}
-          coords="2188,1953,2307,2129"
+          coords="455,407,476,439"
           shape="rect"
         />
       </map>
