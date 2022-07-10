@@ -16,8 +16,6 @@ const Home = () => {
         src={PartyStore}
         alt="home"
         usemap="#workmap"
-        width="100%"
-        height="550vh"
       />
       {/* https://www.image-map.net/ */}
       <map name="image-map">
