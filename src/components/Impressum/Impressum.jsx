@@ -2,7 +2,7 @@ import React from 'react'
 
 const Impressum = () => {
   return (
-    <div>Impressum</div>
+    <div>{console.log(Impressum)}</div>
   )
 }
 

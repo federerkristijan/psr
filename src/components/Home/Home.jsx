@@ -7,7 +7,9 @@ import Events from '../Events/Events';
 import Shop from '../Shop/Shop';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
-import Impressum from '../Team/Team';
+import Impressum from '../Impressum/Impressum';
+
+import './Home.css';
 
 const Home = () => {
   return (
@@ -15,7 +17,9 @@ const Home = () => {
       <img
         src={PartyStore}
         alt="home"
-        usemap="#workmap"
+        usemap="#image-map"
+        width="560px"
+        height="560px"
       />
       {/* https://www.image-map.net/ */}
       <map name="image-map">
