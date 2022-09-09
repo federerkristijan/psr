@@ -1,4 +1,6 @@
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Link, Outlet, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
 import About from "./components/About/About";
@@ -14,22 +16,24 @@ import Team from "./components/Team/Team";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Layout/>} >
-          <Route path="/" element={<Home />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/events" element={<Events />}/>
-          <Route path="/impressum" element={<Impressum />}/>
-          <Route path="/media" element={<Media />}/>
-          <Route path="/partners" element={<Partners />}/>
-          <Route path="/releases" element={<Releases />}/>
-          <Route path="/shop" element={<Shop />}/>
-          <Route path="/team" element={<Team />}/>
-        </Route>
-      </Routes>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/releases" element={<Releases />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/team" element={<Team />} />
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
@@ -38,7 +42,7 @@ function Layout() {
     <>
       <Outlet />
     </>
-  )
+  );
 }
 
 export default App;
