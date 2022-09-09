@@ -18,7 +18,7 @@ const Home = () => {
       <img
         src={PartyStore}
         alt="home"
-        usemap="#image-map"
+        useMap="#image-map"
         width="560px"
         height="560px"
       />
