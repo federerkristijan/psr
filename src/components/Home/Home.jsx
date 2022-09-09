@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import PartyStore from "../../assets/images/PartyStore_Sadies.png";
 import Team from '../Team/Team';
 import Media from '../Media/Media';
@@ -8,7 +10,6 @@ import Shop from '../Shop/Shop';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Impressum from '../Impressum/Impressum';
-
 import './Home.css';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
       <img
         src={PartyStore}
         alt="home"
-        usemap="#image-map"
+        useMap="#image-map"
         width="560px"
         height="560px"
       />

@@ -14,7 +14,7 @@
 
 		var rwdImageMap = function() {
 			$img.each(function() {
-				if (typeof($(this).attr('usemap')) == 'undefined')
+				if (typeof($(this).attr('useMap')) == 'undefined')
 					return;
 
 				var that = this,
@@ -38,7 +38,7 @@
 
 					var wPercent = $that.width()/100,
 						hPercent = $that.height()/100,
-						map = $that.attr('usemap').replace('#', ''),
+						map = $that.attr('useMap').replace('#', ''),
 						c = 'coords';
 
 					$('map[name="' + map + '"]').find('area').each(function() {
