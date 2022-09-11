@@ -11,8 +11,7 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Impressum from "../Impressum/Impressum";
 import "./Home.css";
-
-// const img = {PartyStore};
+import { Link } from "react-router-dom";
 
 const mapArea = [
   {
@@ -20,7 +19,10 @@ const mapArea = [
     height: "13.320132013201318%",
     left: "11.716171617161717%",
     top: "55.97359735973597%",
-    onMouseOver: () => console.log('Team')
+    onMouseOver: () => console.log('Team'),
+    onClick: () => {
+      <a href="/team"/>
+    }
   },
   {
     width: "6.102310231023096%",
@@ -74,6 +76,7 @@ const mapArea = [
 ];
 
 const Home = () => {
+
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea} />
@@ -82,4 +85,3 @@ const Home = () => {
 };
 
 export default Home;
-
