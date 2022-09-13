@@ -1,8 +1,7 @@
 .Home {
   display: block;
-  width: 100%;
+  max-width: 100%;
   max-height: 80%;
-  border: 1px solid red;
 }
 
 .team:hover,
