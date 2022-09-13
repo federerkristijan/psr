@@ -11,12 +11,7 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Impressum from "../Impressum/Impressum";
 import "./Home.css";
-
-// const img = {PartyStore};
-// onMouseOver radi bez beda, samo ne znam kako bih postavio onClick funkciju
-//ok; daj mi da zaronim
-//di je ovaj vrag; ma ne to; nego kak se zove, izgubio sam ga u tabu; onMouseClick??
-//di ti je taj <ImageMap>
+import { useNavigate } from "react-router-dom";
 
 const mapArea = [
   {
@@ -25,7 +20,7 @@ const mapArea = [
     left: "11.716171617161717%",
     top: "55.97359735973597%",
     onMouseOver: () => console.log('Team'),
-    url: "https://www.glas-koncila.hr/"
+    url: "/team"
   },
   {
     width: "6.102310231023096%",
@@ -86,19 +81,10 @@ const mapArea = [
     console.log("index", index)
 
     window.location = area.url;
-
-    // return <a></> taj dio me jebe
-
-    //ja bi to ovako napravio;
-
-    //al kaj zelis postic?, da su to linkovi na druge strane
-
-    //to ti je to; greska je bila sto se click ne stavalja na Area-u, nego direkt na tag. ok i kako sam dinacki pozovem route
   }
 
-
-
 const Home = () => {
+
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea}
