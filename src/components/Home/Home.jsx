@@ -13,6 +13,10 @@ import Impressum from "../Impressum/Impressum";
 import "./Home.css";
 
 // const img = {PartyStore};
+// onMouseOver radi bez beda, samo ne znam kako bih postavio onClick funkciju
+//ok; daj mi da zaronim
+//di je ovaj vrag; ma ne to; nego kak se zove, izgubio sam ga u tabu; onMouseClick??
+//di ti je taj <ImageMap>
 
 const mapArea = [
   {
@@ -20,7 +24,8 @@ const mapArea = [
     height: "13.320132013201318%",
     left: "11.716171617161717%",
     top: "55.97359735973597%",
-    onMouseOver: () => console.log('Team')
+    onMouseOver: () => console.log('Team'),
+    url: "https://www.glas-koncila.hr/"
   },
   {
     width: "6.102310231023096%",
@@ -73,13 +78,34 @@ const mapArea = [
   },
 ];
 
+
+  function imageMap_click(area, index) {
+    console.log("imageMap_click")
+
+    console.log("area", area)
+    console.log("index", index)
+
+    window.location = area.url;
+
+    // return <a></> taj dio me jebe
+
+    //ja bi to ovako napravio;
+
+    //al kaj zelis postic?, da su to linkovi na druge strane
+
+    //to ti je to; greska je bila sto se click ne stavalja na Area-u, nego direkt na tag. ok i kako sam dinacki pozovem route
+  }
+
+
+
 const Home = () => {
   return (
     <div className="Home">
-      <ImageMap className="usage-map" src={PartyStore} map={mapArea} />
+      <ImageMap className="usage-map" src={PartyStore} map={mapArea}
+      onMapClick={imageMap_click}
+      />
     </div>
   );
 };
 
 export default Home;
-
