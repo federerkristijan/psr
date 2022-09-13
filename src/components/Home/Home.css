@@ -5,12 +5,13 @@
   border: 1px solid red;
 }
 
-
-/* area {
-  border: 1px solid red;
+.team:hover,
+.media:hover,
+.events:hover,
+.about:hover,
+.shop:hover,
+.partners:hover,
+.contact:hover,
+.impressum:hover {
+  background: rgba(45, 45, 215, 0.332);
 }
-
-a:hover {
-  transform: scale(1.2);
-  border: rgba(183, 183, 12, 0.606);
-} */
