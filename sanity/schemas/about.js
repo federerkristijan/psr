@@ -9,12 +9,12 @@ export default {
       title: 'Founding story'
     },
     {
-      name: 'chris-profile',
+      name: 'chris_profile',
       type: 'text',
       title: 'Chris-Profile'
     },
     {
-      name: 'marty-profile',
+      name: 'marty_profile',
       type: 'text',
       title: 'Marty-Profile'
     }
