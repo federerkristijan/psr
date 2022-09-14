@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
+import "./Team.css";
+
 const Team = () => {
   const [team, setTeam] = useState(null);
 
@@ -24,7 +26,7 @@ const Team = () => {
   }, []);
 
   return (
-    <div>
+    <div className="team">
       <div className="team-title">
         <h2>Our Team</h2>
       </div>
@@ -49,38 +51,3 @@ const Team = () => {
 };
 
 export default Team;
-
-// let PROJECT_ID = "pyenle2m";
-// let DATASET = "production";
-// let QUERY = encodeURIComponent('*[_type == "team"]');
-// // Compose the URL for your project's endpoint and add the query
-// let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-
-// // fetch the content
-// fetch(URL)
-//   .then((res) => res.json())
-//   .then(({ result }) => {
-//     // get the list element, and the first item
-//     let list = document.querySelector("ul");
-//     let firstListItem = document.querySelector("ul li");
-
-//     if (result.length > 0) {
-//       // remove the placeholder content
-//       list.removeChild(firstListItem);
-
-//       result.forEach((team) => {
-//         // create a list element for each team
-//         let listItem = document.createElement("li");
-
-//         // add the team name as the text content
-//         listItem.textContent = team?.name;
-
-//         // add the item to the list
-//         list.appendChild(listItem);
-//       });
-//       let pre = document.querySelector("pre");
-//       // add the raw data to the preformatted element
-//       pre.textContent = JSON.stringify(result, null, 2);
-//     }
-//   })
-//   .catch((err) => console.error(err));
