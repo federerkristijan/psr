@@ -11,6 +11,11 @@ const Team = () => {
     return builder.image(source);
   }
 
+  // zato sam i mislio ako mogu tu manualno addati header, koji dopusta cors
+  //Access-Control-Allow-Origin: *
+  //treba nam on; no neam blage kak radi sanityClient? kajeto?
+  //ovaju fetch radi post? to je get sa cms-a; ok svejedno (i post i get mogu imat HTTP header)
+
   useEffect(() => {
     sanityClient
       .fetch(
