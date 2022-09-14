@@ -41,8 +41,7 @@ const Team = () => {
               />
             </div> */}
             <div className="team-text">
-              <h3 className="team-name">{team.name}</h3>
-              <span className="team-role">{team.role}</span>
+                <span>{team.name}: {team.role}</span>
             </div>
           </div>
         ))}
