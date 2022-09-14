@@ -1,3 +1,17 @@
-/* .team-title {
+.team {
+  /* border: 1px solid red; */
+  min-height: 60vh;
+}
 
-} */
+.team-title {
+  margin: 2rem;
+}
+
+.team-data {
+  margin: 1rem;
+}
+
+span {
+  letter-spacing: 0.1rem;
+  font-size: 22px;
+}
