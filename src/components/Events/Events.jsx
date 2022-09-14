@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SanityClient } from "@sanity/client";
+import { sanityClient } from "@sanity/client";
 
 const Events = () => {
   const [events, setEvents] = useState(null);
