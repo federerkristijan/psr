@@ -1,1 +1,10 @@
- 
+.about {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 3rem;
+}
+
+.about-story, .about-chris, .about-marty {
+  margin: 1rem;
+}

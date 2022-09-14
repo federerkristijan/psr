@@ -23,12 +23,15 @@ const About = () => {
         about.map((about) => (
           <div className="about-data">
             <div className="about-story">
+              <h3>Founding Story</h3>
               <span>{about.story}</span>
             </div>
             <div className="about-chris">
+              <h3>About Chris</h3>
               <span>{about.chris_profile}</span>
             </div>
             <div className="about-marty">
+              <h3>About Marty</h3>
               <span>{about.marty_profile}</span>
             </div>
           </div>
