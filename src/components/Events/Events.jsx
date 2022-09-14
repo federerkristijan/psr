@@ -5,15 +5,18 @@ const Events = () => {
   const [events, setEvents] = useState(null);
 
   useEffect(() => {
-    sanityClient.fetch(
-      `*[_type == "events"]{
+    sanityClient
+      .fetch(
+        `*[_type == "events"]{
           name,
           description,
           date,
-          slug
+          link
         }`
-    );
-  });
+      )
+      .then((data) => setEvents(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="events">
@@ -24,10 +27,10 @@ const Events = () => {
         events.map((events) => (
           <div className="events-data">
             <div className="events-name">{events.name}</div>
-            <div className="events-description"><a href={events.slug}>{events.description}</a></div>
-            <div className="events-date">
-              {events.date}
+            <div className="events-description">
+              <a href={events.slug}>{events.description}</a>
             </div>
+            <div className="events-date">{events.date}</div>
           </div>
         ))}
     </div>

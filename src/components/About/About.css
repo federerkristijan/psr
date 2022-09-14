@@ -6,5 +6,15 @@
 }
 
 .about-story, .about-chris, .about-marty {
-  margin: 1rem;
+  margin: 5rem;
+}
+
+h3 {
+  margin: 3rem;
+}
+span {
+  letter-spacing: 0.2rem;
+  line-height: 1.5rem;
+  font-size: 14px;
+  padding: 1rem;
 }
