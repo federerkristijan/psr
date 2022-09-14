@@ -26,10 +26,16 @@ const About = () => {
               <span>{about.story}</span>
             </div>
             <div className="about-chris">
-              <span>{about.chris_profile}</span>
+              {/* <span>{about.chris_profile}</span> */}
+              <span>
+
+              </span>
             </div>
             <div className="about-marty">
-              <span>{about.marty_profile}</span>
+              {/* <span>{about.marty_profile}</span> */}
+              <span>
+                
+              </span>
             </div>
           </div>
         ))}
