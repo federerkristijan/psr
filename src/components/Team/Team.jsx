@@ -5,24 +5,18 @@ import imageUrlBuilder from "@sanity/image-url";
 const Team = () => {
   const [team, setTeam] = useState(null);
 
-  const builder = imageUrlBuilder(sanityClient);
+  // const builder = imageUrlBuilder(sanityClient);
 
-  function urlFor(source) {
-    return builder.image(source);
-  }
-
-  // zato sam i mislio ako mogu tu manualno addati header, koji dopusta cors
-  //Access-Control-Allow-Origin: *
-  //treba nam on; no neam blage kak radi sanityClient? kajeto?
-  //ovaju fetch radi post? to je get sa cms-a; ok svejedno (i post i get mogu imat HTTP header)
+  // function urlFor(source) {
+  //   return builder.image(source);
+  // }
 
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "team"]{
           name,
-          role,
-          picture
+          role
         }`
       )
       .then((data) => setTeam(data))
@@ -37,13 +31,13 @@ const Team = () => {
       {team &&
         team.map((team) => (
           <div className="team-data" key={team.name}>
-            <div className="team-image">
+            {/* <div className="team-image">
               <img
                 src={urlFor(team.picture).width(200).url()}
                 alt={team.name}
                 className="team-pictrure"
               />
-            </div>
+            </div> */}
             <div className="team-text">
               <h3 className="team-name">{team.name}</h3>
               <span className="team-role">{team.role}</span>

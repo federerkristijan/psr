@@ -12,14 +12,6 @@ export default {
       name: 'role',
       type: 'string',
       title: 'Role'
-    },
-    {
-      name: 'picture',
-      type: 'image',
-      title: 'Picture',
-      options: {
-        hotspot: true,
-      }
     }
   ]
 }
