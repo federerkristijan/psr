@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@qiuz/react-image-map": "^1.1.8",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
