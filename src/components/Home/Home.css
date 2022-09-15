@@ -4,13 +4,13 @@
   max-height: 80%;
 }
 
-.team:hover,
-.media:hover,
-.events:hover,
-.about:hover,
-.shop:hover,
-.partners:hover,
-.contact:hover,
-.impressum:hover {
+.teamImageMap:hover,
+.mediaImageMap:hover,
+.eventsImageMap:hover,
+.aboutImageMap:hover,
+.shopImageMap:hover,
+.partnersImageMap:hover,
+.contactImageMap:hover,
+.impressumImageMap:hover {
   background: rgba(23, 23, 213, 0.681);
 }

@@ -1,13 +1,18 @@
-.media, .featured {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
+.media, .featured, .press {
+  padding: 6rem;
+}
+
+.featured-header {
+  margin-bottom: 5rem;
 }
 
 .featured-title {
   margin: 2rem;
+  margin-left: 3rem;
+  text-align: left;
+}
+
+.featured-links {
   text-align: left;
 }
 

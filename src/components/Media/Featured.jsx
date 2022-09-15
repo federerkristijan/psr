@@ -21,7 +21,7 @@ const FeaturedIn = () => {
   return (
     <div className="featured" taget="true">
       <div className="featured-header">
-        <h3>Here you can find us in other media</h3>
+        <h1>Here you can find us in other media</h1>
       </div>
       {featured &&
         featured.map((item) => (

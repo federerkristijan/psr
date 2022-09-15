@@ -1,0 +1,15 @@
+.shop {
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.shop-header {
+  float: left;
+  padding-left: 15rem;
+}
+
+.cart {
+  float: right;
+  top: 2rem;
+  border: 1px solid red;
+}
