@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { sanityClient } from "@sanity/client";
+import sanityClient from "../../lib/client";
+
+import "./Events.css";
 
 const Events = () => {
   const [events, setEvents] = useState(null);
@@ -7,11 +9,11 @@ const Events = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "events"]{
+        `*[_type == "events"] | order(_createdAt asc){
           name,
-          description,
           date,
-          link
+          description,
+          url
         }`
       )
       .then((data) => setEvents(data))
@@ -19,18 +21,22 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="events">
+    <div className="events" target="true">
       <div className="events-title">
-        <h3>Our Events</h3>
+        <h1>Our Events</h1>
       </div>
       {events &&
         events.map((events) => (
-          <div className="events-data">
-            <div className="events-name">{events.name}</div>
-            <div className="events-description">
-              <a href={events.slug}>{events.description}</a>
+          <div className="events-data" key={events.name}>
+            <div className="events-name">
+              <h3>{events.name}</h3>
             </div>
             <div className="events-date">{events.date}</div>
+            <div className="events-description">
+              <a href={events.url} target="_blank">
+                {events.description}
+              </a>
+            </div>
           </div>
         ))}
     </div>

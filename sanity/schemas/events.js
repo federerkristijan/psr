@@ -9,19 +9,19 @@ export default {
       title: 'Name'
     },
     {
-      name: 'description',
-      type: 'string',
-      title: 'Description'
-    },
-    {
       name: 'date',
       type: 'date',
       title: 'Date'
     },
     {
-      name: 'href',
+      name: 'description',
+      type: 'string',
+      title: 'Description'
+    },
+    {
+      name: 'url',
       type: 'url',
-      title: 'Link'
+      title: 'url'
     }
   ]
 }
