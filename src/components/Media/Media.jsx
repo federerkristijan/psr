@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import FeaturedIn from './FeaturedIn'
+import Featured from './Featured'
 import Press from './Press'
+
+import "./Media.css";
 
 
 
@@ -9,10 +11,10 @@ const Media = () => {
   return (
     <div className='media'>
       <div className="pres">
-        <Link to="/Press">{<Press/>}</Link>
+        <Link to="/media/press">Press</Link>
       </div>
       <div className="featured">
-      <Link to="/FeaturedIn">{<FeaturedIn/>}</Link>
+      <Link to="/media/featured">Featured in other medias</Link>
       </div>
     </div>
   )

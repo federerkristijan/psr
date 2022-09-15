@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeaturedIn = () => {
   return (
-    <div>FeaturedIn</div>
+    <div>here comes FeaturedIn links</div>
   )
 }
 

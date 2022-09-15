@@ -2,7 +2,7 @@ import React from 'react'
 
 const Press = () => {
   return (
-    <div>Press</div>
+    <div>here comes Press things</div>
   )
 }
 
