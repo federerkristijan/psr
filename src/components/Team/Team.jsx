@@ -16,7 +16,7 @@ const Team = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "team"]{
+        `*[_type == "team"] | order(lower(name) asc){
           name,
           role
         }`

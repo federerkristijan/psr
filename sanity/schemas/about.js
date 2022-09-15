@@ -4,19 +4,24 @@ export default {
   title: 'About',
   fields: [
     {
-      name: 'story',
-      type: 'text',
-      title: 'Founding story'
+      name: 'title',
+      type: 'string',
+      title: 'Title'
     },
     {
-      name: 'chris_profile',
+      name: 'text',
       type: 'text',
-      title: 'Chris-Profile'
+      title: 'About'
     },
     {
-      name: 'marty_profile',
-      type: 'text',
-      title: 'Marty-Profile'
+      name: 'href1',
+      type: 'string',
+      title: 'Insta'
+    },
+    {
+      name: 'href2',
+      type: 'string',
+      title: 'FB'
     }
   ]
 }
