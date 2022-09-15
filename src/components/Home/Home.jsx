@@ -6,73 +6,73 @@ import "./Home.css";
 
 const mapArea = [
   {
-    width: "6.102310231023096%",
-    height: "13.320132013201318%",
-    left: "11.716171617161717%",
-    top: "55.97359735973597%",
+    width: "3.1%",
+    height: "12.1%",
+    left: "27.3%",
+    top: "56.3%",
     onMouseOver: () => console.log('Team'),
     url: "/team",
     className: "team"
   },
   {
-    width: "6.102310231023096%",
-    height: "14.805280528052803%",
-    left: "18.976897689768975%",
-    top: "51.02310231023102%",
+    width: "3.5%",
+    height: "13.2%",
+    left: "31.4%",
+    top: "51%",
     onMouseOver: () => console.log('Media'),
     url: "/media",
     className: "media"
   },
   {
-    width: "8.082508250825077%",
-    height: "14.805280528052803%",
-    left: "28.382838283828388%",
-    top: "57.95379537953795%",
+    width: "5.7%",
+    height: "14.3%",
+    left: "36.6%",
+    top: "56.5%",
     onMouseOver: () => console.log('Partners'),
     url: "/partners",
     className: "partners"
   },
   {
-    width: "4.287128712871279%",
-    height: "11.009900990099007%",
-    left: "42.079207920792086%",
-    top: "64.88448844884486%",
+    width: "1.6%",
+    height: "10.1%",
+    left: "45.5%",
+    top: "63.9%",
     onMouseOver: () => console.log('Events'),
     url: "/events",
     className: "events"
   },
   {
-    width: "5.6072607260726%",
-    height: "18.600660066006597%",
-    left: "48.18481848184818%",
-    top: "62.07920792079206%",
+    width: "4.1%",
+    height: "18.3%",
+    left: "48.6%",
+    top: "61.5%",
     onMouseOver: () => console.log('Shop'),
     url: "/shop",
     className: "shop"
   },
   {
-    width: "18.148514851485142%",
-    height: "15.960396039603959%",
-    left: "61.05610561056105%",
-    top: "56.96369636963694%",
+    width: "11%",
+    height: "15.6%",
+    left: "52.6%",
+    top: "47.2%",
     onMouseOver: () => console.log('About'),
     url: "/about",
     className: "about"
   },
   {
-    width: "4.452145214521445%",
-    height: "2.9240924092409215%",
-    left: "80.03300330033002%",
-    top: "62.07920792079208%",
+    width: "2.3%",
+    height: "3.2%",
+    left: "68.1%",
+    top: "61.1%",
     onMouseOver: () => console.log('Contact'),
     url: "/contact",
     className: "contact"
   },
   {
-    width: "5.112211221122105%",
-    height: "6.884488448844881%",
-    left: "80.69306930693068%",
-    top: "72.14521452145213%",
+    width: "2.7%",
+    height: "6.9%",
+    left: "68.7%",
+    top: "72.1%",
     onMouseOver: () => console.log('Impressum'),
     url: "/impressum",
     className: "impressum"
@@ -93,7 +93,7 @@ const Home = () => {
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea}
-      onMapClick={imageMap_click}
+      onMapClick={imageMap_click} style={{ height: "480px", width: "60%" }}
       />
     </div>
   );
