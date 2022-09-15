@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./Media.css";
 
 const Press = () => {
   return (
-    <div>here comes Press things</div>
-  )
-}
+    <div className="media">
+      <h1>here comes Press things</h1>
+    </div>
+  );
+};
 
-export default Press
+export default Press;

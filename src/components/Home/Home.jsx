@@ -12,7 +12,7 @@ const mapArea = [
     top: "56.3%",
     onMouseOver: () => console.log('Team'),
     url: "/team",
-    className: "team"
+    className: "teamImageMap"
   },
   {
     width: "3.5%",
@@ -21,7 +21,7 @@ const mapArea = [
     top: "51%",
     onMouseOver: () => console.log('Media'),
     url: "/media",
-    className: "media"
+    className: "mediaImageMap"
   },
   {
     width: "5.7%",
@@ -30,7 +30,7 @@ const mapArea = [
     top: "56.5%",
     onMouseOver: () => console.log('Partners'),
     url: "/partners",
-    className: "partners"
+    className: "partnersImageMap"
   },
   {
     width: "1.6%",
@@ -39,7 +39,7 @@ const mapArea = [
     top: "63.9%",
     onMouseOver: () => console.log('Events'),
     url: "/events",
-    className: "events"
+    className: "eventsImageMap"
   },
   {
     width: "4.1%",
@@ -48,16 +48,16 @@ const mapArea = [
     top: "61.5%",
     onMouseOver: () => console.log('Shop'),
     url: "/shop",
-    className: "shop"
+    className: "shopImageMap"
   },
   {
-    width: "11%",
-    height: "15.6%",
-    left: "52.6%",
-    top: "47.2%",
+    width: "10.8%",
+    height: "15.4%",
+    left: "56.4%",
+    top: "57.2%",
     onMouseOver: () => console.log('About'),
     url: "/about",
-    className: "about"
+    className: "aboutImageMap"
   },
   {
     width: "2.3%",
@@ -66,7 +66,7 @@ const mapArea = [
     top: "61.1%",
     onMouseOver: () => console.log('Contact'),
     url: "/contact",
-    className: "contact"
+    className: "contactImageMap"
   },
   {
     width: "2.7%",
@@ -75,7 +75,7 @@ const mapArea = [
     top: "72.1%",
     onMouseOver: () => console.log('Impressum'),
     url: "/impressum",
-    className: "impressum"
+    className: "impressumImageMap"
   },
 ];
 
