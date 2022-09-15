@@ -1,6 +1,5 @@
 .team {
-  /* border: 1px solid red; */
-  min-height: 60vh;
+  display: flex;
 }
 
 .team-title {

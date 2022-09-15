@@ -33,10 +33,10 @@ const mapArea = [
     className: "partners"
   },
   {
-    width: "4.287128712871279%",
-    height: "11.009900990099007%",
-    left: "42.079207920792086%",
-    top: "64.88448844884486%",
+    width: "2.3%",
+    height: "10.1%",
+    left: "45.1%",
+    top: "63.9%",
     onMouseOver: () => console.log('Events'),
     url: "/events",
     className: "events"
@@ -93,7 +93,7 @@ const Home = () => {
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea}
-      onMapClick={imageMap_click}
+      onMapClick={imageMap_click} style={{ height: "480px", width: "60%" }}
       />
     </div>
   );
