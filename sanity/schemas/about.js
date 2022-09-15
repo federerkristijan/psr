@@ -14,9 +14,14 @@ export default {
       title: 'About'
     },
     {
-      name: 'href',
-      type: 'url',
-      title: 'Link'
+      name: 'href1',
+      type: 'string',
+      title: 'Insta'
+    },
+    {
+      name: 'href2',
+      type: 'string',
+      title: 'FB'
     }
   ]
 }
