@@ -4,6 +4,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import team from './team';
 import about from './about';
 import events from './events';
+import contact from './contact';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -11,6 +12,6 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    team, about, events
+    team, about, events, contact
   ]),
 })
