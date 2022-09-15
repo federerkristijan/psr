@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Featured from './Featured'
-import Press from './Press'
 
 import "./Media.css";
 
