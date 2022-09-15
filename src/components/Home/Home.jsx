@@ -1,4 +1,6 @@
 import React from "react";
+
+// ImageMaps credits to Qiuziz, @ https://github.com/qiuziz/react-image-map
 import { ImageMap } from "@qiuz/react-image-map";
 
 import PartyStore from "../../assets/images/PartyStore_Sadies.png";
