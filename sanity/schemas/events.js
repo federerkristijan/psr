@@ -19,8 +19,8 @@ export default {
       title: 'Date'
     },
     {
-      name: 'link',
-      type: 'slug',
+      name: 'href',
+      type: 'url',
       title: 'Link'
     }
   ]

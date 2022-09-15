@@ -1,8 +1,8 @@
 export default {
   name: 'team',
-  type: 'document',
+  type: 'array',
   title: 'Team',
-  fields: [
+  of: [
     {
       name: 'name',
       type: 'string',
