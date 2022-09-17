@@ -37,7 +37,7 @@ const Team = () => {
               <img
                 src={urlFor(team.picture).width(200).url()}
                 alt={team.name}
-                className="team-pictrure"
+                className="team-picture"
               />
             </div> */}
             <div className="team-text">
