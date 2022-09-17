@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import sanityClient from "../../lib/client";
 
 import "./Impressum.css";
 
 // todo Sanity block
 
 const Impressum = () => {
+  const [impressum, setImpressum] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+    .fetch(
+      `*[_type == "document"] | order(_createdAt asc) {
+        title,
+        text,
+        href
+      }`
+    )
+    .then((data) => setImpressum(data))
+    .catch(console.error);
+  }, [])
+
   return (
     <div className="impressum">
       <div className="impressum-header">
         <h1>Here comes impressum</h1>
       </div>
-      <div className="impressum-data">
+      {impressum && impressum.map((item) =>
+      <div className="impressum-data" key={item.title}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec
@@ -37,7 +54,7 @@ const Impressum = () => {
           nibh sed. Rhoncus aenean vel elit scelerisque mauris pellentesque. Sed
           viverra ipsum nunc aliquet.
         </p>
-      </div>
+      </div>)}
     </div>
   );
 };

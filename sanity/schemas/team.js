@@ -1,17 +1,25 @@
 export default {
   name: 'team',
-  type: 'array',
   title: 'Team',
+  type: 'array',
   of: [
     {
       name: 'name',
-      type: 'string',
-      title: 'Name'
+      title: 'Name',
+      type: 'string'
     },
     {
       name: 'role',
-      type: 'string',
-      title: 'Role'
+      title: 'Role',
+      type: 'string'
+    },
+    {
+      name: 'picture',
+      title: 'Picture',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
     }
   ]
 }

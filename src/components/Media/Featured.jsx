@@ -30,7 +30,7 @@ const FeaturedIn = () => {
               <span>{item.title}</span>
             </div>
             <div className="featured-links">
-              <a href={item.url} target="_blank">
+              <a href={item.url} target="_blank" rel="noreferrer" >
                 {item.url}
               </a>
             </div>

@@ -33,7 +33,7 @@ const Events = () => {
             </div>
             <div className="events-date">{events.date}</div>
             <div className="events-description">
-              <a href={events.url} target="_blank">
+              <a href={events.url} target="_blank" rel="noreferrer" >
                 {events.description}
               </a>
             </div>

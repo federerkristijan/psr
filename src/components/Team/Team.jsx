@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../../lib/client";
-// import imageUrlBuilder from "@sanity/image-url";
+import imageUrlBuilder from "@sanity/image-url";
 
 import "./Team.css";
 
 const Team = () => {
   const [team, setTeam] = useState(null);
 
-  // const builder = imageUrlBuilder(sanityClient);
+  const builder = imageUrlBuilder(sanityClient);
 
-  // function urlFor(source) {
-  //   return builder.image(source);
-  // }
+  function urlFor(source) {
+    return builder.image(source);
+  }
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "team"] | order(lower(name) asc){
+        `*[_type == "team"] | order(lower(name) asc) {
           name,
-          role
+          role,
+          image
         }`
       )
       .then((data) => setTeam(data))
@@ -31,17 +32,21 @@ const Team = () => {
         <h2>Our Team</h2>
       </div>
       {team &&
-        team.map((team) => (
-          <div className="team-data" key={team.name}>
-            {/* <div className="team-image">
-              <img
-                src={urlFor(team.picture).width(200).url()}
-                alt={team.name}
-                className="team-picture"
-              />
-            </div> */}
+        team.map((item) => (
+          <div className="team-data" key={item.name}>
+            <div className="team-image">
+              {item.image && (
+                <img
+                  src={urlFor(item.picture).width(200).url()}
+                  alt={item.name}
+                  className="team-picture"
+                />
+              )}
+            </div>
             <div className="team-text">
-                <span>{team.name}: {team.role}</span>
+              <span>
+                {item.name}: {item.role}
+              </span>
             </div>
           </div>
         ))}
