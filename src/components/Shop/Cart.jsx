@@ -1,5 +1,7 @@
 import React from 'react'
 
+// todo sanity and stripe
+
 const Cart = () => {
   return (
     <div className='cart'>
