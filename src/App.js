@@ -11,6 +11,7 @@ import Featured from "./components/Media/Featured";
 import Media from "./components/Media/Media";
 import Press from "./components/Media/Press";
 import Partners from "./components/Partners/Partners";
+import Cart from "./components/Shop/Cart";
 import Shop from "./components/Shop/Shop";
 import Team from "./components/Team/Team";
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/media/featured" element={<Featured/>} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/cart" element={<Cart />} />
             <Route path="/team" element={<Team />} />
           </Route>
         </Routes>

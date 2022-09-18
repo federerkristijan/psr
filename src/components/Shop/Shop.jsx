@@ -1,6 +1,9 @@
 import React from "react";
+import Cart from "./Cart";
 
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Shop.css";
+import { Link } from "react-router-dom";
 
 // todo sanity and stripe
 
@@ -11,7 +14,10 @@ const Shop = () => {
         <h1>here comes shop</h1>
       </div>
       <div className="cart">
-        <h4>I'll become a cart</h4>
+        <Link to="/shop/cart">
+          <AiOutlineShoppingCart />
+        </Link>
+        {/* href={<Cart/>} */}
       </div>
     </div>
   );

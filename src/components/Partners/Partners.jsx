@@ -4,8 +4,6 @@ import imageUrlBuilder from "@sanity/image-url";
 
 import "./Partners.css";
 
-//  todo Sanity block with <a> to partner's page
-
 const Partners = () => {
   const [partners, setPartners] = useState(null);
 
