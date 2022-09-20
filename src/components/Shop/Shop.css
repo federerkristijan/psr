@@ -4,12 +4,46 @@
 }
 
 .shop-header {
-  float: left;
-  padding-left: 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 85vw;
 }
 
 .cart {
   float: right;
   top: 2rem;
   border: 1px solid red;
+}
+
+.shop-data {
+  border: 1px solid blue;
+  max-width: 40rem;
+  margin: 3rem;
+}
+
+.record-text {
+  max-width: 25vw;
+  float: left;
+}
+
+.price {
+  float: right;
+  margin-right: 1rem;
+  bottom: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  font-size: 33px;
 }

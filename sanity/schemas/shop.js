@@ -19,10 +19,10 @@ export default {
       type: 'number'
     },
     {
-      name: 'track',
-      title: 'Track',
+      name: 'tracks',
+      title: 'Tracks',
       type: 'array',
-      of: [{ type: 'file' }]
+      of: [{ type: 'track' }]
     }
   ]
 }
