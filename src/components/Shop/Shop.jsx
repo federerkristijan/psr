@@ -7,6 +7,7 @@ import ReactAudioPlayer from "react-audio-player";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Shop.css";
 import { Link } from "react-router-dom";
+import track from "../../assets/mixkit-house-fest-113.mp3";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -36,6 +37,13 @@ const Shop = () => {
           <AiOutlineShoppingCart />
         </Link>
       </div>
+      <div className="track">
+              <ReactAudioPlayer
+                src={track}
+                autoPlay
+                controls
+              />
+            </div>
       {shop &&
         shop.map((item) => (
           <div className="shop-data" key={item.title}>
@@ -48,13 +56,13 @@ const Shop = () => {
             <div className="price">
               <p>{item.price}€</p>
             </div>
-            <div className="track">
+            {/* <div className="track">
               <ReactAudioPlayer
                 src={item.track}
                 autoPlay
                 controls
               />
-            </div>
+            </div> */}
           </div>
         ))}
     </div>
