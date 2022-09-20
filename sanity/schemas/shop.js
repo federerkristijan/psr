@@ -17,6 +17,12 @@ export default {
       name: 'price',
       title: 'Price',
       type: 'number'
+    },
+    {
+      name: 'track',
+      title: 'Track',
+      type: 'array',
+      of: [{ type: 'file' }]
     }
   ]
 }

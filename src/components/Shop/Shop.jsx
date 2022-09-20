@@ -14,7 +14,8 @@ const Shop = () => {
         `*[_type == "shop"] | order(_createdAt asc) {
         title,
         description,
-        price
+        price,
+        track
       }`
       )
       .then((data) => setShop(data))
