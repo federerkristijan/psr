@@ -8,8 +8,8 @@ import contact from "./contact";
 import featured from "./featured";
 import partners from "./partners";
 import impressum from "./impressum";
-import shop from "./shop";
 import track from "./track";
+import record from "./record";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -24,7 +24,7 @@ export default createSchema({
     featured,
     partners,
     impressum,
-    shop,
+    record,
     track
   ]),
 });
