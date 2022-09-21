@@ -15,11 +15,11 @@ const Shop = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "shop"] | order(_createdAt asc) {
-        title,
-        description,
-        price,
-        tracks
+        `*[_type == "record"] {
+          artist
+          title,
+          cover,
+          price
       }`
       )
       .then((data) => setShop(data))
@@ -43,16 +43,18 @@ const Shop = () => {
         <ReactAudioPlayer src={track} autoPlay controls />
       </div> */}
       {shop &&
-        shop.map((item) => (
+        shop?.map((item) => (
           <div className="shop-data" key={item.title}>
             <ul>
               <li>
                 <div className="record-text">
                   <div className="record-title">
+                    <h2>{item.artist}</h2>
                     <h3>{item.title}</h3>
-                  </div>
-                  <div className="record-description">
-                    <span>{item.description}</span>
+                    <img
+                      src={item.cover}
+                      alt={item.title}
+                    />
                   </div>
                 </div>
                 <div className="price">
@@ -60,12 +62,12 @@ const Shop = () => {
                 </div>
                 <div className="track">
                   {/* version 1 */}
-                  <ReactAudioPlayer
+                  {/* <ReactAudioPlayer
                     src={item.tracks}
                     autoPlay
-                    controls="true"
+                    controls
                     key={item.title}
-                  />
+                  /> */}
 
                   {/* version 2 */}
                   {/* <span>{shop.tracks && shop.tracks.map((track) => (
