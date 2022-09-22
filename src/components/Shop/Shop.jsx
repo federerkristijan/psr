@@ -7,7 +7,6 @@ import ReactAudioPlayer from "react-audio-player";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Shop.css";
 import { Link } from "react-router-dom";
-// import track from "../../assets/mixkit-house-fest-113.mp3";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -16,11 +15,16 @@ const Shop = () => {
     sanityClient
       .fetch(
         `*[_type == "record"] {
-          artist
+          artist,
           title,
           cover,
-          price
-      }`
+          price,
+          tracks[] {
+            title,
+            artist,
+            trackId
+          }
+        }`
       )
       .then((data) => setShop(data))
       .catch(console.error);
@@ -39,9 +43,6 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      {/* <div className="track">
-        <ReactAudioPlayer src={track} autoPlay controls />
-      </div> */}
       {shop &&
         shop?.map((item) => (
           <div className="shop-data" key={item.title}>
@@ -51,23 +52,19 @@ const Shop = () => {
                   <div className="record-title">
                     <h2>{item.artist}</h2>
                     <h3>{item.title}</h3>
-                    <img
-                      src={item.cover}
-                      alt={item.title}
-                    />
+                    <img src={item.cover} alt={item.title} />
                   </div>
                 </div>
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                <div className="track">
+                <div className="track" key={item.tracks.trackId}>
                   {/* version 1 */}
-                  {/* <ReactAudioPlayer
-                    src={item.tracks}
+                  <ReactAudioPlayer
+                    src={item.tracks.track}
                     autoPlay
                     controls
-                    key={item.title}
-                  /> */}
+                  />
 
                   {/* version 2 */}
                   {/* <span>{shop.tracks && shop.tracks.map((track) => (

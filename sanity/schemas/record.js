@@ -31,14 +31,9 @@ export default {
       title: 'Tracks',
       type: 'array',
       of: [
-        {
-         type: 'reference',
-         to: [
           {
             type: 'track'
           }
-         ]
-        }
       ]
     }
   ]
