@@ -11,7 +11,8 @@ const FeaturedIn = () => {
       .fetch(
         `*[_type == "featured"] | order(_createdAt asc){
           title,
-          url
+          url,
+          featImg
         }`
       )
       .then((data) => setFeatured(data))
