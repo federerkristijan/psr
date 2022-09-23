@@ -5,7 +5,7 @@ import team from "./team";
 import about from "./about";
 import events from "./events";
 import contact from "./contact";
-import featured from "./featured";
+import media from "./media";
 import partners from "./partners";
 import impressum from "./impressum";
 import track from "./track";
@@ -21,7 +21,7 @@ export default createSchema({
     about,
     events,
     contact,
-    featured,
+    media,
     partners,
     impressum,
     record,

@@ -31,8 +31,7 @@ const About = () => {
               <span>{about.text}</span>
             </div>
             {about.href1 && about.href2 && (
-              <div className="about-icons" target="true">
-                <span>
+              <div className="about-icons">
                   ig: @
                   <a
                     href={`www.instagram.com/${about.href1}`}
@@ -41,9 +40,7 @@ const About = () => {
                   >
                     {about.href1}
                   </a>
-                </span>
-                <span>
-                  FB:
+                  FB: /
                   <a
                     href={`www.facebook.com/${about.href1}`}
                     target="_blank"
@@ -51,7 +48,6 @@ const About = () => {
                   >
                     {about.href2}
                   </a>
-                </span>
               </div>
             )}
           </div>

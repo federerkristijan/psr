@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   max-width: 100%;
-  font-family: 'CalgaryScript'
+  font-family: 'Calgary Script'
 }
 
 .App {
@@ -9,12 +9,10 @@ html, body {
 }
 
 @font-face {
-  font-family: 'CalgaryScript';
+  font-family: 'Calgary Script';
   src: url('../src/assets/fonts/CalgaryScript.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
 }
 
 a, h1, h2, h3, h4, p, span {
-  font-family: 'CalgaryScript';
+  font-family: 'Calgary Script';
 }
