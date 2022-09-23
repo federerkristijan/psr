@@ -30,10 +30,30 @@ const About = () => {
             <div className="about-text">
               <span>{about.text}</span>
             </div>
-            <div className="about-icons">
-                <a href="/">{about.href1}</a>
-                <a href="/">{about.href2}</a>
-            </div>
+            {about.href1 && about.href2 && (
+              <div className="about-icons" target="true">
+                <span>
+                  ig: @
+                  <a
+                    href={`www.instagram.com/${about.href1}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {about.href1}
+                  </a>
+                </span>
+                <span>
+                  FB:
+                  <a
+                    href={`www.facebook.com/${about.href1}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {about.href2}
+                  </a>
+                </span>
+              </div>
+            )}
           </div>
         ))}
     </div>
