@@ -95,7 +95,7 @@ const Home = () => {
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea}
-      onMapClick={imageMap_click} style={{ height: "480px", width: "60%" }}
+      onMapClick={imageMap_click} style={{ height: "550px", width: "40%" }}
       />
     </div>
   );
