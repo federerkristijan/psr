@@ -31,8 +31,8 @@ const About = () => {
               <span>{about.text}</span>
             </div>
             <div className="about-icons">
-                <p>{about.href1}</p>
-                <p>{about.href2}</p>
+                <a href="/">{about.href1}</a>
+                <a href="/">{about.href2}</a>
             </div>
           </div>
         ))}
