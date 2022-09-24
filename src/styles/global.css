@@ -51,3 +51,9 @@ a, h1, h2, h3, h4, p, span {
 .contact-data {
   padding: 10rem;
 }
+
+/* events */
+.events {
+  text-align: left;
+}
+

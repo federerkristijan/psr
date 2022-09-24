@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import sanityClient from "../../lib/client";
+import sanityClient from "../lib/client";
 
-import "./Events.css";
+import "../styles/global.css";
 
 const Events = () => {
   const [events, setEvents] = useState(null);
