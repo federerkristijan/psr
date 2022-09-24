@@ -57,3 +57,16 @@ a, h1, h2, h3, h4, p, span {
   text-align: left;
 }
 
+/* impressum */
+.impressum {
+  padding: 3rem;
+}
+
+.impressum-data {
+  padding: 3rem;
+  font-size: 14px;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  line-height: 1.8rem;
+}
+
