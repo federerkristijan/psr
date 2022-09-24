@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Events from "./components/Events";
 import Home from "./components/Home";
 import Impressum from "./components/Impressum";
-import Media from "./components/Media/Media";
+import Media from "./components/Media";
 import Partners from "./components/Partners/Partners";
 import Cart from "./components/Shop/Cart";
 import Shop from "./components/Shop/Shop";
