@@ -2,16 +2,16 @@ import React from "react";
 import { Routes, Route, Outlet, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Events from "./components/Events";
-import Home from "./components/Home";
-import Impressum from "./components/Impressum";
-import Media from "./components/Media";
-import Partners from "./components/Partners";
-import Cart from "./components/Cart";
-import Shop from "./components/Shop";
-import Team from "./components/Team";
+import About from "../src/components/About";
+import Contact from "../src/components/Contact";
+import Events from "../src/components/Events";
+import Home from "../src/components/Home";
+import Impressum from "../src/components/Impressum";
+import Media from "../src/components/Media";
+import Partners from "../src/components/Partners";
+import Cart from "../src/components/Cart";
+import Shop from "../src/components/Shop";
+import Team from "../src/components/Team";
 
 function App() {
   return (
