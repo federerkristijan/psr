@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import sanityClient from "../../lib/client";
+import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
-import "./Partners.css";
+import "../styles/global.css";
 
 const Partners = () => {
   const [partners, setPartners] = useState(null);

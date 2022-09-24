@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import sanityClient from "../../lib/client";
-import "./About.css";
+import sanityClient from "../lib/client";
+import "../styles/global.css";
 
 const About = () => {
   const [about, setAbout] = useState(null);

@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height: 99%;
   max-width: 100%;
   font-family: 'Calgary Script'
 }
@@ -13,6 +13,4 @@ html, body {
   src: url('../src/assets/fonts/CalgaryScript.ttf') format('ttf');
 }
 
-a, h1, h2, h3, h4, p, span {
-  font-family: 'Calgary Script';
-}
+

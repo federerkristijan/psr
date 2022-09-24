@@ -1,0 +1,181 @@
+/* global */
+a, h1, h2, h3, h4, p, span {
+  font-family: 'Calgary Script';
+}
+
+/* Home */
+
+.home {
+  display: block;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.teamImageMap:hover,
+.mediaImageMap:hover,
+.eventsImageMap:hover,
+.aboutImageMap:hover,
+.shopImageMap:hover,
+.partnersImageMap:hover,
+.contactImageMap:hover,
+.impressumImageMap:hover {
+  background: rgba(23, 23, 213, 0.681);
+}
+
+/* About */
+.about {
+  margin: 3rem;
+}
+
+.about-data {
+  margin: 4rem 0;
+}
+
+.about-text {
+  padding: 2rem;
+}
+
+.about-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 3rem;
+}
+
+/* span, p, a {
+  letter-spacing: 0.2rem;
+  font-size: 16px;
+} */
+
+/* contact */
+.contact-data {
+  padding: 10rem;
+}
+
+/* events */
+.events {
+  text-align: left;
+}
+
+/* impressum */
+.impressum {
+  padding: 3rem;
+}
+
+.impressum-data {
+  padding: 3rem;
+  font-size: 14px;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  line-height: 1.8rem;
+}
+
+/* media */
+.media {
+  padding: 6rem;
+}
+
+.media-header {
+  margin-bottom: 5rem;
+}
+
+.media-title {
+  margin: 2rem;
+  margin-left: 3rem;
+  text-align: left;
+}
+
+.media-links {
+  text-align: left;
+}
+
+/* a {
+  text-decoration: none;
+  font-size: 24px;
+} */
+
+/* partners */
+.partners {
+  padding: 4rem;
+}
+
+/* shop */
+.shop {
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 85vw;
+}
+
+.cart {
+  float: right;
+  top: 2rem;
+  border: 1px solid red;
+}
+
+.shop-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid blue;
+  max-width: 40rem;
+  height: 25vh;
+  margin: 3rem;
+  box-sizing: border-box;
+  white-space: no-wrap;
+}
+
+.record-cover {
+  border: 1px solid blue;
+}
+
+.record-text {
+  border: 1px solid red;
+  max-width: 25vw;
+}
+
+.price {
+  border: 1px solid green;
+  margin-right: 1rem;
+  bottom: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* a {
+  font-size: 33px;
+} */
+
+/* team */
+.team {
+  display: block;
+}
+
+.team-title {
+  margin: 2rem;
+}
+
+.team-data {
+  margin: 1rem;
+}
+
+span {
+  letter-spacing: 0.1rem;
+  font-size: 22px;
+}
+

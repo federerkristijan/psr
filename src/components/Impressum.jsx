@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import sanityClient from "../../lib/client";
+import sanityClient from "../lib/client";
 
-import "./Impressum.css";
+import "../styles/global.css";
 
 // todo Sanity block
 
