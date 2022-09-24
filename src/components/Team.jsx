@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import sanityClient from "../../lib/client";
+import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
-import "./Team.css";
+import "../styles/global.css";
 
 const Team = () => {
   const [team, setTeam] = useState(null);

@@ -8,10 +8,10 @@ import Events from "./components/Events";
 import Home from "./components/Home";
 import Impressum from "./components/Impressum";
 import Media from "./components/Media";
-import Partners from "./components/Partners/Partners";
-import Cart from "./components/Shop/Cart";
-import Shop from "./components/Shop/Shop";
-import Team from "./components/Team/Team";
+import Partners from "./components/Partners";
+import Cart from "./components/Cart";
+import Shop from "./components/Shop";
+import Team from "./components/Team";
 
 function App() {
   return (
