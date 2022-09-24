@@ -5,7 +5,7 @@ import "./App.css";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Events from "./components/Events/Events";
-import Home from "./components/Home/Home";
+import Home from "./components/Home";
 import Impressum from "./components/Impressum/Impressum";
 import Media from "./components/Media/Media";
 import Partners from "./components/Partners/Partners";

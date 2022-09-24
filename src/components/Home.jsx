@@ -3,8 +3,8 @@ import React from "react";
 // ImageMaps credits to Qiuziz, @ https://github.com/qiuziz/react-image-map
 import { ImageMap } from "@qiuz/react-image-map";
 
-import PartyStore from "../../assets/images/PSR.jpg";
-import "../../App.css";
+import PartyStore from "../assets/images/PSR.jpg";
+import "../styles/global.css";
 
 const mapArea = [
   {
@@ -95,7 +95,7 @@ const Home = () => {
   return (
     <div className="Home">
       <ImageMap className="usage-map" src={PartyStore} map={mapArea}
-      onMapClick={imageMap_click} style={{ height: "520px", width: "40%" }}
+      onMapClick={imageMap_click} style={{ height: "530px", width: "40%", margin: "1rem" }}
       />
     </div>
   );
