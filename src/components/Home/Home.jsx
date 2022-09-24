@@ -4,7 +4,7 @@ import React from "react";
 import { ImageMap } from "@qiuz/react-image-map";
 
 import PartyStore from "../../assets/images/PSR.jpg";
-import "./Home.css";
+import "../../App.css";
 
 const mapArea = [
   {

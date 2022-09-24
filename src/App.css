@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height: 99%;
   max-width: 100%;
   font-family: 'Calgary Script'
 }
@@ -15,4 +15,23 @@ html, body {
 
 a, h1, h2, h3, h4, p, span {
   font-family: 'Calgary Script';
+}
+
+/* Home */
+
+.Home {
+  display: block;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.teamImageMap:hover,
+.mediaImageMap:hover,
+.eventsImageMap:hover,
+.aboutImageMap:hover,
+.shopImageMap:hover,
+.partnersImageMap:hover,
+.contactImageMap:hover,
+.impressumImageMap:hover {
+  background: rgba(23, 23, 213, 0.681);
 }
