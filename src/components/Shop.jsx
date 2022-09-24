@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import sanityClient from "../../lib/client";
+import sanityClient from "../lib/client";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
 
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "./Shop.css";
+import "../styles/global.css";
 import { Link } from "react-router-dom";
 
 const Shop = () => {
