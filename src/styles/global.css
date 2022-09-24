@@ -46,3 +46,8 @@ a, h1, h2, h3, h4, p, span {
   letter-spacing: 0.2rem;
   font-size: 16px;
 } */
+
+/* contact */
+.contact-data {
+  padding: 10rem;
+}
