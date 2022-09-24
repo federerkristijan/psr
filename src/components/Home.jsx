@@ -12,90 +12,93 @@ const mapArea = [
     height: "12.1%",
     left: "27.3%",
     top: "56.3%",
-    onMouseOver: () => console.log('Team'),
+    onMouseOver: () => console.log("Team"),
     url: "/team",
-    className: "teamImageMap"
+    className: "teamImageMap",
   },
   {
     width: "3.5%",
     height: "13.2%",
     left: "31.4%",
     top: "51%",
-    onMouseOver: () => console.log('Media'),
+    onMouseOver: () => console.log("Media"),
     url: "/media",
-    className: "mediaImageMap"
+    className: "mediaImageMap",
   },
   {
     width: "5.7%",
     height: "14.3%",
     left: "36.6%",
     top: "56.5%",
-    onMouseOver: () => console.log('Partners'),
+    onMouseOver: () => console.log("Partners"),
     url: "/partners",
-    className: "partnersImageMap"
+    className: "partnersImageMap",
   },
   {
     width: "1.6%",
     height: "10.1%",
     left: "45.5%",
     top: "63.9%",
-    onMouseOver: () => console.log('Events'),
+    onMouseOver: () => console.log("Events"),
     url: "/events",
-    className: "eventsImageMap"
+    className: "eventsImageMap",
   },
   {
     width: "4.1%",
     height: "18.3%",
     left: "48.6%",
     top: "61.5%",
-    onMouseOver: () => console.log('Shop'),
+    onMouseOver: () => console.log("Shop"),
     url: "/shop",
-    className: "shopImageMap"
+    className: "shopImageMap",
   },
   {
     width: "10.8%",
     height: "15.4%",
     left: "56.4%",
     top: "57.2%",
-    onMouseOver: () => console.log('About'),
+    onMouseOver: () => console.log("About"),
     url: "/about",
-    className: "aboutImageMap"
+    className: "aboutImageMap",
   },
   {
     width: "2.3%",
     height: "3.2%",
     left: "68.1%",
     top: "61.1%",
-    onMouseOver: () => console.log('Contact'),
+    onMouseOver: () => console.log("Contact"),
     url: "/contact",
-    className: "contactImageMap"
+    className: "contactImageMap",
   },
   {
     width: "2.7%",
     height: "6.9%",
     left: "68.7%",
     top: "72.1%",
-    onMouseOver: () => console.log('Impressum'),
+    onMouseOver: () => console.log("Impressum"),
     url: "/impressum",
-    className: "impressumImageMap"
+    className: "impressumImageMap",
   },
 ];
 
-  function imageMap_click(area, index) {
-    console.log("imageMap_click")
+function imageMap_click(area, index) {
+  console.log("imageMap_click");
 
-    console.log("area", area)
-    console.log("index", index)
+  console.log("area", area);
+  console.log("index", index);
 
-    window.location = area.url;
-  }
+  window.location = area.url;
+}
 
 const Home = () => {
-
   return (
-    <div className="Home">
-      <ImageMap className="usage-map" src={PartyStore} map={mapArea}
-      onMapClick={imageMap_click} style={{ height: "530px", width: "40%", margin: "1rem" }}
+    <div className="home">
+      <ImageMap
+        className="usage-map"
+        src={PartyStore}
+        map={mapArea}
+        onMapClick={imageMap_click}
+        style={{ height: "530px", width: "40%", margin: "1rem" }}
       />
     </div>
   );

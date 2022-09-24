@@ -5,7 +5,7 @@ a, h1, h2, h3, h4, p, span {
 
 /* Home */
 
-.Home {
+.home {
   display: block;
   max-width: 100%;
   min-height: 100%;
@@ -21,3 +21,28 @@ a, h1, h2, h3, h4, p, span {
 .impressumImageMap:hover {
   background: rgba(23, 23, 213, 0.681);
 }
+
+/* About */
+.about {
+  margin: 3rem;
+}
+
+.about-data {
+  margin: 4rem 0;
+}
+
+.about-text {
+  padding: 2rem;
+}
+
+.about-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 3rem;
+}
+
+/* span, p, a {
+  letter-spacing: 0.2rem;
+  font-size: 16px;
+} */
