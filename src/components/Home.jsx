@@ -113,10 +113,10 @@ const mapArea = [
     className: "contactLink",
   },
   {
-    width: "7.2%",
+    width: "9%",
     height: "12.6%",
-    left: "66%",
-    top: "59%",
+    left: "64%",
+    top: "67%",
     className: "contactArrow",
   },
   {
