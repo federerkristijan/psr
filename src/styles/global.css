@@ -53,7 +53,7 @@ span {
 
 .partnersArrow::before {
   display: flex;
-  content: "Partners ⬏";
+  content: "Partners ⮥";
   color: rgba(236, 244, 15, 0.903);
   margin-left: 35%;
   font-weight: 600;
@@ -64,12 +64,12 @@ span {
 
 .eventsArrow::before {
   display: flex;
-  content: "EVENTS";
+  content: "⮤ Events";
   color: rgba(236, 244, 15, 0.903);
   margin-top: 10%;
   margin-left: 10%;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 22px;
   background: rgb(56 56 223);
   text-orientation: upright;
 }
