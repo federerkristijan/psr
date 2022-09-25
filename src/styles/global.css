@@ -85,7 +85,19 @@ span {
   background: rgb(56 56 223);
 }
 
-/* .aboutImageMap::before,
+.aboutImageMap::before {
+  display: flex;
+  content: "ABOUT";
+  color: rgba(236, 244, 15, 0.903);
+  margin-top: 35%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  background: rgb(56 56 223);
+}
+
+/* ,
 ,
 ,
 .contactImageMap::before,
