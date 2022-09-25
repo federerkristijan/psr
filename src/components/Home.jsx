@@ -21,6 +21,7 @@ const mapArea = [
     height: "55%",
     left: "29%",
     top: "38%",
+    onMouseOver: () => console.log("TeamArrow"),
     className: "teamArrow",
   },
   {
@@ -137,6 +138,19 @@ const mapArea = [
   },
 ];
 
+function onMouseOver() {
+  const e = document.getElementsByClassName(
+    "teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow"
+  );
+
+  e.onmouseover = function () {
+    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "block";
+  };
+  e.onmouseout = function () {
+    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "none";
+  };
+}
+
 function imageMap_click(area, index) {
   console.log("imageMap_click");
 
@@ -155,6 +169,7 @@ const Home = () => {
         map={mapArea}
         onMapClick={imageMap_click}
         style={{ height: "530px", width: "40%", margin: "1rem" }}
+        onMouseOver={onMouseOver}
       />
     </div>
   );
