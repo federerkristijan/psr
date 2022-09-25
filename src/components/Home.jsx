@@ -129,10 +129,10 @@ const mapArea = [
     className: "impressumLink",
   },
   {
-    width: "7.2%",
+    width: "13%",
     height: "12.6%",
-    left: "67%",
-    top: "68.6%",
+    left: "64.5%",
+    top: "82%",
     className: "impressumArrow",
   },
 ];

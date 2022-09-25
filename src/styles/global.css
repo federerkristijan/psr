@@ -111,14 +111,10 @@ span {
 
 .impressumArrow::before {
   display: flex;
-  content: "IMPRESSUM";
+  content: "⮤ Impressum";
   color: rgba(236, 244, 15, 0.903);
-  margin-top: 60%;
-  margin-left: 15%;
   font-weight: 600;
-  font-size: 12px;
-  width: max-content;
-  letter-spacing: 0.3rem;
+  font-size: 22px;
   background: rgb(56 56 223);
 }
 
