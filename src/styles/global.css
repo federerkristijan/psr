@@ -33,10 +33,11 @@ span {
   content: "TEAM";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
-  margin-top: 5%;
   margin-left: 5%;
   font-weight: 600;
+  font-size: 17px;
   background: rgb(56 56 223);
+  text-orientation: upright;
 }
 
 .mediaImageMap::before {
@@ -46,7 +47,9 @@ span {
   writing-mode: vertical-rl;
   margin-left: 10%;
   font-weight: 600;
+  font-size: 17px;
   background: rgb(56 56 223);
+  text-orientation: upright;
 }
 
 .partnersImageMap::before {
@@ -56,8 +59,9 @@ span {
   writing-mode: vertical-rl;
   margin-left: 35%;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 13px;
   background: rgb(56 56 223);
+  text-orientation: upright;
 }
 
 .eventsImageMap::before {
@@ -65,11 +69,12 @@ span {
   content: "EVENTS";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
-  margin-top: 20%;
+  margin-top: 10%;
   margin-left: 10%;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   background: rgb(56 56 223);
+  text-orientation: upright;
 }
 
 .shopImageMap::before {
@@ -77,12 +82,13 @@ span {
   content: "SHOP";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
-  margin-top: 50%;
+  margin-top: 20%;
   margin-left: 15%;
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 0.3rem;
   background: rgb(56 56 223);
+  text-orientation: upright;
 }
 
 .aboutImageMap::before {
