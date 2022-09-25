@@ -210,7 +210,7 @@ span {
 .cart {
   float: right;
   top: 2rem;
-  border: 1px solid red;
+  font-size: 2rem;
 }
 
 .shop-data {
@@ -219,11 +219,12 @@ span {
   justify-content: space-around;
   align-items: center;
   border: 1px solid blue;
-  max-width: 40rem;
+  /* max-width: 40rem; */
   height: 25vh;
-  margin: 3rem;
+  margin: 4rem;
   box-sizing: border-box;
   white-space: no-wrap;
+  background: rgba(0, 0, 0, 0.417);
 }
 
 .record-cover {
@@ -233,21 +234,24 @@ span {
 .record-text {
   border: 1px solid red;
   max-width: 25vw;
+  color: white;
 }
 
 .price {
   border: 1px solid green;
   margin-right: 1rem;
   bottom: 2rem;
+  color: white;
+}
+
+.track {
+  color: white;
+  background: turquoise;
 }
 
 li {
   list-style-type: none;
 }
-
-/* a {
-  font-size: 33px;
-} */
 
 /* team */
 .team {

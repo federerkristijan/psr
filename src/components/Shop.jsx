@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
@@ -10,6 +11,12 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
+
+  const builder = imageUrlBuilder(sanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
 
   useEffect(() => {
     sanityClient
@@ -30,6 +37,11 @@ const Shop = () => {
       .catch(console.error);
   }, []);
 
+  // const listTracks = (tracks) => {
+  //   return tracks.map((track) => <li>{track}</li>);
+  // };
+  const tracks = [];
+
   return (
     <div className="shop">
       <div className="shop-header">
@@ -43,37 +55,63 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      {shop &&
-        shop?.map((item) => (
-          <div className="shop-data" key={item.title}>
-            <div className="record-cover">
-              <img src={item.cover} alt={item.title} />
-            </div>
-            <div className="record-text">
-              <div className="record-title">
-                <h3>{item.artist}</h3>
-                <h4>{item.title}</h4>
-              </div>
-            </div>
-            <div className="price">
-              <p>{item.price}€</p>
-            </div>
-            <div className="track" key={item.tracks.trackId}>
-              <p>I'm track</p>
-              {/* <ul>
-                <li>
-                  <audio src={item.tracks[0].track} type="audio/mp3"></audio>
-                </li>
-              </ul> */}
-              {/* version 1 */}
-              {/* <ReactAudioPlayer
+      <div className="shop-data">
+        {shop &&
+          shop?.map((item) => (
+            <ul key={item.title}>
+              <li>
+                <div className="record-cover">
+                  <img
+                    src={urlFor(item.cover).width(120).url()}
+                    alt={item.title}
+                  />
+                </div>
+                <div className="record-text">
+                  <div className="record-title">
+                    <h3>{item.artist}</h3>
+                    <h4>{item.title}</h4>
+                  </div>
+                </div>
+                <div className="price">
+                  <p>{item.price}€</p>
+                </div>
+                <div className="track" key={item.tracks.trackId}>
+                  <p>I'm track</p>
+                  <ul>
+                    <li>
+                      <audio
+                        src={item.tracks[0].track}
+                        type="audio/mp3"
+                      ></audio>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default Shop;
+
+{
+  /* version 1 */
+}
+{
+  /* <ReactAudioPlayer
                     src={item.tracks[0].track}
                     autoPlay
                     controls
-                  /> */}
+                  /> */
+}
 
-              {/* version 2 */}
-              {/* <ul>
+{
+  /* version 2 */
+}
+{
+  /* <ul>
                     <li>
                       <span>
                         <ReactAudioPlayer
@@ -84,22 +122,19 @@ const Shop = () => {
                         />
                       </span>
                     </li>
-                  </ul> */}
+                  </ul> */
+}
 
-              {/* version 3 */}
-              {/* <span>{shop.tracks && shop.tracks.map((track) => (
+{
+  /* version 3 */
+}
+{
+  /* <span>{shop.tracks && shop.tracks.map((track) => (
                     <ReactAudioPlayer
                     src={item.tracks}
                     autoPlay
                     controls="true"
                     key={track.title}
                   />
-                  ))}</span> */}
-            </div>
-          </div>
-        ))}
-    </div>
-  );
-};
-
-export default Shop;
+                  ))}</span> */
+}
