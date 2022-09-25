@@ -29,7 +29,7 @@ span {
 }
 
 .teamImageMap::before {
-  /* position: fixed; */
+  display: flex;
   content: "team";
   color: yellow;
   writing-mode: vertical-rl;
