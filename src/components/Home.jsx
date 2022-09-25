@@ -17,6 +17,15 @@ const mapArea = [
     className: "teamImageMap",
   },
   {
+    width: "12.2%",
+    height: "12.6%",
+    left: "20%",
+    top: "40%",
+    onMouseOver: () => console.log("Arrow"),
+    className: "arrow",
+    title: "U+21B4"
+  },
+  {
     width: "2.8%",
     height: "13.2%",
     left: "36.9%",
