@@ -17,38 +17,32 @@ span {
   min-height: 100%;
 }
 
-.teamImageMap:hover,
-.mediaImageMap:hover,
-.eventsImageMap:hover,
-.aboutImageMap:hover,
-.shopImageMap:hover,
-.partnersImageMap:hover,
-.contactImageMap:hover,
-.impressumImageMap:hover {
+.teamLink:hover,
+.mediaLink:hover,
+.eventsLink:hover,
+.aboutLink:hover,
+.shopLink:hover,
+.partnersLink:hover,
+.contactLink:hover,
+.impressumLink:hover {
   background: rgb(56 56 223);
 }
 
-.teamImageMap::before {
+.teamArrow::before {
   display: flex;
-  content: "TEAM";
+  content: "Team ↳";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
   margin-left: 5%;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 32px;
   background: rgb(56 56 223);
   text-orientation: upright;
 }
 
-.arrow::before {
-  content: "↳";
-  color: yellow;
-  background: blue;
-}
-
 .mediaImageMap::before {
   display: flex;
-  content: "MEDIA";
+  content: "MEDIA ↴";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
   margin-left: 10%;
