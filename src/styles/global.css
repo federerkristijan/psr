@@ -30,9 +30,23 @@ span {
 
 .teamImageMap::before {
   display: flex;
-  content: "team";
-  color: yellow;
+  content: "TEAM";
+  color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
+  margin-top: 5%;
+  margin-left: 5%;
+  font-weight: 600;
+  background: rgba(56, 56, 223, 0.681);
+}
+
+.mediaImageMap::before {
+  display: flex;
+  content: "MEDIA";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-left: 10%;
+  font-weight: 600;
+  background:  rgba(56, 56, 223, 0.681);
 }
 
 /* .mediaImageMap::before {
