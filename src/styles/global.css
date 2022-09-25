@@ -28,7 +28,7 @@ span {
   background: rgba(56, 56, 223, 0.681);
 }
 
-.teamImageMap::before {
+.teamImageMap::after {
   display: flex;
   content: "TEAM";
   color: rgba(236, 244, 15, 0.903);
@@ -49,14 +49,19 @@ span {
   background:  rgba(56, 56, 223, 0.681);
 }
 
-/* .mediaImageMap::before {
-  content: "media";
-  color: red;
-  writing-mode: vertical-lr;
-} */
+.eventsImageMap::before {
+  display: flex;
+  content: "EVENTS";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 13px;
+  background: rgb(56 56 223);
+}
 
-/* .eventsImageMap::before,
-.aboutImageMap::before,
+/* .aboutImageMap::before,
 .shopImageMap::before,
 .partnersImageMap::before,
 .contactImageMap::before,
