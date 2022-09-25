@@ -72,8 +72,21 @@ span {
   background: rgb(56 56 223);
 }
 
+.shopImageMap::before {
+  display: flex;
+  content: "SHOP";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-top: 50%;
+  margin-left: 15%;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.3rem;
+  background: rgb(56 56 223);
+}
+
 /* .aboutImageMap::before,
-.shopImageMap::before,
+,
 ,
 .contactImageMap::before,
 .impressumImageMap::before */
