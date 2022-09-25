@@ -1,6 +1,12 @@
 /* global */
-a, h1, h2, h3, h4, p, span {
-  font-family: 'Calgary Script';
+a,
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: "Calgary Script";
 }
 
 /* Home */
@@ -19,8 +25,28 @@ a, h1, h2, h3, h4, p, span {
 .partnersImageMap:hover,
 .contactImageMap:hover,
 .impressumImageMap:hover {
-  background: rgba(23, 23, 213, 0.681);
+  background: rgba(56, 56, 223, 0.681);
 }
+
+.teamImageMap::before {
+  /* position: fixed; */
+  content: "team";
+  color: yellow;
+  writing-mode: vertical-rl;
+}
+
+/* .mediaImageMap::before {
+  content: "media";
+  color: red;
+  writing-mode: vertical-lr;
+} */
+
+/* .eventsImageMap::before,
+.aboutImageMap::before,
+.shopImageMap::before,
+.partnersImageMap::before,
+.contactImageMap::before,
+.impressumImageMap::before */
 
 /* About */
 .about {
