@@ -33,7 +33,6 @@ span {
   content: "Team ⮡";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
-  margin-left: 5%;
   font-weight: 600;
   font-size: 24px;
   background: rgb(56 56 223);
@@ -44,7 +43,6 @@ span {
   display: flex;
   content: "Media ⮧";
   color: rgba(236, 244, 15, 0.903);
-  margin-left: 10%;
   font-weight: 600;
   font-size: 24px;
   background: rgb(56 56 223);
@@ -55,7 +53,6 @@ span {
   display: flex;
   content: "Partners ⮥";
   color: rgba(236, 244, 15, 0.903);
-  margin-left: 35%;
   font-weight: 600;
   font-size: 22px;
   background: rgb(56 56 223);
@@ -66,8 +63,6 @@ span {
   display: flex;
   content: "Events ⮥";
   color: rgba(236, 244, 15, 0.903);
-  margin-top: 10%;
-  margin-left: 10%;
   font-weight: 600;
   font-size: 22px;
   background: rgb(56 56 223);
@@ -77,9 +72,6 @@ span {
   display: flex;
   content: "Shop ⮧";
   color: rgba(236, 244, 15, 0.903);
-
-  margin-top: 20%;
-  margin-left: 15%;
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 0.3rem;

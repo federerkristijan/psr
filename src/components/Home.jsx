@@ -35,8 +35,8 @@ const mapArea = [
   {
     width: "9%",
     height: "13%",
-    left: "30.8%",
-    top: "41%",
+    left: "31.4%",
+    top: "42.5%",
     className: "mediaArrow",
   },
   {
@@ -49,10 +49,10 @@ const mapArea = [
     className: "partnersLink",
   },
   {
-    width: "16%",
+    width: "10%",
     height: "12.6%",
-    left: "28%",
-    top: "78%",
+    left: "33%",
+    top: "76%",
     className: "partnersArrow",
   },
   {
@@ -65,10 +65,10 @@ const mapArea = [
     className: "eventsLink",
   },
   {
-    width: "9%",
+    width: "8%",
     height: "12.6%",
-    left: "40%",
-    top: "80.5%",
+    left: "41%",
+    top: "81%",
     className: "eventsArrow",
   },
   {
@@ -81,10 +81,10 @@ const mapArea = [
     className: "shopLink",
   },
   {
-    width: "9%",
+    width: "8%",
     height: "14%",
-    left: "43.7%",
-    top: "52%",
+    left: "45%",
+    top: "56.5%",
     className: "shopArrow",
   },
   {
