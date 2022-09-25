@@ -30,12 +30,12 @@ span {
 
 .teamArrow::before {
   display: flex;
-  content: "Team ↳";
+  content: "Team ⮡";
   color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
   margin-left: 5%;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 24px;
   background: rgb(56 56 223);
   text-orientation: upright;
 }
@@ -71,7 +71,6 @@ span {
   font-weight: 600;
   font-size: 22px;
   background: rgb(56 56 223);
-  text-orientation: upright;
 }
 
 .shopArrow::before {
@@ -90,14 +89,15 @@ span {
 
 .aboutArrow::before {
   display: flex;
-  content: "ABOUT";
+  content: "About ⮠";
   color: rgba(236, 244, 15, 0.903);
-  margin-top: 35%;
-  margin-left: 10%;
+  writing-mode: vertical-rl;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 0.1rem;
   background: rgb(56 56 223);
+  text-orientation: upright;
+  padding: 0.1rem;
 }
 
 .contactArrow::before {

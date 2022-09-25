@@ -18,9 +18,9 @@ const mapArea = [
   },
   {
     width: "7.2%",
-    height: "12.6%",
-    left: "20%",
-    top: "52.6%",
+    height: "55%",
+    left: "29%",
+    top: "38%",
     className: "teamArrow",
   },
   {
@@ -35,7 +35,7 @@ const mapArea = [
   {
     width: "9%",
     height: "13%",
-    left: "30.5%",
+    left: "30.8%",
     top: "41%",
     className: "mediaArrow",
   },
@@ -98,9 +98,9 @@ const mapArea = [
   },
   {
     width: "7.2%",
-    height: "9.6%",
-    left: "58%",
-    top: "77.6%",
+    height: "37%",
+    left: "60.5%",
+    top: "28.9%",
     className: "aboutArrow",
   },
   {
