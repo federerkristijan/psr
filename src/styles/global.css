@@ -25,7 +25,7 @@ span {
 .partnersImageMap:hover,
 .contactImageMap:hover,
 .impressumImageMap:hover {
-  background: rgba(56, 56, 223, 0.681);
+  background: rgb(56 56 223);
 }
 
 .teamImageMap::after {
@@ -36,7 +36,7 @@ span {
   margin-top: 5%;
   margin-left: 5%;
   font-weight: 600;
-  background: rgba(56, 56, 223, 0.681);
+  background: rgb(56 56 223);
 }
 
 .mediaImageMap::before {
@@ -46,7 +46,18 @@ span {
   writing-mode: vertical-rl;
   margin-left: 10%;
   font-weight: 600;
-  background:  rgba(56, 56, 223, 0.681);
+  background: rgb(56 56 223);
+}
+
+.partnersImageMap::before {
+  display: flex;
+  content: "PARTNERS";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-left: 35%;
+  font-weight: 600;
+  font-size: 17px;
+  background: rgb(56 56 223);
 }
 
 .eventsImageMap::before {
@@ -63,7 +74,7 @@ span {
 
 /* .aboutImageMap::before,
 .shopImageMap::before,
-.partnersImageMap::before,
+,
 .contactImageMap::before,
 .impressumImageMap::before */
 
