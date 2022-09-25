@@ -14,7 +14,14 @@ const mapArea = [
     top: "57.5%",
     onMouseOver: () => console.log("Team"),
     url: "/team",
-    className: "teamImageMap",
+    className: "teamLink",
+  },
+  {
+    width: "7.2%",
+    height: "55%",
+    left: "29%",
+    top: "38%",
+    className: "teamArrow",
   },
   {
     width: "2.8%",
@@ -23,7 +30,14 @@ const mapArea = [
     top: "52%",
     onMouseOver: () => console.log("Media"),
     url: "/media",
-    className: "mediaImageMap",
+    className: "mediaLink",
+  },
+  {
+    width: "9%",
+    height: "13%",
+    left: "31.4%",
+    top: "42.5%",
+    className: "mediaArrow",
   },
   {
     width: "4.4%",
@@ -32,7 +46,14 @@ const mapArea = [
     top: "57.5%",
     onMouseOver: () => console.log("Partners"),
     url: "/partners",
-    className: "partnersImageMap",
+    className: "partnersLink",
+  },
+  {
+    width: "10%",
+    height: "12.6%",
+    left: "33%",
+    top: "76%",
+    className: "partnersArrow",
   },
   {
     width: "1.6%",
@@ -41,7 +62,14 @@ const mapArea = [
     top: "64.9%",
     onMouseOver: () => console.log("Events"),
     url: "/events",
-    className: "eventsImageMap",
+    className: "eventsLink",
+  },
+  {
+    width: "8%",
+    height: "12.6%",
+    left: "41%",
+    top: "81%",
+    className: "eventsArrow",
   },
   {
     width: "3.1%",
@@ -50,7 +78,14 @@ const mapArea = [
     top: "62.5%",
     onMouseOver: () => console.log("Shop"),
     url: "/shop",
-    className: "shopImageMap",
+    className: "shopLink",
+  },
+  {
+    width: "8%",
+    height: "14%",
+    left: "45%",
+    top: "56.5%",
+    className: "shopArrow",
   },
   {
     width: "7.8%",
@@ -59,7 +94,14 @@ const mapArea = [
     top: "58.5%",
     onMouseOver: () => console.log("About"),
     url: "/about",
-    className: "aboutImageMap",
+    className: "aboutLink",
+  },
+  {
+    width: "7.2%",
+    height: "37%",
+    left: "60.5%",
+    top: "28.9%",
+    className: "aboutArrow",
   },
   {
     width: "1.7%",
@@ -68,7 +110,14 @@ const mapArea = [
     top: "61.1%",
     onMouseOver: () => console.log("Contact"),
     url: "/contact",
-    className: "contactImageMap",
+    className: "contactLink",
+  },
+  {
+    width: "9%",
+    height: "12.6%",
+    left: "64%",
+    top: "67%",
+    className: "contactArrow",
   },
   {
     width: "2.2%",
@@ -77,7 +126,14 @@ const mapArea = [
     top: "72.6%",
     onMouseOver: () => console.log("Impressum"),
     url: "/impressum",
-    className: "impressumImageMap",
+    className: "impressumLink",
+  },
+  {
+    width: "13%",
+    height: "12.6%",
+    left: "64.5%",
+    top: "82%",
+    className: "impressumArrow",
   },
 ];
 
