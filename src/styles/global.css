@@ -97,10 +97,23 @@ span {
   background: rgb(56 56 223);
 }
 
+.contactImageMap::before {
+  display: flex;
+  content: "CONTACT";
+  color: rgba(236, 244, 15, 0.903);
+  margin-top: 20%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 11px;
+  max-width: content-fit;
+  width: max-content;
+  background: rgb(56 56 223);
+}
+
 /* ,
 ,
 ,
-.contactImageMap::before,
+,
 .impressumImageMap::before */
 
 /* About */
