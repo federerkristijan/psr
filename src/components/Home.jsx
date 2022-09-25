@@ -67,8 +67,8 @@ const mapArea = [
   {
     width: "9%",
     height: "12.6%",
-    left: "47%",
-    top: "83%",
+    left: "40%",
+    top: "80.5%",
     className: "eventsArrow",
   },
   {
@@ -81,10 +81,10 @@ const mapArea = [
     className: "shopLink",
   },
   {
-    width: "7.2%",
-    height: "12.6%",
-    left: "49%",
-    top: "52.6%",
+    width: "9%",
+    height: "14%",
+    left: "43.7%",
+    top: "52%",
     className: "shopArrow",
   },
   {

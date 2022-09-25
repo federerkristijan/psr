@@ -42,7 +42,7 @@ span {
 
 .mediaArrow::before {
   display: flex;
-  content: "Media ↴";
+  content: "Media ⮧";
   color: rgba(236, 244, 15, 0.903);
   margin-left: 10%;
   font-weight: 600;
@@ -64,7 +64,7 @@ span {
 
 .eventsArrow::before {
   display: flex;
-  content: "⮤ Events";
+  content: "Events ⮥";
   color: rgba(236, 244, 15, 0.903);
   margin-top: 10%;
   margin-left: 10%;
@@ -76,7 +76,7 @@ span {
 
 .shopArrow::before {
   display: flex;
-  content: "SHOP";
+  content: "Shop ⮧";
   color: rgba(236, 244, 15, 0.903);
 
   margin-top: 20%;
