@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
@@ -10,6 +11,13 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
+
+  const builder = imageUrlBuilder(sanityClient);
+
+  function urlFor(source) {
+    return builder.image(source);
+  }
+
 
   useEffect(() => {
     sanityClient
@@ -47,7 +55,7 @@ const Shop = () => {
         shop?.map((item) => (
           <div className="shop-data" key={item.title}>
             <div className="record-cover">
-              <img src={item.cover} alt={item.title} />
+              <img src={urlFor(item.cover).width(120).url()} alt={item.title} />
             </div>
             <div className="record-text">
               <div className="record-title">
@@ -60,11 +68,11 @@ const Shop = () => {
             </div>
             <div className="track" key={item.tracks.trackId}>
               <p>I'm track</p>
-              {/* <ul>
+              <ul>
                 <li>
                   <audio src={item.tracks[0].track} type="audio/mp3"></audio>
                 </li>
-              </ul> */}
+              </ul>
               {/* version 1 */}
               {/* <ReactAudioPlayer
                     src={item.tracks[0].track}
