@@ -25,28 +25,103 @@ span {
 .partnersImageMap:hover,
 .contactImageMap:hover,
 .impressumImageMap:hover {
-  background: rgba(56, 56, 223, 0.681);
+  background: rgb(56 56 223);
 }
 
-.teamImageMap::before {
+.teamImageMap::after {
   display: flex;
-  content: "team";
-  color: yellow;
+  content: "TEAM";
+  color: rgba(236, 244, 15, 0.903);
   writing-mode: vertical-rl;
+  margin-top: 5%;
+  margin-left: 5%;
+  font-weight: 600;
+  background: rgb(56 56 223);
 }
 
-/* .mediaImageMap::before {
-  content: "media";
-  color: red;
-  writing-mode: vertical-lr;
-} */
+.mediaImageMap::before {
+  display: flex;
+  content: "MEDIA";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-left: 10%;
+  font-weight: 600;
+  background: rgb(56 56 223);
+}
 
-/* .eventsImageMap::before,
-.aboutImageMap::before,
-.shopImageMap::before,
-.partnersImageMap::before,
-.contactImageMap::before,
-.impressumImageMap::before */
+.partnersImageMap::before {
+  display: flex;
+  content: "PARTNERS";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-left: 35%;
+  font-weight: 600;
+  font-size: 17px;
+  background: rgb(56 56 223);
+}
+
+.eventsImageMap::before {
+  display: flex;
+  content: "EVENTS";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 13px;
+  background: rgb(56 56 223);
+}
+
+.shopImageMap::before {
+  display: flex;
+  content: "SHOP";
+  color: rgba(236, 244, 15, 0.903);
+  writing-mode: vertical-rl;
+  margin-top: 50%;
+  margin-left: 15%;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.3rem;
+  background: rgb(56 56 223);
+}
+
+.aboutImageMap::before {
+  display: flex;
+  content: "ABOUT";
+  color: rgba(236, 244, 15, 0.903);
+  margin-top: 35%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  background: rgb(56 56 223);
+}
+
+.contactImageMap::before {
+  display: flex;
+  content: "CONTACT";
+  color: rgba(236, 244, 15, 0.903);
+  margin-top: 20%;
+  margin-left: 10%;
+  font-weight: 600;
+  font-size: 11px;
+  max-width: content-fit;
+  width: max-content;
+  background: rgb(56 56 223);
+}
+
+.impressumImageMap::before {
+  display: flex;
+  content: "IMPRESSUM";
+  color: rgba(236, 244, 15, 0.903);
+  margin-top: 60%;
+  margin-left: 15%;
+  font-weight: 600;
+  font-size: 10px;
+  width: max-content;
+  letter-spacing: 0.3rem;
+  background: rgb(56 56 223);
+}
 
 /* About */
 .about {
