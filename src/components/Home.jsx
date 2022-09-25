@@ -33,10 +33,10 @@ const mapArea = [
     className: "mediaLink",
   },
   {
-    width: "7.2%",
-    height: "12.6%",
-    left: "36.9%",
-    top: "32.6%",
+    width: "9%",
+    height: "13%",
+    left: "30.5%",
+    top: "41%",
     className: "mediaArrow",
   },
   {
@@ -99,8 +99,8 @@ const mapArea = [
   {
     width: "7.2%",
     height: "39.6%",
-    left: "28%",
-    top: "29.6%",
+    left: "58%",
+    top: "77.6%",
     className: "aboutArrow",
   },
   {
@@ -115,8 +115,8 @@ const mapArea = [
   {
     width: "7.2%",
     height: "12.6%",
-    left: "60%",
-    top: "52.6%",
+    left: "66%",
+    top: "59%",
     className: "contactArrow",
   },
   {
@@ -131,8 +131,8 @@ const mapArea = [
   {
     width: "7.2%",
     height: "12.6%",
-    left: "60%",
-    top: "52.6%",
+    left: "67%",
+    top: "68.6%",
     className: "impressumArrow",
   },
 ];

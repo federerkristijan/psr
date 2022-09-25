@@ -40,23 +40,21 @@ span {
   text-orientation: upright;
 }
 
-.mediaImageMap::before {
+.mediaArrow::before {
   display: flex;
-  content: "MEDIA ↴";
+  content: "Media ↴";
   color: rgba(236, 244, 15, 0.903);
-  writing-mode: vertical-rl;
   margin-left: 10%;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 24px;
   background: rgb(56 56 223);
   text-orientation: upright;
 }
 
-.partnersImageMap::before {
+.partnersArrow::before {
   display: flex;
   content: "PARTNERS";
   color: rgba(236, 244, 15, 0.903);
-  writing-mode: vertical-rl;
   margin-left: 35%;
   font-weight: 600;
   font-size: 13px;
@@ -64,11 +62,10 @@ span {
   text-orientation: upright;
 }
 
-.eventsImageMap::before {
+.eventsArrow::before {
   display: flex;
   content: "EVENTS";
   color: rgba(236, 244, 15, 0.903);
-  writing-mode: vertical-rl;
   margin-top: 10%;
   margin-left: 10%;
   font-weight: 600;
@@ -77,11 +74,11 @@ span {
   text-orientation: upright;
 }
 
-.shopImageMap::before {
+.shopArrow::before {
   display: flex;
   content: "SHOP";
   color: rgba(236, 244, 15, 0.903);
-  writing-mode: vertical-rl;
+
   margin-top: 20%;
   margin-left: 15%;
   font-weight: 600;
@@ -91,7 +88,7 @@ span {
   text-orientation: upright;
 }
 
-.aboutImageMap::before {
+.aboutArrow::before {
   display: flex;
   content: "ABOUT";
   color: rgba(236, 244, 15, 0.903);
@@ -103,7 +100,7 @@ span {
   background: rgb(56 56 223);
 }
 
-.contactImageMap::before {
+.contactArrow::before {
   display: flex;
   content: "CONTACT";
   color: rgba(236, 244, 15, 0.903);
@@ -116,7 +113,7 @@ span {
   background: rgb(56 56 223);
 }
 
-.impressumImageMap::before {
+.impressumArrow::before {
   display: flex;
   content: "IMPRESSUM";
   color: rgba(236, 244, 15, 0.903);
