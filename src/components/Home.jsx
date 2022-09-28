@@ -99,9 +99,9 @@ const mapArea = [
   },
   {
     width: "7.2%",
-    height: "37%",
-    left: "60.5%",
-    top: "28.9%",
+    height: "8%",
+    left: "57.3%",
+    top: "44.9%",
     className: "aboutArrow",
   },
   {
