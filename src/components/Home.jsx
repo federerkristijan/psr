@@ -17,7 +17,7 @@ const mapArea = [
     className: "teamLink",
   },
   {
-    width: "3.2%",
+    width: "3.4%",
     height: "40%",
     left: "28.9%",
     top: "30%",

@@ -29,7 +29,8 @@ span {
 .partnersLink:hover,
 .contactLink:hover,
 .impressumLink:hover {
-  background: rgb(56 56 223);
+  background: #a3addba3;
+  border-radius: 9px;
 }
 
 .teamArrow::after {
@@ -42,6 +43,7 @@ span {
   font-size: 24px;
   background: #a3addba3;
   text-orientation: upright;
+  border-radius: 9px;
 }
 
 .mediaArrow::after {
@@ -53,6 +55,7 @@ span {
   font-size: 26px;
   background: #a3addba3;
   text-orientation: upright;
+  border-radius: 9px;
 }
 
 .partnersArrow::after {
@@ -64,6 +67,7 @@ span {
   font-size: 26px;
   background: #a3addba3;
   text-orientation: upright;
+  border-radius: 9px;
 }
 
 .eventsArrow::after {
@@ -74,6 +78,7 @@ span {
   letter-spacing: 0.3rem;
   font-size: 26px;
   background: #a3addba3;
+  border-radius: 9px;
 }
 
 .shopArrow::after {
@@ -85,6 +90,7 @@ span {
   font-size: 26px;
   background: #a3addba3;
   text-orientation: upright;
+  border-radius: 9px;
 }
 
 .aboutArrow::after {
@@ -95,6 +101,7 @@ span {
   letter-spacing: 0.3rem;
   font-size: 26px;
   background: #a3addba3;
+  border-radius: 9px;
 }
 
 .contactArrow::after {
@@ -105,6 +112,7 @@ span {
   letter-spacing: 0.3rem;
   font-size: 26px;
   background: #a3addba3;
+  border-radius: 9px;
 }
 
 .impressumArrow::after {
@@ -115,6 +123,7 @@ span {
   letter-spacing: 0.3rem;
   font-size: 26px;
   background: #a3addba3;
+  border-radius: 9px;
 }
 
 /* About */
