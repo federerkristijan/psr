@@ -138,17 +138,16 @@ const mapArea = [
   },
 ];
 
-function onMouseOver() {
-  const e = document.getElementsByClassName(
-    "teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow"
-  );
+function onMouseOver(argument) {
+  argument.target.classList.add("active");
+}
 
-  e.onmouseover = function () {
-    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "block";
-  };
-  e.onmouseout = function () {
-    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "none";
-  };
+
+function onMouseLeave(argument) {
+  if (argument.relatedTarget.classList.contains("image-map__content")){
+
+    argument.target.classList.remove("active");
+  }
 }
 
 function imageMap_click(area, index) {
@@ -170,6 +169,7 @@ const Home = () => {
         onMapClick={imageMap_click}
         style={{ height: "530px", width: "40%", margin: "1rem" }}
         onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
       />
     </div>
   );

@@ -14,5 +14,5 @@ html, body {
 
 @font-face {
   font-family: Calgary Script;
-  src: url('../src/assets/fonts/CalgaryScript.ttf') format('ttf');
+  src: local('./fonts/CalgaryScript.ttf') format('ttf');
 }
