@@ -40,7 +40,7 @@ span {
   font-weight: 500;
   letter-spacing: 0.2rem;
   font-size: 24px;
-  /* background: rgb(56 56 223); */
+  background: #a3addba3;
   text-orientation: upright;
 }
 
@@ -51,18 +51,18 @@ span {
   font-weight: 500;
   letter-spacing: 0.2rem;
   font-size: 24px;
-  /* background: rgb(56 56 223); */
+  background: #a3addba3;
   text-orientation: upright;
 }
 
 .partnersArrow::after {
   display: flex;
-  content: "Partners ⮥";
+  content: "PARTNERS ⮥";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
-  letter-spacing: 0.2rem;
-  font-size: 22px;
-  /* background: rgb(56 56 223); */
+  letter-spacing: 0.7rem;
+  font-size: 26px;
+  background: #a3addba3;
   text-orientation: upright;
 }
 
@@ -72,8 +72,8 @@ span {
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.2rem;
-  font-size: 22px;
-  /* background: rgb(56 56 223); */
+  font-size: 24px;
+  background: #a3addba3;
 }
 
 .shopArrow::after {
@@ -81,9 +81,9 @@ span {
   content: "Shop ⮧";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
-  letter-spacing: 0.3rem;
-  font-size: 20px;
-  /* background: rgb(56 56 223); */
+  letter-spacing: 0.2rem;
+  font-size: 24px;
+  background: #a3addba3;
   text-orientation: upright;
 }
 
@@ -94,8 +94,8 @@ span {
   writing-mode: vertical-rl;
   font-weight: 500;
   letter-spacing: 0.2rem;
-  font-size: 22px;
-  /* background: rgb(56 56 223); */
+  font-size: 24px;
+  background: #a3addba3;
   text-orientation: upright;
   padding: 0.1rem;
 }
@@ -106,8 +106,8 @@ span {
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.2rem;
-  font-size: 22px;
-  /* background: rgb(56 56 223); */
+  font-size: 24px;
+  background: #a3addba3;
 }
 
 .impressumArrow::after {
@@ -116,8 +116,8 @@ span {
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.2rem;
-  font-size: 22px;
-  /* background: rgb(56 56 223); */
+  font-size: 24px;
+  background: #a3addba3;
 }
 
 /* About */

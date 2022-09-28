@@ -50,9 +50,9 @@ const mapArea = [
     className: "partnersLink",
   },
   {
-    width: "10%",
-    height: "12.6%",
-    left: "33%",
+    width: "17%",
+    height: "6.6%",
+    left: "27.5%",
     top: "76%",
     className: "partnersArrow",
   },
