@@ -18,9 +18,9 @@ const mapArea = [
   },
   {
     width: "3.2%",
-    height: "38%",
-    left: "28.7%",
-    top: "31%",
+    height: "39%",
+    left: "28.6%",
+    top: "30%",
     onMouseOver: () => console.log("TeamArrow"),
     className: "teamArrow",
   },
@@ -66,10 +66,10 @@ const mapArea = [
     className: "eventsLink",
   },
   {
-    width: "8%",
-    height: "12.6%",
-    left: "41%",
-    top: "81%",
+    width: "7%",
+    height: "12.4%",
+    left: "44.5%",
+    top: "81.5%",
     className: "eventsArrow",
   },
   {
