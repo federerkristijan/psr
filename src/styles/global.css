@@ -17,6 +17,10 @@ span {
   min-height: 100%;
 }
 
+.image-map__content__img:not(.active) ~ *:after  {
+  display: none;
+}
+
 .teamLink:hover,
 .mediaLink:hover,
 .eventsLink:hover,
@@ -31,63 +35,67 @@ span {
 .teamArrow::after {
   display: flex;
   content: "Team ⮡";
-  color: rgba(236, 244, 15, 0.903);
+  color: rgba(11, 104, 235, 0.903);
   writing-mode: vertical-rl;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 24px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
   text-orientation: upright;
 }
 
 .mediaArrow::after {
   display: flex;
   content: "Media ⮧";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 24px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
   text-orientation: upright;
 }
 
 .partnersArrow::after {
   display: flex;
   content: "Partners ⮥";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 22px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
   text-orientation: upright;
 }
 
 .eventsArrow::after {
   display: flex;
   content: "Events ⮥";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 22px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
 }
 
 .shopArrow::after {
   display: flex;
   content: "Shop ⮧";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
-  font-size: 20px;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
   letter-spacing: 0.3rem;
-  background: rgb(56 56 223);
+  font-size: 20px;
+  /* background: rgb(56 56 223); */
   text-orientation: upright;
 }
 
 .aboutArrow::after {
   display: flex;
   content: "About ⮠";
-  color: rgba(236, 244, 15, 0.903);
+  color: rgba(11, 104, 235, 0.903);
   writing-mode: vertical-rl;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 22px;
-  letter-spacing: 0.1rem;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
   text-orientation: upright;
   padding: 0.1rem;
 }
@@ -95,19 +103,21 @@ span {
 .contactArrow::after {
   display: flex;
   content: "⮤ Contact";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 22px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
 }
 
 .impressumArrow::after {
   display: flex;
   content: "⮤ Impressum";
-  color: rgba(236, 244, 15, 0.903);
-  font-weight: 600;
+  color: rgba(11, 104, 235, 0.903);
+  font-weight: 500;
+  letter-spacing: 0.2rem;
   font-size: 22px;
-  background: rgb(56 56 223);
+  /* background: rgb(56 56 223); */
 }
 
 /* About */
@@ -269,21 +279,4 @@ li {
 span {
   letter-spacing: 0.1rem;
   font-size: 22px;
-}
-
-
-
-/*srecko drkanje
-
-idiot..... .ja........
-+ je next sibling;
-~ je all siblings.....
-a > je under sibling? my childrend
-
-ima jedan problem... kada hoveras njegov children, on izgubi hover...
-trebat ce nam skripta; al radit ce samo ovo
-*/
-
-.image-map__content__img:not(.active) ~ *:after  {
-  display: none;
 }
