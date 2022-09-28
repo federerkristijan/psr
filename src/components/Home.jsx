@@ -83,9 +83,9 @@ const mapArea = [
   },
   {
     width: "8%",
-    height: "14%",
+    height: "6%",
     left: "45%",
-    top: "56.5%",
+    top: "54.5%",
     className: "shopArrow",
   },
   {
