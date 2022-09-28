@@ -7,6 +7,8 @@ h4,
 p,
 span {
   font-family: "CalgaryScript";
+  letter-spacing: 0.5rem;
+  font-size: 26px;
 }
 
 /* Home */
@@ -193,11 +195,6 @@ span {
   text-align: left;
 }
 
-/* a {
-  text-decoration: none;
-  font-size: 24px;
-} */
-
 /* partners */
 .partners {
   padding: 4rem;
@@ -282,7 +279,3 @@ li {
   margin: 1rem;
 }
 
-span {
-  letter-spacing: 0.1rem;
-  font-size: 22px;
-}
