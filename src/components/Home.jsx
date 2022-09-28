@@ -17,11 +17,11 @@ const mapArea = [
     className: "teamLink",
   },
   {
-    width: "7.2%",
-    height: "55%",
-    left: "29%",
-    top: "38%",
-    onMouseOver: () => console.log("TeamArrow"),
+    width: "3.4%",
+    height: "40%",
+    left: "28.9%",
+    top: "30%",
+    url: "/team",
     className: "teamArrow",
   },
   {
@@ -34,10 +34,11 @@ const mapArea = [
     className: "mediaLink",
   },
   {
-    width: "9%",
-    height: "13%",
-    left: "31.4%",
-    top: "42.5%",
+    width: "6%",
+    height: "6%",
+    left: "35%",
+    top: "33.5%",
+    url: "/media",
     className: "mediaArrow",
   },
   {
@@ -50,10 +51,11 @@ const mapArea = [
     className: "partnersLink",
   },
   {
-    width: "10%",
-    height: "12.6%",
-    left: "33%",
+    width: "17%",
+    height: "6.6%",
+    left: "27.5%",
     top: "76%",
+    url: "/partners",
     className: "partnersArrow",
   },
   {
@@ -66,10 +68,11 @@ const mapArea = [
     className: "eventsLink",
   },
   {
-    width: "8%",
-    height: "12.6%",
-    left: "41%",
-    top: "81%",
+    width: "7%",
+    height: "12.4%",
+    left: "44.5%",
+    top: "81.5%",
+    url: "/events",
     className: "eventsArrow",
   },
   {
@@ -83,9 +86,10 @@ const mapArea = [
   },
   {
     width: "8%",
-    height: "14%",
+    height: "6%",
     left: "45%",
-    top: "56.5%",
+    top: "54.5%",
+    url: "/shop",
     className: "shopArrow",
   },
   {
@@ -99,9 +103,10 @@ const mapArea = [
   },
   {
     width: "7.2%",
-    height: "37%",
-    left: "60.5%",
-    top: "28.9%",
+    height: "8%",
+    left: "57.3%",
+    top: "44.9%",
+    url: "/about",
     className: "aboutArrow",
   },
   {
@@ -114,10 +119,11 @@ const mapArea = [
     className: "contactLink",
   },
   {
-    width: "9%",
-    height: "12.6%",
-    left: "64%",
-    top: "67%",
+    width: "11%",
+    height: "6.1%",
+    left: "63.8%",
+    top: "65.2%",
+    url: "/contact",
     className: "contactArrow",
   },
   {
@@ -132,23 +138,23 @@ const mapArea = [
   {
     width: "13%",
     height: "12.6%",
-    left: "64.5%",
-    top: "82%",
+    left: "59%",
+    top: "81.3%",
+    url: "/impressum",
     className: "impressumArrow",
   },
 ];
 
-function onMouseOver() {
-  const e = document.getElementsByClassName(
-    "teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow"
-  );
+function onMouseOver(argument) {
+  argument.target.classList.add("active");
+}
 
-  e.onmouseover = function () {
-    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "block";
-  };
-  e.onmouseout = function () {
-    document.getElementsByClassName("teamArrow mediaArrow partnersArrow eventsArrow shopArrow aboutArrow contactArrow impressumArrow").style.display = "none";
-  };
+
+function onMouseLeave(argument) {
+  if (argument.relatedTarget.classList.contains("image-map__content")){
+
+    argument.target.classList.remove("active");
+  }
 }
 
 function imageMap_click(area, index) {
@@ -170,6 +176,7 @@ const Home = () => {
         onMapClick={imageMap_click}
         style={{ height: "530px", width: "40%", margin: "1rem" }}
         onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
       />
     </div>
   );
