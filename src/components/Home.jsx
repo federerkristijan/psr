@@ -21,7 +21,7 @@ const mapArea = [
     height: "40%",
     left: "28.9%",
     top: "30%",
-    onMouseOver: () => console.log("TeamArrow"),
+    url: "/team",
     className: "teamArrow",
   },
   {
@@ -38,6 +38,7 @@ const mapArea = [
     height: "6%",
     left: "35%",
     top: "33.5%",
+    url: "/media",
     className: "mediaArrow",
   },
   {
@@ -54,6 +55,7 @@ const mapArea = [
     height: "6.6%",
     left: "27.5%",
     top: "76%",
+    url: "/partners",
     className: "partnersArrow",
   },
   {
@@ -70,6 +72,7 @@ const mapArea = [
     height: "12.4%",
     left: "44.5%",
     top: "81.5%",
+    url: "/events",
     className: "eventsArrow",
   },
   {
@@ -86,6 +89,7 @@ const mapArea = [
     height: "6%",
     left: "45%",
     top: "54.5%",
+    url: "/shop",
     className: "shopArrow",
   },
   {
@@ -102,6 +106,7 @@ const mapArea = [
     height: "8%",
     left: "57.3%",
     top: "44.9%",
+    url: "/about",
     className: "aboutArrow",
   },
   {
@@ -118,6 +123,7 @@ const mapArea = [
     height: "6.1%",
     left: "63.8%",
     top: "65.2%",
+    url: "/contact",
     className: "contactArrow",
   },
   {
@@ -134,6 +140,7 @@ const mapArea = [
     height: "12.6%",
     left: "59%",
     top: "81.3%",
+    url: "/impressum",
     className: "impressumArrow",
   },
 ];
