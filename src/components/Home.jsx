@@ -18,8 +18,8 @@ const mapArea = [
   },
   {
     width: "3.2%",
-    height: "39%",
-    left: "28.6%",
+    height: "40%",
+    left: "28.9%",
     top: "30%",
     onMouseOver: () => console.log("TeamArrow"),
     className: "teamArrow",
@@ -115,9 +115,9 @@ const mapArea = [
   },
   {
     width: "11%",
-    height: "6.2%",
+    height: "6.1%",
     left: "63.8%",
-    top: "66%",
+    top: "65.2%",
     className: "contactArrow",
   },
   {
@@ -132,8 +132,8 @@ const mapArea = [
   {
     width: "13%",
     height: "12.6%",
-    left: "64.5%",
-    top: "82%",
+    left: "59%",
+    top: "81.3%",
     className: "impressumArrow",
   },
 ];
