@@ -210,6 +210,19 @@ span {
   align-items: center;
 }
 
+.shop-data {
+  border: 1px solid blue;
+  margin: 4rem;
+  background: rgba(0, 0, 0, 0.417);
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 5px red;
+}
+
 .shop-title {
   display: flex;
   flex-direction: column;
@@ -224,19 +237,6 @@ span {
   font-size: 2rem;
 }
 
-.shop-data {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid blue;
-  /* max-width: 40rem; */
-  height: 25vh;
-  margin: 4rem;
-  box-sizing: border-box;
-  white-space: no-wrap;
-  background: rgba(0, 0, 0, 0.417);
-}
 
 .record-cover {
   border: 1px solid blue;

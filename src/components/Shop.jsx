@@ -55,9 +55,9 @@ const Shop = () => {
           </Link>
         </div>
       </div>
-      <div className="shop-data">
-        {shop &&
-          shop?.map((item) => (
+      {shop &&
+        shop?.map((item) => (
+          <div className="shop-data">
             <ul key={item.title}>
               <li>
                 <div className="record-cover">
@@ -88,8 +88,8 @@ const Shop = () => {
                 </div>
               </li>
             </ul>
-          ))}
-      </div>
+          </div>
+        ))}
     </div>
   );
 };
