@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
+  const [tracks, setTracks] = useState([]);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -22,25 +23,35 @@ const Shop = () => {
     sanityClient
       .fetch(
         `*[_type == "record"] {
+          _id,
           title,
           artist,
           cover,
           price,
-          tracks[] {
+          "tracks": *[_type == "track"] {
+            _id,
             title,
             artist,
-            trackId
+            audio
           }
         }`
       )
       .then((data) => setShop(data))
+      .then((data) => setTracks(data))
       .catch(console.error);
   }, []);
 
   // const listTracks = (tracks) => {
   //   return tracks.map((track) => <li>{track}</li>);
   // };
-  const tracks = [];
+  // const tracks = useEffect(() => {
+  //   sanityClient
+  //   .fetch(
+  //     `*[_type == "track"]{
+
+  //     }`
+  //   )
+  // });
 
   return (
     <div className="shop">
@@ -58,7 +69,7 @@ const Shop = () => {
       {shop &&
         shop?.map((item) => (
           <div className="shop-data">
-            <ul key={item.title}>
+            <ul key={item._id}>
               <li>
                 <div className="record-cover">
                   <img
@@ -75,17 +86,17 @@ const Shop = () => {
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                <div className="track" key={item.tracks.trackId}>
-                  <p>I'm track</p>
-                  <ul>
-                    <li>
-                      <audio
-                        src={item.tracks[0].track}
-                        type="audio/mp3"
-                      ></audio>
-                    </li>
-                  </ul>
-                </div>
+                {tracks >= 1 ?
+                  tracks?.map((track) => (
+                    <div className="track">
+                      <p>I'm track</p>
+                      <ul key={track._id}>
+                        <li>
+                          <audio src={track.audio} type="audio/mp3"></audio>
+                        </li>
+                      </ul>
+                    </div>
+                  )) : "Please add a track"}
               </li>
             </ul>
           </div>

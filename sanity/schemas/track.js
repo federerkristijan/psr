@@ -14,9 +14,9 @@ export default {
       type: 'string'
     },
     {
-      name:'trackId',
-      title: 'TrackID',
-      type: 'number'
+      name: 'audio',
+      title: 'Audio',
+      type: 'file'
     }
   ]
 }
