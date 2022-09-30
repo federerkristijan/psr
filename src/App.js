@@ -13,6 +13,8 @@ import Cart from "../src/components/Cart";
 import Shop from "../src/components/Shop";
 import Team from "../src/components/Team";
 
+/*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
+
 function App() {
   return (
     <BrowserRouter>
