@@ -5,7 +5,7 @@ html, body {
 }
 
 * {
-  font-family: 'Calgary Script';
+  font-family: 'Helvetica Neue Condensed';
 }
 
 .App {
@@ -13,6 +13,8 @@ html, body {
 }
 
 @font-face {
-  font-family: Calgary Script;
-  src: local('./fonts/CalgaryScript.ttf') format('ttf');
+  font-family: Helvetica Neue Roman;
+  src: local('./fonts/HelveticaNeue-Roman.ttf') format('otf');
+  font-family: Helvetica Neue Condensed;
+  src: local('./fonts/HelveticaNeueCondensedBlack.ttf') format('ttf');
 }
