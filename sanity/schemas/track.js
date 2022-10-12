@@ -14,9 +14,9 @@ export default {
       type: 'string'
     },
     {
-      name:'trackId',
-      title: 'TrackID',
-      type: 'number'
+      name: 'src',
+      title: 'Source URL',
+      type: 'string'
     }
   ]
 }
