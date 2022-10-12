@@ -14,9 +14,9 @@ export default {
       type: 'string'
     },
     {
-      name: 'audio',
-      title: 'Audio',
-      type: 'file'
+      name: 'src',
+      title: 'Source URL',
+      type: 'string'
     }
   ]
 }

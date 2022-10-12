@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  // const [tracks, setTracks] = useState([]);
+  const [tracks, setTracks] = useState("");
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -29,10 +29,9 @@ const Shop = () => {
           cover,
           price,
           "tracks": *[_type == "track"] {
-            _id,
             title,
             artist,
-            audio
+            src
           }
         }`
       )
@@ -90,9 +89,9 @@ const Shop = () => {
                   tracks?.map((track) => (
                     <div className="track">
                       <p>I'm track</p>
-                      <ul key={track._id}>
-                        <li>
-                          <audio src={track.audio} type="audio/mp3"></audio>
+                      <ul >
+                        <li key={track.id}>
+                          <audio src={track.src} type="audio/mp3"></audio>
                         </li>
                       </ul>
                     </div>
