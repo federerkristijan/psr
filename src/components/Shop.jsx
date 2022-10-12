@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  const [tracks, setTracks] = useState([]);
+  // const [tracks, setTracks] = useState([]);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -67,7 +67,7 @@ const Shop = () => {
         </div>
       </div>
       {shop &&
-        shop?.map((item) => (
+        shop.map((item) => (
           <div className="shop-data">
             <ul key={item._id}>
               <li>
