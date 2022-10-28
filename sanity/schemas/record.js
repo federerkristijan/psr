@@ -41,5 +41,15 @@ export default {
       title: "testTrack",
       type: "file",
     },
+    {
+      name: "multiTrack",
+      title: "multiTrack",
+      type: "array",
+      of: [
+        {
+          type: "file",
+        },
+      ],
+    },
   ],
 };

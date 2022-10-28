@@ -30,6 +30,8 @@ const Shop = () => {
           cover,
           price,
           singleTrack,
+          multiTrack,
+          
         }`
       )
       .then((data) => setShop(data))
@@ -79,6 +81,24 @@ const Shop = () => {
                   <div className="record-title">
                     <h3>{item.artist}</h3>
                     <h4>{item.title}</h4>
+                    {item.multiTrack
+                      ? Object.keys(item.multiTrack).length < 2
+                        ? "one song"
+                        : item.multiTrack.map((song) => (
+                            <ReactAudioPlayer
+                              src={
+                                song
+                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                      .toString()
+                                      .slice(5)
+                                      .replace("-", ".")}`
+                                  : "nope"
+                              }
+                              autoPlay
+                              controls
+                            />
+                          ))
+                      : "no songs available"}
 
                     <ReactAudioPlayer
                       src={
