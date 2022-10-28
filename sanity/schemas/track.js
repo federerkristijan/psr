@@ -16,7 +16,7 @@ export default {
     {
       name: 'src',
       title: 'Source URL',
-      type: 'string'
+      type: 'file'
     }
   ]
 }

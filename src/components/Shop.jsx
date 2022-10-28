@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
+import ReactAudioPlayer from "react-audio-player";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
@@ -28,17 +29,15 @@ const Shop = () => {
           artist,
           cover,
           price,
-          "tracks": *[_type == "track"] {
-            title,
-            artist,
-            src
-          }
+          singleTrack,
         }`
       )
       .then((data) => setShop(data))
       .then((data) => setTracks(data))
       .catch(console.error);
   }, []);
+
+  console.log("tracks", shop);
 
   // const listTracks = (tracks) => {
   //   return tracks.map((track) => <li>{track}</li>);
@@ -80,22 +79,25 @@ const Shop = () => {
                   <div className="record-title">
                     <h3>{item.artist}</h3>
                     <h4>{item.title}</h4>
+
+                    <ReactAudioPlayer
+                      src={
+                        item.singleTrack
+                          ? `https://cdn.sanity.io/files/pyenle2m/production/${item.singleTrack.asset._ref
+                              .toString()
+                              .slice(5)
+                              .replace("-", ".")}`
+                          : "nope"
+                      }
+                      autoPlay
+                      controls
+                    />
                   </div>
                 </div>
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                {tracks >= 1 ?
-                  tracks?.map((track) => (
-                    <div className="track">
-                      <p>I'm track</p>
-                      <ul >
-                        <li key={track.id}>
-                          <audio src={track.src} type="audio/mp3"></audio>
-                        </li>
-                      </ul>
-                    </div>
-                  )) : "Please add a track"}
+                Please add
               </li>
             </ul>
           </div>

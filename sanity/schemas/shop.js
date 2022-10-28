@@ -1,28 +1,35 @@
 export default {
-  name: 'shop',
-  title: 'Shop',
-  type: 'document',
+  name: "shop",
+  title: "Shop",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string'
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text'
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: 'price',
-      title: 'Price',
-      type: 'number'
+      name: "price",
+      title: "Price",
+      type: "number",
     },
     {
-      name: 'tracks',
-      title: 'Tracks',
-      type: 'array',
-      of: [{ type: 'track' }]
-    }
-  ]
-}
+      name: "tracks",
+      title: "Tracks",
+      value: "file",
+      type: "string",
+      // of: [{ type: 'track' }]
+    },
+    {
+      name: "singleTrack",
+      title: "Tracks",
+      type: "file",
+      // of: [{ type: 'track' }]
+    },
+  ],
+};
