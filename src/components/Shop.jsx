@@ -81,6 +81,8 @@ const Shop = () => {
                   <div className="record-title">
                     <h3>{item.artist}</h3>
                     <h4>{item.title}</h4>
+
+                    {/* multi file player, for now it just puts out as much players as there are files */}
                     {item.multiTrack
                       ? Object.keys(item.multiTrack).length < 2
                         ? "one song"
@@ -98,20 +100,7 @@ const Shop = () => {
                               controls
                             />
                           ))
-                      : "no songs available"}
-
-                    <ReactAudioPlayer
-                      src={
-                        item.singleTrack
-                          ? `https://cdn.sanity.io/files/pyenle2m/production/${item.singleTrack.asset._ref
-                              .toString()
-                              .slice(5)
-                              .replace("-", ".")}`
-                          : "nope"
-                      }
-                      autoPlay
-                      controls
-                    />
+                      : "no songs available on multi files"}
                   </div>
                 </div>
                 <div className="price">
