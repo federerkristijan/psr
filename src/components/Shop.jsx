@@ -85,17 +85,9 @@ const Shop = () => {
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                {tracks >= 1 ?
-                  tracks?.map((track) => (
-                    <div className="track">
-                      <p>I'm track</p>
-                      <ul >
-                        <li key={track.id}>
-                          <audio src={track.src} type="audio/mp3"></audio>
-                        </li>
-                      </ul>
-                    </div>
-                  )) : "Please add a track"}
+                <div className="track">
+                  <audio src={item.track} type="audio/mp3"></audio>
+                </div>
               </li>
             </ul>
           </div>
