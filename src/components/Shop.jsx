@@ -28,11 +28,7 @@ const Shop = () => {
           artist,
           cover,
           price,
-          "tracks": *[_type == "track"] {
-            title,
-            artist,
-            src
-          }
+          track
         }`
       )
       .then((data) => setShop(data))
@@ -52,6 +48,8 @@ const Shop = () => {
   //   )
   // });
 
+  // console.log("track", track)
+
   return (
     <div className="shop">
       <div className="shop-header">
@@ -67,8 +65,8 @@ const Shop = () => {
       </div>
       {shop &&
         shop.map((item) => (
-          <div className="shop-data">
-            <ul key={item._id}>
+          <div className="shop-data" key={item.title}>
+            <ul >
               <li>
                 <div className="record-cover">
                   <img
@@ -85,17 +83,10 @@ const Shop = () => {
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                {tracks >= 1 ?
-                  tracks?.map((track) => (
-                    <div className="track">
-                      <p>I'm track</p>
-                      <ul >
-                        <li key={track.id}>
-                          <audio src={track.src} type="audio/mp3"></audio>
-                        </li>
-                      </ul>
-                    </div>
-                  )) : "Please add a track"}
+                <div className="track">
+                  <audio src={item.track} type="audio/mp3"></audio>
+
+                </div>
               </li>
             </ul>
           </div>

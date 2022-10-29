@@ -27,14 +27,9 @@ export default {
       type: 'number'
     },
     {
-      name: 'tracks',
-      title: 'Tracks',
-      type: 'array',
-      of: [
-          {
-            type: 'track'
-          }
-      ]
+      name: 'track',
+      title: 'Track',
+      type: 'file'
     }
   ]
 }
