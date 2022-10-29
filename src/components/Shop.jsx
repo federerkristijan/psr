@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
+import ReactAudioPlayer from "react-audio-player";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
@@ -28,13 +29,17 @@ const Shop = () => {
           artist,
           cover,
           price,
-          track
+          singleTrack,
+          multiTrack,
+          
         }`
       )
       .then((data) => setShop(data))
       .then((data) => setTracks(data))
       .catch(console.error);
   }, []);
+
+  console.log("tracks", shop);
 
   // const listTracks = (tracks) => {
   //   return tracks.map((track) => <li>{track}</li>);
@@ -78,15 +83,32 @@ const Shop = () => {
                   <div className="record-title">
                     <h3>{item.artist}</h3>
                     <h4>{item.title}</h4>
+
+                    {/* multi file player, for now it just puts out as much players as there are files */}
+                    {item.multiTrack
+                      ? Object.keys(item.multiTrack).length < 2
+                        ? "one song"
+                        : item.multiTrack.map((song) => (
+                            <ReactAudioPlayer
+                              src={
+                                song
+                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                      .toString()
+                                      .slice(5)
+                                      .replace("-", ".")}`
+                                  : "nope"
+                              }
+                              autoPlay
+                              controls
+                            />
+                          ))
+                      : "no songs available on multi files"}
                   </div>
                 </div>
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-                <div className="track">
-                  <audio src={item.track} type="audio/mp3"></audio>
-
-                </div>
+                Please add
               </li>
             </ul>
           </div>
