@@ -254,9 +254,9 @@ li {
   color: white;
 }
 
-.track {
-  color: white;
-  background: turquoise;
+.tracks {
+  display: flex;
+  border: 1px solid black;
 }
 
 li {
