@@ -210,24 +210,33 @@ span {
 }
 
 .shop-data {
-  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
+  border-radius: 9px;
+  height: 40vh;
 }
 
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: solid 5px red;
 }
 
-.shop-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 85vw;
+.record-cover {
+  min-width: 20vw;
+}
+
+.record-cover > img {
+  border-radius: 9px;
+  height: 20vh;
+}
+
+.record-text {
+  border: 1px solid red;
+  min-width: 35vw;
+  color: white;
 }
 
 .cart {
@@ -237,15 +246,7 @@ li {
 }
 
 
-.record-cover {
-  border: 1px solid blue;
-}
 
-.record-text {
-  border: 1px solid red;
-  max-width: 25vw;
-  color: white;
-}
 
 .price {
   border: 1px solid green;
@@ -256,6 +257,7 @@ li {
 
 .tracks {
   display: flex;
+  flex-direction: column;
   border: 1px solid black;
 }
 

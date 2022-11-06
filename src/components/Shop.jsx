@@ -55,11 +55,9 @@ const Shop = () => {
       {shop &&
         shop.map((item) => (
           <div className="shop-data" key={item.title}>
-            <ul>
-              <li>
                 <div className="record-cover">
                   <img
-                    src={urlFor(item.cover).width(120).url()}
+                    src={urlFor(item.cover).width(140).url()}
                     alt={item.title}
                   />
                 </div>
@@ -67,34 +65,31 @@ const Shop = () => {
                   <div className="record-title">
                     <h3>{item.artist}</h3>
                     <h4>{item.title}</h4>
-
-                    {/* multi file player, for now it just puts out as much players as there are files */}
-                    <div className="tracks">
-                      {item.multiTrack
-                        ? Object.keys(item.multiTrack).length < 2
-                          ? "one song"
-                          : item.multiTrack.map((song) => (
-                              <ReactAudioPlayer
-                                src={
-                                  song
-                                    ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                        .toString()
-                                        .slice(5)
-                                        .replace("-", ".")}`
-                                    : "nope"
-                                }
-                                controls
-                              />
-                            ))
-                        : "no songs available on multi files"}
-                    </div>
                   </div>
                 </div>
                 <div className="price">
                   <p>{item.price}€</p>
                 </div>
-              </li>
-            </ul>
+                {/* multi file player, for now it just puts out as much players as there are files */}
+                <div className="tracks">
+                  {item.multiTrack
+                    ? Object.keys(item.multiTrack).length < 2
+                      ? "one song"
+                      : item.multiTrack.map((song) => (
+                          <ReactAudioPlayer
+                            src={
+                              song
+                                ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                    .toString()
+                                    .slice(5)
+                                    .replace("-", ".")}`
+                                : "nope"
+                            }
+                            controls
+                          />
+                        ))
+                    : "no songs available on multi files"}
+                </div>
           </div>
         ))}
     </div>
