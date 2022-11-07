@@ -104,8 +104,8 @@ const mapArea = [
   {
     width: "7.2%",
     height: "8%",
-    left: "57.3%",
-    top: "44.9%",
+    left: "56.3%",
+    top: "46.9%",
     url: "/about",
     className: "aboutArrow",
   },
