@@ -68,10 +68,10 @@ const mapArea = [
     className: "eventsLink",
   },
   {
-    width: "7%",
+    width: "11%",
     height: "12.4%",
-    left: "44.5%",
-    top: "81.5%",
+    left: "38.5%",
+    top: "83%",
     url: "/events",
     className: "eventsArrow",
   },
