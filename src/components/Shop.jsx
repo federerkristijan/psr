@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  const [tracks, setTracks] = useState("");
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -31,29 +30,14 @@ const Shop = () => {
           price,
           singleTrack,
           multiTrack,
-          
+
         }`
       )
       .then((data) => setShop(data))
-      .then((data) => setTracks(data))
       .catch(console.error);
   }, []);
 
   console.log("tracks", shop);
-
-  // const listTracks = (tracks) => {
-  //   return tracks.map((track) => <li>{track}</li>);
-  // };
-  // const tracks = useEffect(() => {
-  //   sanityClient
-  //   .fetch(
-  //     `*[_type == "track"]{
-
-  //     }`
-  //   )
-  // });
-
-  // console.log("track", track)
 
   return (
     <div className="shop">
@@ -71,46 +55,40 @@ const Shop = () => {
       {shop &&
         shop.map((item) => (
           <div className="shop-data" key={item.title}>
-            <ul >
-              <li>
-                <div className="record-cover">
-                  <img
-                    src={urlFor(item.cover).width(120).url()}
-                    alt={item.title}
-                  />
-                </div>
-                <div className="record-text">
-                  <div className="record-title">
-                    <h3>{item.artist}</h3>
-                    <h4>{item.title}</h4>
-
-                    {/* multi file player, for now it just puts out as much players as there are files */}
-                    {item.multiTrack
-                      ? Object.keys(item.multiTrack).length < 2
-                        ? "one song"
-                        : item.multiTrack.map((song) => (
-                            <ReactAudioPlayer
-                              src={
-                                song
-                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                      .toString()
-                                      .slice(5)
-                                      .replace("-", ".")}`
-                                  : "nope"
-                              }
-                              autoPlay
-                              controls
-                            />
-                          ))
-                      : "no songs available on multi files"}
-                  </div>
-                </div>
-                <div className="price">
-                  <p>{item.price}€</p>
-                </div>
-                Please add
-              </li>
-            </ul>
+            <div className="record-cover">
+              <img src={urlFor(item.cover).width(140).url()} alt={item.title} />
+            </div>
+            <div className="record-text">
+              <div className="record-artist">
+                <h3>{item.artist}</h3>
+              </div>
+              <div className="record-title">
+                <h4>{item.title}</h4>
+              </div>
+            </div>
+            <div className="price">
+              <p>{item.price}€</p>
+            </div>
+            {/* multi file player, for now it just puts out as much players as there are files */}
+            <div className="tracks">
+              {item.multiTrack
+                ? Object.keys(item.multiTrack).length < 2
+                  ? "one song"
+                  : item.multiTrack.map((song) => (
+                      <ReactAudioPlayer
+                        src={
+                          song
+                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                .toString()
+                                .slice(5)
+                                .replace("-", ".")}`
+                            : "nope"
+                        }
+                        controls
+                      />
+                    ))
+                : "no songs available on multi files"}
+            </div>
           </div>
         ))}
     </div>

@@ -210,41 +210,30 @@ span {
 }
 
 .shop-data {
-  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
+  border-radius: 9px;
+  height: 25vh;
 }
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid 5px red;
-}
-
-.shop-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 85vw;
-}
-
-.cart {
-  float: right;
-  top: 2rem;
-  font-size: 2rem;
-}
-
 
 .record-cover {
-  border: 1px solid blue;
+  min-width: 20vw;
+}
+
+.record-cover > img {
+  border-radius: 9px;
 }
 
 .record-text {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
   border: 1px solid red;
-  max-width: 25vw;
+  min-width: 45vw;
   color: white;
+  white-space: nowrap;
 }
 
 .price {
@@ -254,13 +243,15 @@ li {
   color: white;
 }
 
-.track {
-  color: white;
-  background: turquoise;
+.tracks {
+  display: flex;
+  border: 1px solid black;
 }
 
-li {
-  list-style-type: none;
+.cart {
+  float: right;
+  top: 2rem;
+  font-size: 2rem;
 }
 
 /* team */
