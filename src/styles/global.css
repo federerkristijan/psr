@@ -232,20 +232,37 @@ span {
   gap: 1.5rem;
   border: 1px solid red;
   min-width: 45vw;
+  height: 50%;
   color: white;
   white-space: nowrap;
 }
 
 .price {
   border: 1px solid green;
-  margin-right: 1rem;
-  bottom: 2rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
   color: white;
 }
 
 .tracks {
   display: flex;
   border: 1px solid black;
+}
+
+/* customizing audio player */
+audio {
+  width: 115px;
+  height: 25px;
+}
+
+/* Removes the timeline */
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+  display: none;
 }
 
 .cart {
