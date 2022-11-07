@@ -27,23 +27,13 @@ export default {
       type: "number",
     },
     {
-      name: "tracks",
-      title: "Tracks",
-      type: "array",
-      of: [
-        {
-          type: "track",
-        },
-      ],
-    },
-    {
       name: "singleTrack",
-      title: "testTrack",
+      title: "Track",
       type: "file",
     },
     {
       name: "multiTrack",
-      title: "multiTrack",
+      title: "Tracks",
       type: "array",
       of: [
         {
