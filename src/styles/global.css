@@ -215,13 +215,7 @@ span {
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  height: 40vh;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 25vh;
 }
 
 .record-cover {
@@ -230,23 +224,17 @@ li {
 
 .record-cover > img {
   border-radius: 9px;
-  height: 20vh;
 }
 
 .record-text {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
   border: 1px solid red;
-  min-width: 35vw;
+  min-width: 45vw;
   color: white;
+  white-space: nowrap;
 }
-
-.cart {
-  float: right;
-  top: 2rem;
-  font-size: 2rem;
-}
-
-
-
 
 .price {
   border: 1px solid green;
@@ -257,12 +245,13 @@ li {
 
 .tracks {
   display: flex;
-  flex-direction: column;
   border: 1px solid black;
 }
 
-li {
-  list-style-type: none;
+.cart {
+  float: right;
+  top: 2rem;
+  font-size: 2rem;
 }
 
 /* team */
