@@ -239,8 +239,8 @@ span {
 
 .price {
   border: 1px solid green;
-  margin-right: 1rem;
-  bottom: 2rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
   color: white;
 }
 
