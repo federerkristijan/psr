@@ -75,7 +75,7 @@ const Shop = () => {
                 ? Object.keys(item.multiTrack).length < 2
                   ? "one song"
                   : item.multiTrack.map((song) => (
-                      <ReactAudioPlayer
+                      <audio
                         src={
                           song
                             ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
@@ -84,8 +84,11 @@ const Shop = () => {
                                 .replace("-", ".")}`
                             : "nope"
                         }
+                        type='audio/mp3'
                         controls
-                      />
+                        preload="auto"
+                        className="audio_volume_only"
+                      ></audio>
                     ))
                 : "no songs available on multi files"}
             </div>
@@ -96,46 +99,3 @@ const Shop = () => {
 };
 
 export default Shop;
-
-{
-  /* version 1 */
-}
-{
-  /* <ReactAudioPlayer
-                    src={item.tracks[0].track}
-                    autoPlay
-                    controls
-                  /> */
-}
-
-{
-  /* version 2 */
-}
-{
-  /* <ul>
-                    <li>
-                      <span>
-                        <ReactAudioPlayer
-                          src={item.tracks[0].track}
-                          autoPlay
-                          controls
-                          key={item.tracks.trackId}
-                        />
-                      </span>
-                    </li>
-                  </ul> */
-}
-
-{
-  /* version 3 */
-}
-{
-  /* <span>{shop.tracks && shop.tracks.map((track) => (
-                    <ReactAudioPlayer
-                    src={item.tracks}
-                    autoPlay
-                    controls="true"
-                    key={track.title}
-                  />
-                  ))}</span> */
-}
