@@ -71,7 +71,7 @@ span {
 
 .eventsArrow::after {
   display: flex;
-  content: "⮥ Events";
+  content: "Events ⮥";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.3rem;
