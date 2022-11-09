@@ -71,7 +71,7 @@ span {
 
 .eventsArrow::after {
   display: flex;
-  content: "⮥ Events";
+  content: "Events ⮥";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.3rem;
@@ -210,57 +210,65 @@ span {
 }
 
 .shop-data {
-  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
+  border-radius: 9px;
+  height: 25vh;
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: solid 5px red;
+.record-cover {
+  min-width: 20vw;
 }
 
-.shop-title {
+.record-cover > img {
+  border-radius: 9px;
+}
+
+.record-text {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 85vw;
+  align-items: baseline;
+  gap: 1.5rem;
+  border: 1px solid red;
+  min-width: 45vw;
+  height: 50%;
+  color: white;
+  white-space: nowrap;
+}
+
+.price {
+  border: 1px solid green;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.tracks {
+  display: flex;
+  border: 1px solid black;
+}
+
+/* customizing audio player */
+audio {
+  width: 115px;
+  height: 25px;
+}
+
+/* Removes the timeline */
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+}
+
+/* Removes the time stamp */
+audio::-webkit-media-controls-current-time-display {
+  display: none;
 }
 
 .cart {
   float: right;
   top: 2rem;
   font-size: 2rem;
-}
-
-
-.record-cover {
-  border: 1px solid blue;
-}
-
-.record-text {
-  border: 1px solid red;
-  max-width: 25vw;
-  color: white;
-}
-
-.price {
-  border: 1px solid green;
-  margin-right: 1rem;
-  bottom: 2rem;
-  color: white;
-}
-
-.track {
-  color: white;
-  background: turquoise;
-}
-
-li {
-  list-style-type: none;
 }
 
 /* team */
