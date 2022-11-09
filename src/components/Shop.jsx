@@ -71,26 +71,25 @@ const Shop = () => {
             </div>
             {/* multi file player, for now it just puts out as much players as there are files */}
             <div className="tracks">
-              {item.multiTrack
-                ? Object.keys(item.multiTrack).length < 2
-                  ? "one song"
-                  : item.multiTrack.map((song) => (
-                      <audio
-                        src={
-                          song
-                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                .toString()
-                                .slice(5)
-                                .replace("-", ".")}`
-                            : "nope"
-                        }
-                        type='audio/mp3'
-                        controls
-                        preload="auto"
-                        className="audio_volume_only"
-                      ></audio>
-                    ))
-                : "no songs available on multi files"}
+              {item.multiTrack.map((song) => (
+                <div>
+                  {song.artist}
+                  <audio
+                    src={
+                      song
+                        ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                            .toString()
+                            .slice(5)
+                            .replace("-", ".")}`
+                        : "nope"
+                    }
+                    type="audio/mp3"
+                    controls="false"
+                    preload="auto"
+                    className="audio_volume_only"
+                  ></audio>
+                </div>
+              ))}
             </div>
           </div>
         ))}
