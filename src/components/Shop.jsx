@@ -9,6 +9,7 @@ import ReactAudioPlayer from "react-audio-player";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../styles/global.css";
 import { Link } from "react-router-dom";
+import Back from "./Back";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -41,6 +42,7 @@ const Shop = () => {
 
   return (
     <div className="shop">
+      <Back />
       <div className="shop-header">
         <div className="shop-title">
           <h1>Shop</h1>
