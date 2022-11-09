@@ -84,22 +84,20 @@ const Shop = () => {
 
                     {/* multi file player, for now it just puts out as much players as there are files */}
                     {item.multiTrack
-                      ? Object.keys(item.multiTrack).length < 2
-                        ? "one song"
-                        : item.multiTrack.map((song) => (
-                            <ReactAudioPlayer
-                              src={
-                                song
-                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                      .toString()
-                                      .slice(5)
-                                      .replace("-", ".")}`
-                                  : "nope"
-                              }
-                              autoPlay
-                              controls
-                            />
-                          ))
+                      ? item.multiTrack.map((song) => (
+                          <ReactAudioPlayer
+                            src={
+                              song
+                                ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                    .toString()
+                                    .slice(5)
+                                    .replace("-", ".")}`
+                                : "nope"
+                            }
+                            autoPlay
+                            controls
+                          />
+                        ))
                       : "no songs available on multi files"}
                   </div>
                 </div>
