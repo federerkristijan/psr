@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <div className="about">
-        <Back />
+      <Back />
       {about &&
         about.map((about) => (
           <div className="about-data" key={about.title}>
@@ -34,22 +34,22 @@ const About = () => {
             </div>
             {about.href1 && about.href2 && (
               <div className="about-icons">
-                  ig: @
-                  <a
-                    href={`www.instagram.com/${about.href1}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {about.href1}
-                  </a>
-                  FB: /
-                  <a
-                    href={`www.facebook.com/${about.href1}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {about.href2}
-                  </a>
+                ig: @
+                <a
+                  href={`www.instagram.com/${about.href1}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {about.href1}
+                </a>
+                FB: /
+                <a
+                  href={`www.facebook.com/${about.href1}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {about.href2}
+                </a>
               </div>
             )}
           </div>
