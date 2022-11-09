@@ -1,12 +1,13 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom';
+import React from "react";
 
 const Back = () => {
   return (
-    <div className='back-btn'>
-      <NavLink href="/"/>
+    <div className="back-btn">
+      <button type="button">
+        <a href="/">Back</a>
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Back
+export default Back;
