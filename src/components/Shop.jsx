@@ -74,7 +74,7 @@ const Shop = () => {
               {item.multiTrack.map((song) => (
                 <div>
                   {song.artist}
-                  <audio
+                  <ReactAudioPlayer
                     src={
                       song
                         ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
@@ -87,7 +87,7 @@ const Shop = () => {
                     controls="false"
                     preload="auto"
                     className="audio_volume_only"
-                  ></audio>
+                  />
                 </div>
               ))}
             </div>
