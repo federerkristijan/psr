@@ -2,9 +2,11 @@ import React from "react";
 
 const Back = () => {
   return (
-    <div className="back-btn">
-      <button type="button">
-        <a href="/">Back</a>
+    <div className="back">
+      <button type="button" className="back-btn">
+        <a href="/" style={{ textDecoration: "none", color: "black" }}>
+        🢦
+        </a>
       </button>
     </div>
   );

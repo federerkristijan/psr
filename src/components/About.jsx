@@ -22,9 +22,7 @@ const About = () => {
 
   return (
     <div className="about">
-      <div className="back">
         <Back />
-      </div>
       {about &&
         about.map((about) => (
           <div className="about-data" key={about.title}>

@@ -283,3 +283,19 @@ audio::-webkit-media-controls-current-time-display {
 .team-data {
   margin: 1rem;
 }
+
+/* back */
+.back {
+  /* display: flex; */
+  float: left;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  border-radius: 9px;
+}
+
+.back-btn > a {
+font-size: 40px;
+}
