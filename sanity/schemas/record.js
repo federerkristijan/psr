@@ -26,18 +26,23 @@ export default {
       title: "Price",
       type: "number",
     },
-    {
-      name: "singleTrack",
-      title: "Track",
-      type: "file",
-    },
+
     {
       name: "multiTrack",
       title: "Tracks",
       type: "array",
       of: [
         {
+          title: "click on the file to change the name",
+
           type: "file",
+          fields: [
+            {
+              name: "artist",
+              title: "Artist",
+              type: "string",
+            },
+          ],
         },
       ],
     },

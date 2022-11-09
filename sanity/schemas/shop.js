@@ -38,6 +38,13 @@ export default {
       of: [
         {
           type: "file",
+          fields: [
+            {
+              name: "artist",
+              title: "Artist",
+              type: "string",
+            },
+          ],
         },
       ],
     },
