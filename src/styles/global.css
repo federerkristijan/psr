@@ -286,8 +286,7 @@ audio::-webkit-media-controls-current-time-display {
 
 /* back */
 .back {
-  /* display: flex; */
-  float: left;
+  display: flex;
 }
 
 .back-btn {
