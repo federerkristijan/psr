@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
-// import ReactAudioPlayer from "react-audio-player";
-import { AudioContextProvider } from "../components/AudioContext";
-
-// credits to justinmc @https://github.com/justinmc/react-audio-player
-// import ReactAudioPlayer from "react-audio-player";
-
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "../styles/global.css";
+
+import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from '../components/Back';
+import "../styles/global.css";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -87,20 +83,6 @@ const Shop = () => {
                   {item.multiTrack.map((song) => (
                     <div>
                       {song.artist}
-                      {/* <ReactAudioPlayer
-                      src={
-                        song
-                          ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                              .toString()
-                              .slice(5)
-                              .replace("-", ".")}`
-                          : "nope"
-                      }
-                      type="audio/mp3"
-                      preload="auto"
-                      play="true"
-                      className="audio_volume_only"
-                    ></ReactAudioPlayer> */}
                       <HomeMadeAudioPlayer
                         onclick={clickCheck}
                         src={
