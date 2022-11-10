@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
-import Back from './Back';
+import Back from '../components/Back';
 
 const Contact = () => {
   const [contact, setContact] = useState(null);

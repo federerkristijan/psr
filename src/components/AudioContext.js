@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState } from "react";
 
 export const AudioContext = createContext();
 export const AudioContextProvider = (props) => {
