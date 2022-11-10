@@ -11,6 +11,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../styles/global.css";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../elements/HomeMadeAudioPlayer";
+import Back from "./Back";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -58,6 +59,17 @@ const Shop = () => {
               <AiOutlineShoppingCart />
             </Link>
           </div>
+    <div className="shop">
+      <Back />
+      <div className="shop-header">
+        <div className="shop-title">
+          <h1>Shop</h1>
+          <h3>check out our collection</h3>
+        </div>
+        <div className="cart">
+          <Link to="/shop/cart">
+            <AiOutlineShoppingCart />
+          </Link>
         </div>
         {shop &&
           shop.map((item) => (
