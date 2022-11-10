@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../lib/client";
 import "../styles/global.css";
-import Back from "./Back";
+import Back from "../components/Back";
 
 const About = () => {
   const [about, setAbout] = useState(null);

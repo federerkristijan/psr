@@ -2,16 +2,16 @@ import React from "react";
 import { Routes, Route, Outlet, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
-import About from "../src/components/About";
-import Contact from "../src/components/Contact";
-import Events from "../src/components/Events";
-import Home from "../src/components/Home";
-import Impressum from "../src/components/Impressum";
-import Media from "../src/components/Media";
-import Partners from "../src/components/Partners";
+import About from "../src/views/About";
+import Contact from "../src/views/Contact";
+import Events from "../src/views/Events";
+import Home from "../src/views/Home";
+import Impressum from "../src/views/Impressum";
+import Media from "../src/views/Media";
+import Partners from "../src/views/Partners";
 import Cart from "../src/components/Cart";
-import Shop from "../src/components/Shop";
-import Team from "../src/components/Team";
+import Shop from "../src/views/Shop";
+import Team from "../src/views/Team";
 
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 

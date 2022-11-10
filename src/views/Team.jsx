@@ -3,7 +3,7 @@ import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 import "../styles/global.css";
-import Back from "./Back";
+import Back from '../components/Back';
 
 const Team = () => {
   const [team, setTeam] = useState(null);

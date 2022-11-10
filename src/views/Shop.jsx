@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 // import ReactAudioPlayer from "react-audio-player";
-import { AudioContextProvider } from "../elements/AudioContext";
+import { AudioContextProvider } from "../components/AudioContext";
 
 // credits to justinmc @https://github.com/justinmc/react-audio-player
 // import ReactAudioPlayer from "react-audio-player";
@@ -10,8 +10,8 @@ import { AudioContextProvider } from "../elements/AudioContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../styles/global.css";
 import { Link } from "react-router-dom";
-import HomeMadeAudioPlayer from "../elements/HomeMadeAudioPlayer";
-import Back from "./Back";
+import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
+import Back from '../components/Back';
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
