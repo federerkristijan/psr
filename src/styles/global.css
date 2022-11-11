@@ -226,8 +226,14 @@ span {
   border-radius: 9px;
 }
 
-.record-text {
+.card-middle {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.record-text {
+  display: inherit;
   align-items: baseline;
   gap: 1.5rem;
   border: 1px solid red;
@@ -237,12 +243,6 @@ span {
   white-space: nowrap;
 }
 
-.price {
-  border: 1px solid green;
-  margin-left: 6rem;
-  margin-top: 2rem;
-  color: white;
-}
 
 .tracks {
   display: flex;
@@ -255,6 +255,13 @@ span {
   border: 1px solid black;
   padding: 0.4rem;
   gap: 0.5rem;
+}
+
+.price {
+  border: 1px solid green;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  color: white;
 }
 
 /* customizing audio player */
@@ -346,5 +353,5 @@ audio::-webkit-media-controls-toggle-closed-captions-button {
 }
 
 .back-btn > a {
-font-size: 40px;
+  font-size: 40px;
 }
