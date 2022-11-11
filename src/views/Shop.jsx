@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
-import Back from '../components/Back';
+import Back from "../components/Back";
 import "../styles/global.css";
 
 const Shop = () => {
@@ -44,63 +44,73 @@ const Shop = () => {
 
   return (
     <>
-    <AudioContextProvider>
-      <div className="shop">
-        <Back />
-        <div className="shop-header">
-          <div className="shop-title">
-            <h1>Shop</h1>
-            <h3>check out our collection</h3>
-          </div>
+      <AudioContextProvider>
+        <div className="shop">
           <div className="cart">
             <Link to="/shop/cart">
               <AiOutlineShoppingCart />
             </Link>
           </div>
-        </div>
+          <Back />
+          <div className="shop-header">
+            <div className="shop-title">
+              <h1>Shop</h1>
+              <h3>check out our collection</h3>
+            </div>
+          </div>
           {shop &&
             shop.map((item) => (
               <div className="shop-data" key={item.title}>
-                <div className="record-cover">
-                  <img
-                    src={urlFor(item.cover).width(140).url()}
-                    alt={item.title}
-                  />
-                </div>
-                <div className="record-text">
-                  <div className="record-artist">
-                    <h3>{item.artist}</h3>
-                  </div>
-                  <div className="record-title">
-                    <h4>{item.title}</h4>
+                <div className="card-left">
+                  <div className="record-cover">
+                    <img
+                      src={urlFor(item.cover).width(140).url()}
+                      alt={item.title}
+                    />
                   </div>
                 </div>
-                <div className="price">
-                  <p>{item.price}€</p>
-                </div>
-                {/* multi file player, for now it just puts out as much players as there are files */}
-                <div className="tracks">
-                  {item.multiTrack.map((song) => (
-                    <div>
-                      {song.artist}
-                      <HomeMadeAudioPlayer
-                        onclick={clickCheck}
-                        src={
-                          song
-                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                .toString()
-                                .slice(5)
-                                .replace("-", ".")}`
-                            : "nope"
-                        }
-                      />
+                <div className="card-middle">
+                  <div className="record-text">
+                    <div className="record-artist">
+                      <h3>{item.artist}</h3>
                     </div>
-                  ))}
+                    <div className="record-title">
+                      <h4>{item.title}</h4>
+                    </div>
+                  </div>
+                  {/* multi file player, for now it just puts out as much players as there are files */}
+                  <div className="tracks">
+                    {item.multiTrack.map((song) => (
+                      <div className="track">
+                        <HomeMadeAudioPlayer
+                          onclick={clickCheck}
+                          src={
+                            song
+                              ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                  .toString()
+                                  .slice(5)
+                                  .replace("-", ".")}`
+                              : "nope"
+                          }
+                        />
+                        {song.artist}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="card-right">
+                  <div className="record-tabs">
+                    <div className="lp">LP</div>
+                    <div className="digital">digital</div>
+                  </div>
+                  <div className="price">
+                    <p>{item.price}€</p>
+                  </div>
                 </div>
               </div>
             ))}
-      </div>
-    </AudioContextProvider>
+        </div>
+      </AudioContextProvider>
     </>
   );
 };

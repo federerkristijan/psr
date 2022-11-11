@@ -40,9 +40,31 @@ const HomeMadeAudioPlayer = (props) => {
         src={props.src}
       />
       {audioStatus ? (
-        <button onClick={pauseAudio}>pause</button>
+        <button
+          onClick={pauseAudio}
+          style={{
+            borderRadius: "9px",
+            border: "none",
+            padding: "3px",
+            fontSize: "20px",
+            background: "none",
+          }}
+        >
+          ⏸
+        </button>
       ) : (
-        <button onClick={startAudio}>play</button>
+        <button
+          onClick={startAudio}
+          style={{
+            borderRadius: "9px",
+            border: "none",
+            padding: "3px",
+            fontSize: "20px",
+            background: "none",
+          }}
+        >
+          ▶
+        </button>
       )}
       <div></div>
     </>
