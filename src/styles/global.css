@@ -215,7 +215,12 @@ span {
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  height: 25vh;
+  height: 28vh;
+}
+
+.card-left {
+  display: inherit;
+  align-items: center;
 }
 
 .record-cover {
