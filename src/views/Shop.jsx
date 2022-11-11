@@ -6,7 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
-import Back from '../components/Back';
+import Back from "../components/Back";
 import "../styles/global.css";
 
 const Shop = () => {
@@ -44,20 +44,20 @@ const Shop = () => {
 
   return (
     <>
-    <AudioContextProvider>
-      <div className="shop">
-        <Back />
-        <div className="shop-header">
-          <div className="shop-title">
-            <h1>Shop</h1>
-            <h3>check out our collection</h3>
-          </div>
+      <AudioContextProvider>
+        <div className="shop">
           <div className="cart">
             <Link to="/shop/cart">
               <AiOutlineShoppingCart />
             </Link>
           </div>
-        </div>
+          <Back />
+          <div className="shop-header">
+            <div className="shop-title">
+              <h1>Shop</h1>
+              <h3>check out our collection</h3>
+            </div>
+          </div>
           {shop &&
             shop.map((item) => (
               <div className="shop-data" key={item.title}>
@@ -99,8 +99,8 @@ const Shop = () => {
                 </div>
               </div>
             ))}
-      </div>
-    </AudioContextProvider>
+        </div>
+      </AudioContextProvider>
     </>
   );
 };
