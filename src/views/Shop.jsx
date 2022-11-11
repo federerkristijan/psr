@@ -99,6 +99,10 @@ const Shop = () => {
                   </div>
                 </div>
                 <div className="card-right">
+                  <div className="record-tabs">
+                    <div className="lp">LP</div>
+                    <div className="digital">digital</div>
+                  </div>
                   <div className="price">
                     <p>{item.price}€</p>
                   </div>
