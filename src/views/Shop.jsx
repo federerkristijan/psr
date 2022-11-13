@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
@@ -11,6 +12,7 @@ import "../styles/global.css";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -100,8 +102,19 @@ const Shop = () => {
                 </div>
                 <div className="card-right">
                   <div className="record-tabs">
-                    <div className="lp">LP</div>
-                    <div className="digital">digital</div>
+                    <Tabs
+                      selectedIndex={tabIndex}
+                      onSelect={(index) => setTabIndex(index)}
+                      style={{ display: "flex", flexDirection: "column" }}
+                    >
+                      <TabList style={{ display: "inherit", gap: "1rem", listStyle: "none", border: "1px solid red" }}>
+                        <Tab style={{ border: "1px solid blue", borderRadius: "9px" }}>LP</Tab>
+                        <Tab style={{ border: "1px solid blue", borderRadius: "9px" }}>digital</Tab>
+                      </TabList>
+                      <TabPanel style={{ border: "1px solid black" }}>LP</TabPanel>
+                      <TabPanel style={{ border: "1px solid black" }}>List of songs</TabPanel>
+                    </Tabs>
+
                   </div>
                   <div className="price">
                     <p>{item.price}€</p>

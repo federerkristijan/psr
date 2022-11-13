@@ -1,10 +1,11 @@
 import React from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-// https://www.w3schools.com/howto/howto_js_tabs.asp
+// credits to https://github.com/reactjs/react-tabs
 
 const RecordTabs = () => {
   return (
-    <div>RecordTabs</div>
+    <div className='tab'>RecordTabs</div>
   )
 }
 
