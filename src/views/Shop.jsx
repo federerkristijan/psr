@@ -107,14 +107,39 @@ const Shop = () => {
                       onSelect={(index) => setTabIndex(index)}
                       style={{ display: "flex", flexDirection: "column" }}
                     >
-                      <TabList style={{ display: "inherit", gap: "1rem", listStyle: "none", border: "1px solid red" }}>
-                        <Tab style={{ border: "1px solid blue", borderRadius: "9px" }}>LP</Tab>
-                        <Tab style={{ border: "1px solid blue", borderRadius: "9px" }}>digital</Tab>
+                      <TabList
+                        style={{
+                          display: "inherit",
+                          gap: "1rem",
+                          listStyle: "none",
+                        }}
+                      >
+                        <Tab
+                          style={{
+                            border: "1px solid blue",
+                            borderRadius: "9px",
+                            padding: "3px"
+                          }}
+                        >
+                          LP
+                        </Tab>
+                        <Tab
+                          style={{
+                            border: "1px solid blue",
+                            borderRadius: "9px",
+                            padding: "3px"
+                          }}
+                        >
+                          digital
+                        </Tab>
                       </TabList>
-                      <TabPanel style={{ border: "1px solid black" }}>LP</TabPanel>
-                      <TabPanel style={{ border: "1px solid black" }}>List of songs</TabPanel>
+                      <TabPanel style={{ border: "1px solid black" }}>
+                        LP
+                      </TabPanel>
+                      <TabPanel style={{ border: "1px solid black" }}>
+                        List of songs
+                      </TabPanel>
                     </Tabs>
-
                   </div>
                   <div className="price">
                     <p>{item.price}€</p>
