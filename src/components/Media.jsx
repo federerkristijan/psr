@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
-
-
 
 const Media = () => {
   const [media, setMedia] = useState(null);
@@ -37,7 +35,7 @@ const Media = () => {
               <span>{item.mediaDesc}</span>
             </div>
             <div className="media-links">
-              <a href={item.mediaUrl} target="_blank" rel="noreferrer" >
+              <a href={item.mediaUrl} target="_blank" rel="noreferrer">
                 {item.mediaUrl}
               </a>
             </div>
@@ -45,6 +43,6 @@ const Media = () => {
         ))}
     </div>
   );
-}
+};
 
-export default Media
+export default Media;
