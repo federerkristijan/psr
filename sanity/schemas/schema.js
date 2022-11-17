@@ -25,6 +25,6 @@ export default createSchema({
     partners,
     impressum,
     record,
-    track
+    track,
   ]),
 });

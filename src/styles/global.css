@@ -18,7 +18,7 @@ span {
   min-height: 100%;
 }
 
-.image-map__content__img:not(.active) ~ *:after  {
+.image-map__content__img:not(.active) ~ *:after {
   display: none;
 }
 
@@ -71,7 +71,7 @@ span {
 
 .eventsArrow::after {
   display: flex;
-  content: "⮥ Events";
+  content: "Events ⮥";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.3rem;
@@ -205,62 +205,75 @@ span {
 
 .shop-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .shop-data {
-  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
   margin: 4rem;
   background: rgba(0, 0, 0, 0.417);
+  border-radius: 9px;
+  height: 28vh;
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
+.card-left {
+  display: inherit;
   align-items: center;
-  border: solid 5px red;
 }
 
-.shop-title {
+.record-cover {
+  min-width: 20vw;
+}
+
+.record-cover > img {
+  border-radius: 9px;
+}
+
+.card-middle {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.record-text {
+  display: inherit;
+  align-items: baseline;
+  gap: 1.5rem;
+  min-width: 45vw;
+  height: 50%;
+  color: white;
+  white-space: nowrap;
+}
+
+
+.tracks {
+  display: flex;
+  gap: 1rem;
+}
+
+.track {
+  display: inherit;
   align-items: center;
-  min-width: 85vw;
+  background: rgb(163, 160, 160);
+  border: 1px solid rgb(107, 105, 105);
+  border-radius: 9px;
+  padding: 0.4rem;
+  gap: 0.2rem;
+}
+
+.price {
+  border: 1px solid green;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  color: white;
 }
 
 .cart {
   float: right;
   top: 2rem;
   font-size: 2rem;
-}
-
-
-.record-cover {
-  border: 1px solid blue;
-}
-
-.record-text {
-  border: 1px solid red;
-  max-width: 25vw;
-  color: white;
-}
-
-.price {
-  border: 1px solid green;
-  margin-right: 1rem;
-  bottom: 2rem;
-  color: white;
-}
-
-.track {
-  color: white;
-  background: turquoise;
-}
-
-li {
-  list-style-type: none;
 }
 
 /* team */
@@ -274,4 +287,19 @@ li {
 
 .team-data {
   margin: 1rem;
+}
+
+/* back */
+.back {
+  display: flex;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  border-radius: 9px;
+}
+
+.back-btn > a {
+  font-size: 40px;
 }

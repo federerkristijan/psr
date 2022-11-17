@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
+import Back from '../components/Back';
 
 const Contact = () => {
   const [contact, setContact] = useState(null);
@@ -20,6 +21,7 @@ const Contact = () => {
 
   return (
     <div className='contact'>
+      <Back />
       {contact && contact.map((item) => (
       <div className="contact-data">
       <div className="contact-address">

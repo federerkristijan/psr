@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../lib/client";
 import "../styles/global.css";
+import Back from "../components/Back";
 
 const About = () => {
   const [about, setAbout] = useState(null);
@@ -21,6 +22,7 @@ const About = () => {
 
   return (
     <div className="about">
+      <Back />
       {about &&
         about.map((about) => (
           <div className="about-data" key={about.title}>
@@ -32,22 +34,22 @@ const About = () => {
             </div>
             {about.href1 && about.href2 && (
               <div className="about-icons">
-                  ig: @
-                  <a
-                    href={`www.instagram.com/${about.href1}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {about.href1}
-                  </a>
-                  FB: /
-                  <a
-                    href={`www.facebook.com/${about.href1}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {about.href2}
-                  </a>
+                ig: @
+                <a
+                  href={`www.instagram.com/${about.href1}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {about.href1}
+                </a>
+                FB: /
+                <a
+                  href={`www.facebook.com/${about.href1}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {about.href2}
+                </a>
               </div>
             )}
           </div>
