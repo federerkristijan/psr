@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+// credits to https://github.com/reactjs/react-tabs
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import { AudioContextProvider } from "../components/AudioContext";
@@ -105,14 +106,17 @@ const Shop = () => {
                     <Tabs
                       selectedIndex={tabIndex}
                       onSelect={(index) => setTabIndex(index)}
-                      style={{ display: "flex", flexDirection: "column" }}
+                      style={{ display: "flex", flexDirection: "column",  }}
+                      forceRenderTabPanel
                     >
                       <TabList
                         style={{
                           display: "inherit",
                           gap: "1rem",
                           listStyle: "none",
+                          border: "1px solid black"
                         }}
+                        key={item.title}
                       >
                         <Tab
                           style={{
@@ -120,6 +124,7 @@ const Shop = () => {
                             borderRadius: "9px",
                             padding: "3px"
                           }}
+                          tabIndex
                         >
                           LP
                         </Tab>
@@ -129,14 +134,15 @@ const Shop = () => {
                             borderRadius: "9px",
                             padding: "3px"
                           }}
+                          tabIndex
                         >
                           digital
                         </Tab>
                       </TabList>
-                      <TabPanel style={{ border: "1px solid black" }}>
+                      <TabPanel style={{ border: "1px solid black" }} forceRender>
                         LP
                       </TabPanel>
-                      <TabPanel style={{ border: "1px solid black" }}>
+                      <TabPanel style={{ border: "1px solid black" }} forceRender>
                         List of songs
                       </TabPanel>
                     </Tabs>
