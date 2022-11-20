@@ -276,6 +276,14 @@ span {
   font-size: 2rem;
 }
 
+/* Cart */
+
+.cart-wrapper {
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+}
+
 /* team */
 .team {
   display: block;
