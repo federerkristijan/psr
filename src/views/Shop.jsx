@@ -9,6 +9,7 @@ import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from "../components/Back";
+import 'react-tabs/style/react-tabs.css';
 import "../styles/global.css";
 
 const Shop = () => {
@@ -105,21 +106,18 @@ const Shop = () => {
                     <Tabs
                       selectedIndex={tabIndex}
                       onSelect={(index) => setTabIndex(index)}
-                      style={{ display: "flex", flexDirection: "column",  }}
+                      style={{ display: "flex", flexDirection: "column" }}
+                      key={item.title}
                     >
                       <TabList
                         style={{
                           display: "inherit",
                           gap: "1rem",
                           listStyle: "none",
-                          border: "1px solid black"
                         }}
-                        key={item.title}
                       >
                         <Tab
                           style={{
-                            border: "1px solid blue",
-                            borderRadius: "9px",
                             padding: "3px"
                           }}
                         >
@@ -127,8 +125,6 @@ const Shop = () => {
                         </Tab>
                         <Tab
                           style={{
-                            border: "1px solid blue",
-                            borderRadius: "9px",
                             padding: "3px"
                           }}
                         >
