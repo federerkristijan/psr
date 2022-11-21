@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -107,7 +107,6 @@ const Shop = () => {
                       selectedIndex={tabIndex}
                       onSelect={(index) => setTabIndex(index)}
                       style={{ display: "flex", flexDirection: "column" }}
-                      key={tabIndex}
                     >
                       <TabList
                         style={{
