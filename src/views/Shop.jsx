@@ -107,7 +107,7 @@ const Shop = () => {
                       selectedIndex={tabIndex}
                       onSelect={(index) => setTabIndex(index)}
                       style={{ display: "flex", flexDirection: "column" }}
-                      key={item.title}
+                      key={tabIndex}
                     >
                       <TabList
                         style={{
