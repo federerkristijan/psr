@@ -32,6 +32,9 @@ const Cart = (tracks) => {
     <div className="cart-wrapper">
             {cart && cart.map((item) => (
         <div className="cart-data" key={item.id}>
+          <div className="cart-display">
+            
+          </div>
           <button onClick={() => addItem(item)}>Add to cart</button>
         </div>
       ))}
