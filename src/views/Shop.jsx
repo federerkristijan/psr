@@ -9,12 +9,14 @@ import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from "../components/Back";
-import 'react-tabs/style/react-tabs.css';
+import "react-tabs/style/react-tabs.css";
 import "../styles/global.css";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
+  // const tabsContext = useContext(null);
+  const tabs = useState(0);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -103,40 +105,42 @@ const Shop = () => {
                 </div>
                 <div className="card-right">
                   <div className="record-tabs">
-                    <Tabs
-                      selectedIndex={tabIndex}
-                      onSelect={(index) => setTabIndex(index)}
-                      style={{ display: "flex", flexDirection: "column" }}
-                    >
-                      <TabList
-                        style={{
-                          display: "inherit",
-                          gap: "1rem",
-                          listStyle: "none",
-                        }}
+                      <Tabs
+                        selectedIndex={tabIndex}
+                        onSelect={(index) => setTabIndex(index)}
+                        style={{ display: "flex", flexDirection: "column" }}
                       >
-                        <Tab
+                        <TabList
                           style={{
-                            padding: "3px"
+                            display: "inherit",
+                            gap: "1rem",
+                            listStyle: "none",
                           }}
                         >
+                          <Tab
+                            style={{
+                              padding: "3px",
+                            }}
+                            key={0}
+                          >
+                            LP
+                          </Tab>
+                          <Tab
+                            style={{
+                              padding: "3px",
+                            }}
+                            key={1}
+                          >
+                            digital
+                          </Tab>
+                        </TabList>
+                        <TabPanel style={{ border: "1px solid black" }}>
                           LP
-                        </Tab>
-                        <Tab
-                          style={{
-                            padding: "3px"
-                          }}
-                        >
-                          digital
-                        </Tab>
-                      </TabList>
-                      <TabPanel style={{ border: "1px solid black" }}>
-                        LP
-                      </TabPanel>
-                      <TabPanel style={{ border: "1px solid black" }}>
-                        List of songs
-                      </TabPanel>
-                    </Tabs>
+                        </TabPanel>
+                        <TabPanel style={{ border: "1px solid black" }}>
+                          List of songs
+                        </TabPanel>
+                      </Tabs>
                   </div>
                   <div className="price">
                     <p>{item.price}€</p>
