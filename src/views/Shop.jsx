@@ -11,12 +11,13 @@ import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from "../components/Back";
 import "react-tabs/style/react-tabs.css";
 import "../styles/global.css";
+import { TabsContext } from "../components/TabsContext";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
-  // const tabsContext = useContext(null);
-  const tabs = useState(0);
+  const [tab, setTab] = useState(0);
+  const { showTab, setShowTab } = useContext(TabsContext);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -46,6 +47,12 @@ const Shop = () => {
   }, []);
 
   console.log("tracks", shop);
+
+  useEffect(() => {
+    if(showTab === 0) {
+      tab(true);
+    }
+  }, [setTab])
 
   return (
     <>
