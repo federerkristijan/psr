@@ -106,7 +106,6 @@ const Shop = () => {
                       selectedIndex={tabIndex}
                       onSelect={(index) => setTabIndex(index)}
                       style={{ display: "flex", flexDirection: "column",  }}
-                      forceRenderTabPanel
                     >
                       <TabList
                         style={{
@@ -123,7 +122,6 @@ const Shop = () => {
                             borderRadius: "9px",
                             padding: "3px"
                           }}
-                          tabIndex
                         >
                           LP
                         </Tab>
@@ -133,15 +131,14 @@ const Shop = () => {
                             borderRadius: "9px",
                             padding: "3px"
                           }}
-                          tabIndex
                         >
                           digital
                         </Tab>
                       </TabList>
-                      <TabPanel style={{ border: "1px solid black" }} forceRender>
+                      <TabPanel style={{ border: "1px solid black" }}>
                         LP
                       </TabPanel>
-                      <TabPanel style={{ border: "1px solid black" }} forceRender>
+                      <TabPanel style={{ border: "1px solid black" }}>
                         List of songs
                       </TabPanel>
                     </Tabs>
