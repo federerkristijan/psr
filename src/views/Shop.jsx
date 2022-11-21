@@ -36,7 +36,6 @@ const Shop = () => {
           price,
           singleTrack,
           multiTrack,
-
         }`
       )
       .then((data) => setShop(data))
