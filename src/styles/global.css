@@ -276,6 +276,42 @@ span {
   font-size: 2rem;
 }
 
+/* CustomTabs */
+
+.Tabs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Tabs {
+  width: 10vw;
+  max-height: 15vh;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+}
+
+.Nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  background: lightslategray;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 0.6rem;
+}
+
+.Nav > li {
+  width: 5vw;
+  border: 1px solid grey;
+}
+
+.outlet {
+  list-style: none;
+}
+
 /* Cart */
 
 .cart-wrapper {

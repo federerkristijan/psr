@@ -14,23 +14,18 @@ const CustomTabs = () => {
   };
 
   return (
-    <div className="Tabs-wrapper" style={{ display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-      <div
-        className="Tabs"
-        style={{
-          width: "70%",
-          height: "auto",
-          background: "lightgrey",
-          borderRadius: "1rem",
-        }}
-      >
+    <div className="Tabs-wrapper">
+      <div className="Tabs">
         {/* tabs nav */}
-        <ul className="Nav" style={{ listStyle: "none", display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid blue" }}>
-          <li style={{ width:"50%", border: "1px solid red" }} className={activeTab === "lp" ? "active" : ""} onClick={handleLP}>
+        <ul className="Nav">
+          <li
+            className={activeTab === "lp" ? "active" : ""}
+            onClick={handleLP}
+          >
             LP
           </li>
           <li
-            style={{ width:"50%", border: "1px solid red" }} className={activeTab === "digital" ? "active" : ""}
+            className={activeTab === "digital" ? "active" : ""}
             onClick={handleDigital}
           >
             Digital
@@ -39,7 +34,7 @@ const CustomTabs = () => {
         {/* tabs panel/outlet */}
         <div className="outlet">
           {/* content comes here */}
-          {activeTab === "lp" ? <LP/> : <Digital/>}
+          {activeTab === "lp" ? <LP /> : <Digital />}
         </div>
       </div>
     </div>
