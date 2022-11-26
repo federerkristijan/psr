@@ -221,6 +221,8 @@ span {
 .card-left {
   display: inherit;
   align-items: center;
+  flex: 2;
+  max-width: fit-content;
 }
 
 .record-cover {
@@ -235,13 +237,21 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  max-width: fit-content;
+  flex: 2;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .record-text {
   display: inherit;
   align-items: baseline;
   gap: 1.5rem;
-  min-width: 45vw;
+  min-width: 40vw;
   height: 50%;
   color: white;
   white-space: nowrap;
@@ -265,6 +275,7 @@ span {
 
 .price {
   border: 1px solid green;
+  width: 3vw;
   margin-left: 6rem;
   margin-top: 2rem;
   color: white;
