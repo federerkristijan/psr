@@ -276,6 +276,22 @@ span {
   font-size: 2rem;
 }
 
+/* CustomTabs */
+
+.Tabs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Tabs {
+  width: 10vw;
+  max-height: 15vh;
+  background: lightslategray;
+  border-radius: 0.3rem;
+}
+
 /* Cart */
 
 .cart-wrapper {
