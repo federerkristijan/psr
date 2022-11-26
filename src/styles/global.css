@@ -292,6 +292,20 @@ span {
   border-radius: 0.3rem;
 }
 
+.Nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid silver;
+  padding: 0;
+}
+
+.Nav > li {
+  width: 5vw;
+  border: 1px solid grey;
+}
+
 /* Cart */
 
 .cart-wrapper {
