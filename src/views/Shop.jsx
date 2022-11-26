@@ -1,22 +1,17 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-// credits to https://github.com/reactjs/react-tabs
-// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from "../components/Back";
-import "react-tabs/style/react-tabs.css";
 import "../styles/global.css";
-import Tabs from "../components/Tabs";
 import CustomTabs from "../components/CustomTabs";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  // const [tabIndex, setTabIndex] = useState(0);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -105,7 +100,6 @@ const Shop = () => {
                 </div>
                 <div className="card-right">
                   <div className="record-tabs">
-                    {/* <Tabs /> */}
                     <CustomTabs/>
                   </div>
                   <div className="price">

@@ -18,7 +18,7 @@ const CustomTabs = () => {
       <div
         className="Tabs"
         style={{
-          width: "70%",
+          width: "60%",
           height: "auto",
           background: "lightgrey",
           borderRadius: "1rem",
@@ -26,11 +26,11 @@ const CustomTabs = () => {
       >
         {/* tabs nav */}
         <ul className="Nav" style={{ listStyle: "none", display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid blue" }}>
-          <li style={{ width:"50%", border: "1px solid red" }} className={activeTab === "lp" ? "active" : ""} onClick={handleLP}>
+          <li style={{ width:"30%", border: "1px solid red" }} className={activeTab === "lp" ? "active" : ""} onClick={handleLP}>
             LP
           </li>
           <li
-            style={{ width:"50%", border: "1px solid red" }} className={activeTab === "digital" ? "active" : ""}
+            style={{ width:"30%", border: "1px solid red" }} className={activeTab === "digital" ? "active" : ""}
             onClick={handleDigital}
           >
             Digital
