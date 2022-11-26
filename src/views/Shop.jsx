@@ -103,7 +103,7 @@ const Shop = () => {
                     <CustomTabs/>
                   </div>
                   <div className="price">
-                    <p>{item.price}€</p>
+                    {item.price}€
                   </div>
                 </div>
               </div>
