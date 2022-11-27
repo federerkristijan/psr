@@ -276,8 +276,11 @@ span {
 .price {
   border: 1px solid green;
   width: 3vw;
-  margin-left: 6rem;
-  margin-top: 2rem;
+  font-size: larger;
+  position: relative;
+  display: block;
+  left: 18rem;
+  top: 1rem;
   color: white;
 }
 
