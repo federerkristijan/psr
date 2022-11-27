@@ -5,7 +5,7 @@ const Digital = (props) => {
     <div className="song-list">
       {/* get tracks from sanity */}
       <span style={{ fontSize: "1em", letterSpacing: "none"}}>1. song</span>
-      <span>{props.track}</span>
+      {/* <span>{props.item.multiTrack}</span> */}
     </div>
   )
 }
