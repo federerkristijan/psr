@@ -81,7 +81,7 @@ const Shop = () => {
                   {/* multi file player, for now it just puts out as much players as there are files */}
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
-                      <div className="track">
+                      <div className="track" id={item.title}>
                         <HomeMadeAudioPlayer
                           onclick={clickCheck}
                           src={
