@@ -21,14 +21,14 @@ const CustomTabs = () => {
           <li
             className={activeTab === "lp" ? "active" : ""}
             onClick={handleLP}
-            id="lp"
+            key="lp"
           >
             LP
           </li>
           <li
             className={activeTab === "digital" ? "active" : ""}
             onClick={handleDigital}
-            id="digital"
+            key="digital"
           >
             Digital
           </li>

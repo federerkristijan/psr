@@ -9,9 +9,27 @@ import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import Back from "../components/Back";
 import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
+import LP from "../components/LP";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
+  const [openTab, setOpenTab] = useState(false);
+
+  // const tabs = {
+  //   LP: {
+  //     border: "1px solid black",
+  //   },
+  //   digital: {
+  //     border: "1px solid red",
+  //   },
+  // };
+
+  useEffect(() => {
+    if(setOpenTab === <LP/>){
+      openTab(true)
+    }
+  }, [openTab, setOpenTab])
+
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -60,7 +78,7 @@ const Shop = () => {
           </div>
           {shop &&
             shop.map((item) => (
-              <div className="shop-data" key={item.title}>
+              <div className="shop-data" key={item._id}>
                 <div className="card-left">
                   <div className="record-cover">
                     <img
@@ -81,7 +99,7 @@ const Shop = () => {
                   {/* multi file player, for now it just puts out as much players as there are files */}
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
-                      <div className="track" id={item.title}>
+                      <div className="track" key={song._id}>
                         <HomeMadeAudioPlayer
                           onclick={clickCheck}
                           src={
@@ -101,10 +119,31 @@ const Shop = () => {
                 <div className="card-right">
                   <div className="record-tabs">
                     <CustomTabs/>
+                    {/* <div className="Tabs-wrapper">
+                      <div className="Tabs">
+                        <ul className="Nav">
+                          <li
+                            className={activeTab === "lp" ? "active" : ""}
+                            onClick={handleLP}
+                            id="lp"
+                          >
+                            LP
+                          </li>
+                          <li
+                            className={activeTab === "digital" ? "active" : ""}
+                            onClick={handleDigital}
+                            id="digital"
+                          >
+                            Digital
+                          </li>
+                        </ul>
+                        <div className="outlet">
+                          {activeTab === "lp" ? "1" : "2"}
+                        </div>
+                      </div>
+                    </div> */}
                   </div>
-                  <div className="price">
-                    {item.price}€
-                  </div>
+                  {openTab && <div className="price">{item.price}€</div>}
                 </div>
               </div>
             ))}
