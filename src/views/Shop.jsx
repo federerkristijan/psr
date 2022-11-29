@@ -20,7 +20,6 @@ const Shop = () => {
     }
   }, [openTab, setOpenTab])
 
-
   const builder = imageUrlBuilder(sanityClient);
 
   function urlFor(source) {
