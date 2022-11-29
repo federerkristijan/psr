@@ -12,22 +12,6 @@ import CustomTabs from "../components/CustomTabs";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  const [openTab, setOpenTab] = useState([]);
-
-  // const tabs = {
-  //   LP: {
-  //     border: "1px solid black",
-  //   },
-  //   digital: {
-  //     border: "1px solid red",
-  //   },
-  // };
-
-  // useEffect(() => {
-  //   if (setOpenTab === <LP />) {
-  //     openTab(true);
-  //   }
-  // }, [openTab, setOpenTab]);
 
   const builder = imageUrlBuilder(sanityClient);
 
