@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Digital from "./Digital";
-import LP from "./LP";
 
 const CustomTabs = (props) => {
   const [activeTab, setActiveTab] = useState("lp");
@@ -43,7 +42,7 @@ const CustomTabs = (props) => {
             {/* tabs panel/outlet */}
             <div className="outlet">
               {/* content comes here */}
-              {activeTab === "lp" ? <LP /> : <Digital />}
+              {activeTab === "lp" ? "": <Digital />}
             </div>
           </div>
         </div>

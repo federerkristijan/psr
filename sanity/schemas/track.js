@@ -17,6 +17,11 @@ export default {
       name: 'src',
       title: 'Source URL',
       type: 'file'
+    },
+    {
+      name: 'price',
+      title: 'Price',
+      type: 'string'
     }
   ]
 }
