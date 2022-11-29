@@ -17,7 +17,7 @@ const Shop = () => {
   const [shop, setShop] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
   const [tab, setTab] = useState(0);
-  const { showTab, setShowTab } = useContext(TabsContext);
+  // const { showTab, setShowTab } = useContext(TabsContext);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -48,11 +48,11 @@ const Shop = () => {
 
   console.log("tracks", shop);
 
-  useEffect(() => {
-    if(showTab === 0) {
-      tab(true);
-    }
-  }, [setTab])
+  // useEffect(() => {
+  //   if(showTab === 0) {
+  //     tab(true);
+  //   }
+  // }, [setTab])
 
   return (
     <>
@@ -112,42 +112,42 @@ const Shop = () => {
                 </div>
                 <div className="card-right">
                   <div className="record-tabs">
-                      <Tabs
-                        selectedIndex={tabIndex}
-                        onSelect={(index) => setTabIndex(index)}
-                        style={{ display: "flex", flexDirection: "column" }}
+                    <Tabs
+                      selectedIndex={tabIndex}
+                      onSelect={(index) => setTabIndex(index)}
+                      style={{ display: "flex", flexDirection: "column" }}
+                    >
+                      <TabList
+                        style={{
+                          display: "inherit",
+                          gap: "1rem",
+                          listStyle: "none",
+                        }}
                       >
-                        <TabList
+                        <Tab
                           style={{
-                            display: "inherit",
-                            gap: "1rem",
-                            listStyle: "none",
+                            padding: "3px",
                           }}
+                          key={0}
                         >
-                          <Tab
-                            style={{
-                              padding: "3px",
-                            }}
-                            key={0}
-                          >
-                            LP
-                          </Tab>
-                          <Tab
-                            style={{
-                              padding: "3px",
-                            }}
-                            key={1}
-                          >
-                            digital
-                          </Tab>
-                        </TabList>
-                        <TabPanel style={{ border: "1px solid black" }}>
                           LP
-                        </TabPanel>
-                        <TabPanel style={{ border: "1px solid black" }}>
-                          List of songs
-                        </TabPanel>
-                      </Tabs>
+                        </Tab>
+                        <Tab
+                          style={{
+                            padding: "3px",
+                          }}
+                          key={1}
+                        >
+                          digital
+                        </Tab>
+                      </TabList>
+                      <TabPanel style={{ border: "1px solid black" }}>
+                        LP
+                      </TabPanel>
+                      <TabPanel style={{ border: "1px solid black" }}>
+                        List of songs
+                      </TabPanel>
+                    </Tabs>
                   </div>
                   <div className="price">
                     <p>{item.price}€</p>
