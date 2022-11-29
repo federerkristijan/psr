@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Outlet, BrowserRouter } from "react-router-dom";
+import { GraphQLContextProvider } from "./components/GraphQLContext";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -17,24 +18,26 @@ import Team from "../src/views/Team";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/shop/cart" element={<Cart />} />
-            <Route path="/team" element={<Team />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <GraphQLContextProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/media" element={<Media />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/shop/cart" element={<Cart />} />
+              <Route path="/team" element={<Team />} />
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </GraphQLContextProvider>
   );
 }
 
