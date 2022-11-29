@@ -33,8 +33,7 @@ export default {
       type: "array",
       of: [
         {
-          title: "click on the file to change the name",
-
+          title: "click on the file to enter the name and the price",
           type: "file",
           fields: [
             {
@@ -42,6 +41,11 @@ export default {
               title: "Artist",
               type: "string",
             },
+            {
+              name: 'price',
+              title: 'Price',
+              type: 'string'
+            }
           ],
         },
       ],

@@ -36,7 +36,7 @@ const CustomTabs = () => {
         {/* tabs panel/outlet */}
         <div className="outlet">
           {/* content comes here */}
-          {activeTab === "lp" ? <LP /> : <Digital />}
+          {activeTab === "lp" ? "" : <Digital />}
         </div>
       </div>
     </div>

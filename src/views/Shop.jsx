@@ -13,7 +13,7 @@ import LP from "../components/LP";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  const [openTab, setOpenTab] = useState(false);
+  const [openTab, setOpenTab] = useState("lp");
 
   // const tabs = {
   //   LP: {
@@ -25,8 +25,8 @@ const Shop = () => {
   // };
 
   useEffect(() => {
-    if(setOpenTab === <LP/>){
-      openTab(true)
+    if(openTab === "lp"){
+      setOpenTab(true)
     }
   }, [openTab, setOpenTab])
 

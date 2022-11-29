@@ -5,9 +5,9 @@ const Digital = (props) => {
   return (
     <div className="song-list">
       {/* get tracks from sanity, via HomeMadeAudioPlayer.js*/}
-      <span style={{ fontSize: "1em", letterSpacing: "none" }}>
+      {/* <span style={{ fontSize: "1em", letterSpacing: "none" }}>
         1. <HomeMadeAudioPlayer>{props.multiTrack}</HomeMadeAudioPlayer>
-      </span>
+      </span> */}
       <br />
       <span style={{ fontSize: "1em", letterSpacing: "none" }}>2. song</span>
       <br />
