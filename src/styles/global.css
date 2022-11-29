@@ -221,6 +221,8 @@ span {
 .card-left {
   display: inherit;
   align-items: center;
+  flex: 2;
+  max-width: fit-content;
 }
 
 .record-cover {
@@ -235,13 +237,21 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  max-width: fit-content;
+  flex: 2;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .record-text {
   display: inherit;
   align-items: baseline;
   gap: 1.5rem;
-  min-width: 45vw;
+  min-width: 40vw;
   height: 50%;
   color: white;
   white-space: nowrap;
@@ -265,8 +275,12 @@ span {
 
 .price {
   border: 1px solid green;
-  margin-left: 6rem;
-  margin-top: 2rem;
+  width: 3vw;
+  font-size: larger;
+  position: relative;
+  display: block;
+  left: 18rem;
+  top: 1rem;
   color: white;
 }
 
@@ -274,6 +288,42 @@ span {
   float: right;
   top: 2rem;
   font-size: 2rem;
+}
+
+/* CustomTabs */
+
+.Tabs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Tabs {
+  width: 10vw;
+  max-height: 15vh;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+}
+
+.Nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  background: lightslategray;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 0.6rem;
+}
+
+.Nav > li {
+  width: 5vw;
+  border: 1px solid grey;
+}
+
+.outlet {
+  list-style: none;
 }
 
 /* Cart */
