@@ -15,8 +15,14 @@ const Contact = () => {
   const [firstName, setfirstName] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  const [text, setText] = useState({});
 
   const { GraphQLHandler } = useContext(GraphQLContext);
+
+  const textInputHandler = (e) => {
+    setText({ ...text, [e.target.id]: e.target.value });
+    console.log(text);
+  };
 
   const countryHandler = (event) => {
     setCountry(event.target.value);
