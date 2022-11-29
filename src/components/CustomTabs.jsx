@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Digital from "./Digital";
-import LP from "./LP";
 
 const CustomTabs = () => {
   const [activeTab, setActiveTab] = useState("lp");
