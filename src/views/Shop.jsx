@@ -12,13 +12,22 @@ import CustomTabs from "../components/CustomTabs";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
-  const [openTab, setOpenTab] = useState("lp");
+  const [openTab, setOpenTab] = useState([]);
 
-  useEffect(() => {
-    if(openTab === "lp"){
-      setOpenTab(true)
-    }
-  }, [openTab, setOpenTab])
+  // const tabs = {
+  //   LP: {
+  //     border: "1px solid black",
+  //   },
+  //   digital: {
+  //     border: "1px solid red",
+  //   },
+  // };
+
+  // useEffect(() => {
+  //   if (setOpenTab === <LP />) {
+  //     openTab(true);
+  //   }
+  // }, [openTab, setOpenTab]);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -105,12 +114,7 @@ const Shop = () => {
                     ))}
                   </div>
                 </div>
-                <div className="card-right">
-                  <div className="record-tabs">
-                    <CustomTabs/>
-                  </div>
-                  {openTab && <div className="price">{item.price}€</div>}
-                </div>
+                <CustomTabs item={item} />
               </div>
             ))}
         </div>
