@@ -107,7 +107,7 @@ span {
 
 .contactArrow::after {
   display: flex;
-  content: "⮤ Contact";
+  content: "↵ Contact";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.3rem;
