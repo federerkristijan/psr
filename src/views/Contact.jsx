@@ -10,37 +10,30 @@ const Contact = () => {
   // Sign up
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
-  const [contact, setContact] = useState(null);
-  const [password, setPassword] = useState("");
-  const [firstName, setfirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [text, setText] = useState({});
+  const [contact, setContact] = useState("");
+  const [userData, setUserData] = useState({
+    firstName: "",
+    password: "",
+    email: "",
+    country: "",
+    lastName: "",
+    city: "",
+    street: "",
+    streetNumber: "",
+    zipCode: "",
+    loginPassword: "",
+    loginEmail: "",
+  });
 
   const { GraphQLHandler } = useContext(GraphQLContext);
 
   const textInputHandler = (e) => {
-    setText({ ...text, [e.target.id]: e.target.value });
-    console.log(text);
-  };
-
-  const countryHandler = (event) => {
-    setCountry(event.target.value);
-  };
-
-  const passwordHandler = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const firstNameHandler = (event) => {
-    setfirstName(event.target.value);
-  };
-  const emailHandler = (event) => {
-    setEmail(event.target.value);
+    setUserData({ ...userData, [e.target.id]: e.target.value });
+    console.log(userData);
   };
 
   const signupHandler = () => {
-    GraphQLHandler(0, email, password, [firstName, country]);
+    GraphQLHandler(0, userData);
   };
 
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 14:32 ////////////
@@ -49,16 +42,12 @@ const Contact = () => {
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
   const loginHandler = () => {
-    GraphQLHandler(1, email, firstName, password);
+    GraphQLHandler(1, userData);
   };
 
-  const loginPasswordHandler = (event) => {
-    setPassword(event.target.value);
-  };
+  const loginPasswordHandler = (event) => {};
 
-  const loginEmailHandler = (event) => {
-    setEmail(event.target.value);
-  };
+  const loginEmailHandler = (event) => {};
 
   useEffect(() => {
     sanityClient
@@ -75,24 +64,29 @@ const Contact = () => {
   return (
     <div className="contact">
       <div>
-        <button onClick={signupHandler}>Signup</button>
+        Sign up
+        <button key={Math.random()} id="singUp" onClick={signupHandler}>
+          {" "}
+          Sign up
+        </button>
         firstName:
-        <input onChange={firstNameHandler} />
-        email: <input onChange={emailHandler} /> password:{" "}
-        <input onChange={passwordHandler} />
+        <input key={"firs"} id="firstName" onChange={textInputHandler} />
+        password:
+        <input key={"pass"} id="password" onChange={textInputHandler} />
+        email:
+        <input key={"emai"} id="email" onChange={textInputHandler} />
         country:
-        <input onChange={countryHandler} />
-        {/* lastName:
-        <input onChange={lastNameHandler} />
-        
+        <input key={"coun"} id="country" onChange={textInputHandler} />
+        lastName:
+        <input key={"last"} id="lastName" onChange={textInputHandler} />
         city:
-        <input onChange={cityHandler} />
+        <input key={"city"} id="city" onChange={textInputHandler} />
         street:
-        <input onChange={streetHandler} />
+        <input key={"sore"} id="street" onChange={textInputHandler} />
         streetNumber:
-        <input onChange={streetNumberHandler} />
+        <input key={"stre"} id="streetNumber" onChange={textInputHandler} />
         ZipCode:
-        <input onChange={zipCodeHandler} /> */}
+        <input key={"zipC"} id="zipCode" onChange={textInputHandler} />
       </div>
       <hr
         style={{
@@ -105,8 +99,13 @@ const Contact = () => {
       <div>
         <button onClick={loginHandler}>Login</button>
         email:
-        <input onChange={loginEmailHandler} />
-        password: <input onChange={loginPasswordHandler} />
+        <input key={"lohi"} id="loginEmail" onChange={loginEmailHandler} />
+        password:{" "}
+        <input
+          key={"logi"}
+          id="loginPassword"
+          onChange={loginPasswordHandler}
+        />
       </div>
       <hr
         style={{

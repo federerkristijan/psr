@@ -15,11 +15,11 @@ export const GraphQLContextProvider = (props) => {
   //
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
-  const GraphQLHandler = async (request, email, password, personalData) => {
-    console.log(personalData[1]);
+  const GraphQLHandler = async (request, userData) => {
+    console.log(userData[1]);
     const requestList = [
       `mutation {
-  createUser(userInput: {email: "${email}", name: "${personalData[0]}", country: "${personalData[1]}", password:"${password}" })
+  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}" })
   
   {
     _id
@@ -28,7 +28,7 @@ export const GraphQLContextProvider = (props) => {
   }}
 `,
       `{
-        login(email: "${email}", password: "${password}"){
+        login(email: "${userData.email}", password: "${userData.password}"){
           token
           userId
         }
