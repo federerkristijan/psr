@@ -21,3 +21,5 @@ const Sidebar = () => {
 }
 
 export default Sidebar
+
+// credtis to https://github.com/makeuseofcode/react-collapsible-navbar
