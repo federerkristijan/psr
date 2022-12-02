@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 
-import "../styles/global.css";
+import styles from "../styles/global.css";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -10,12 +10,10 @@ const Sidebar = () => {
   }
 
   return (
-    <div className={open}>
-      <ul>
-        <li>
-
-        </li>
-      </ul>
+    <div className={open?styles.sidenav:styles.sidenavClosed}>
+      <button>
+        
+      </button>
     </div>
   )
 }
