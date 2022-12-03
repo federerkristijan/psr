@@ -19,7 +19,7 @@ const navData = [
     id: 1,
     icon: <Contact />,
     text: "Contact",
-    link: "/"
+    link: "/contact"
   },
   {
     id: 2,
