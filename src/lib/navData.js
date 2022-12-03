@@ -31,25 +31,25 @@ const navData = [
     id: 3,
     icon: <Media />,
     text: "Media",
-    link: "/"
+    link: "/media"
   },
   {
     id: 4,
     icon: <Partners />,
     text: "Partners",
-    link: "/"
+    link: "/partners"
   },
   {
     id: 5,
     icon: <Team />,
     text: "Team",
-    link: "/"
+    link: "/team"
   },
   {
     id: 6,
     icon: <Impressum />,
     text: "Impressum",
-    link: "/"
+    link: "/impressum"
   },
 ]
 
