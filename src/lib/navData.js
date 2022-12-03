@@ -25,7 +25,7 @@ const navData = [
     id: 2,
     icon: <Event />,
     text: "Event",
-    link: "/"
+    link: "/event"
   },
   {
     id: 3,
