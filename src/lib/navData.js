@@ -19,37 +19,37 @@ const navData = [
     id: 1,
     icon: <Contact />,
     text: "Contact",
-    link: "/"
+    link: "/contact"
   },
   {
     id: 2,
     icon: <Event />,
     text: "Event",
-    link: "/"
+    link: "/event"
   },
   {
     id: 3,
     icon: <Media />,
     text: "Media",
-    link: "/"
+    link: "/media"
   },
   {
     id: 4,
     icon: <Partners />,
     text: "Partners",
-    link: "/"
+    link: "/partners"
   },
   {
     id: 5,
     icon: <Team />,
     text: "Team",
-    link: "/"
+    link: "/team"
   },
   {
     id: 6,
     icon: <Impressum />,
     text: "Impressum",
-    link: "/"
+    link: "/impressum"
   },
 ]
 
