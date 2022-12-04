@@ -1,53 +1,53 @@
 // icons for home, about, events, team, media, partners, shop, about, contact, impressum, login
 // credits to "https://www.flaticon.com/free-icons/event" Event icons created by Freepik - Flaticon and "https://iconscout.com/icons/impressum" WEBTECHOPS LLP
-import Home from "../assets/icons/home_icon.png";
-import Contact from "../assets/icons/contact.png";
-import Event from "../assets/icons/event.png";
-import Media from "../assets/icons/media.png";
-import Partners from "../assets/icons/Partners.png";
-import Team from "../assets/icons/team.png";
-import Impressum from "../assets/icons/impressum.png";
+import HomeIcon from "../assets/icons/home_icon.png";
+import ContactIcon from "../assets/icons/contact.png";
+import EventIcon from "../assets/icons/event.png";
+import MediaIcon from "../assets/icons/media.png";
+import PartnersIcon from "../assets/icons/Partners.png";
+import TeamIcon from "../assets/icons/team.png";
+import ImpressumIcon from "../assets/icons/impressum.png";
 
 const navData = [
   {
     id: 0,
-    icon: <Home />,
+    icon: <HomeIcon />,
     text: "Home",
     link: "/"
   },
   {
     id: 1,
-    icon: <Contact />,
+    icon: <ContactIcon />,
     text: "Contact",
     link: "/contact"
   },
   {
     id: 2,
-    icon: <Event />,
+    icon: <EventIcon />,
     text: "Event",
     link: "/event"
   },
   {
     id: 3,
-    icon: <Media />,
+    icon: <MediaIcon />,
     text: "Media",
     link: "/media"
   },
   {
     id: 4,
-    icon: <Partners />,
+    icon: <PartnersIcon />,
     text: "Partners",
     link: "/partners"
   },
   {
     id: 5,
-    icon: <Team />,
+    icon: <TeamIcon />,
     text: "Team",
     link: "/team"
   },
   {
     id: 6,
-    icon: <Impressum />,
+    icon: <ImpressumIcon />,
     text: "Impressum",
     link: "/impressum"
   },
