@@ -4,7 +4,7 @@ import HomeIcon from "../assets/icons/home_icon.png";
 import ContactIcon from "../assets/icons/contact.png";
 import EventIcon from "../assets/icons/event.png";
 import MediaIcon from "../assets/icons/media.png";
-import PartnersIcon from "../assets/icons/Partners.png";
+import PartnersIcon from "../assets/icons/partners.png";
 import TeamIcon from "../assets/icons/team.png";
 import ImpressumIcon from "../assets/icons/impressum.png";
 

@@ -3,6 +3,7 @@ import sanityClient from "../lib/client";
 
 import "../styles/global.css";
 import Back from '../components/Back';
+import Sidebar from "../components/Sidebar";
 
 // todo Sanity block
 
@@ -24,6 +25,7 @@ const Impressum = () => {
 
   return (
     <div className="impressum">
+      <Sidebar/>
       <Back />
       <div className="impressum-header">
         <h1>Here comes impressum</h1>
