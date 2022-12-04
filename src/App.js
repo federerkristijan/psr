@@ -22,7 +22,6 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
@@ -33,19 +32,10 @@ function App() {
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/cart" element={<Cart />} />
               <Route path="/team" element={<Team />} />
-            </Route>
           </Routes>
         </div>
       </BrowserRouter>
     </GraphQLContextProvider>
-  );
-}
-
-function Layout() {
-  return (
-    <>
-      <Outlet />
-    </>
   );
 }
 
