@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Outlet, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
 
 import "./App.css";
