@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import navData from "../lib/navData";
 
-import LeftArrowIcon from "../assets/icons/double_left_arrow_icon.png";
-import RightArrowIcon from "../assets/icons/double_right_arrow_icon.png";
+import LeftArrowIcon from "../assets/icons/LeftArrow.png";
+import RightArrowIcon from "../assets/icons/RightArrow.png";
 import styles from "../styles/global.css";
 
 const Sidebar = () => {
@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <div className={open ? styles.sidenav : styles.sidenavClosed}>
       <button className={styles.menuBtn} onClick={toggleOpen}>
-        {open ? <LeftArrowIcon /> : <RightArrowIcon/>}
+        {open ? <LeftArrowIcon/> : <RightArrowIcon/>}
       </button>
       {navData.map((item) => {
         return (
