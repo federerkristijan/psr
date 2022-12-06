@@ -11,9 +11,8 @@ import { Link } from "react-router-dom";
 
 // import navData from "../lib/navData";
 
-import LeftArrowIcon from "../assets/icons/LeftArrow.png";
-import RightArrowIcon from "../assets/icons/RightArrow.png";
-import styles from "../styles/global.css";
+import Left from "../assets/icons/double-left-arrow.png";
+// import styles from "../styles/global.css";
 
 const ToggleSidebar = () => {
   const { collapseSidebar } = useProSidebar();
@@ -25,6 +24,11 @@ const ToggleSidebar = () => {
   return (
     <div className="sidebar-wrapper">
       <Sidebar closeOnClick="true">
+        {/* <RightArrowIcon /> */}
+        <button onClick={() => collapseSidebar()}>
+          {" "}
+          <i src={Left} />{" "}
+        </button>
         <Menu>
           <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>
           <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
