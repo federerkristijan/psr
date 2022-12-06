@@ -1,35 +1,44 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import {
+  Sidebar,
+  Menu,
+  MenuItem,
+  SubMenu,
+  useProSidebar,
+} from "react-pro-sidebar";
+import { Link } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
-import navData from "../lib/navData";
+// import navData from "../lib/navData";
 
 import LeftArrowIcon from "../assets/icons/LeftArrow.png";
 import RightArrowIcon from "../assets/icons/RightArrow.png";
 import styles from "../styles/global.css";
 
-const Sidebar = () => {
+const ToggleSidebar = () => {
+  const { collapseSidebar } = useProSidebar();
   const [open, setOpen] = useState(true);
   const toggleOpen = () => {
     setOpen(!open);
   };
 
   return (
-    <div className={open ? styles.sidenav : styles.sidenavClosed}>
-      <button className={styles.menuBtn} onClick={toggleOpen}>
-        {open ? <LeftArrowIcon/> : <RightArrowIcon/>}
-      </button>
-      {navData.map((item) => {
-        return (
-          <NavLink key={item.id} className={styles.sideItem} to={item.link}>
-            {item.icon}
-            <span className={styles.lineText}>{item.text}</span>
-          </NavLink>
-        );
-      })}
+    <div className="sidebar-wrapper">
+      <Sidebar closeOnClick="true">
+        <Menu>
+          <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>
+          <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
+          <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
+          <MenuItem routerLink={<Link to="/impressum" />}>impressum</MenuItem>
+          <MenuItem routerLink={<Link to="/media" />}>media</MenuItem>
+          <MenuItem routerLink={<Link to="/partners" />}>partners</MenuItem>
+          <MenuItem routerLink={<Link to="/shop" />}>shop</MenuItem>
+          <MenuItem routerLink={<Link to="/team" />}>team</MenuItem>
+          <MenuItem routerLink={<Link to="/members" />}>members</MenuItem>
+        </Menu>
+      </Sidebar>
     </div>
   );
 };
 
-export default Sidebar;
-
-// credits to https://github.com/makeuseofcode/react-collapsible-navbar
+export default ToggleSidebar;

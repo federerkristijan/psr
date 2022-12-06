@@ -12,47 +12,12 @@ span {
 
 /* Sidebar */
 
-.sidenav {
-  width: 250px;
-  transition: width 0.3s ease-in-out;
-  height: 100vh;
-  background-color: rgb(10,25,41);
-  padding-top: 28px;
-}
-
-.sidenav > .sidenavClosed {
-  transition: width 0.3s ease-in-out;
-  width: 60px
-}
-
-.sideitem {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: #B2BAC2;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.linkText {
-  padding-left: 16px;
-}
-
-.sideitem:hover {
-  background-color: #244f7d1c;
-
-}
-
-.menuBtn {
-  align-self: center;
-  align-self: flex-start;
-  justify-self: flex-end;
-  color: #B2BAC2;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding-left: 20px;
+.sidebar-wrapper {
+  height: 100%;
+  width: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* Home */
@@ -303,7 +268,6 @@ span {
   color: white;
   white-space: nowrap;
 }
-
 
 .tracks {
   display: flex;

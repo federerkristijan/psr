@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-  useProSidebar,
-} from "react-pro-sidebar";
+// import {
+//   Sidebar,
+//   Menu,
+//   MenuItem,
+//   SubMenu,
+//   useProSidebar,
+// } from "react-pro-sidebar";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -20,29 +20,24 @@ import Partners from "../src/views/Partners";
 import Cart from "../src/components/Cart";
 import Shop from "../src/views/Shop";
 import Team from "../src/views/Team";
+import ToggleSidebar from "./components/Sidebar";
 
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 
 const App = () => {
-  const { collapseSidebar } = useProSidebar();
+  // const { collapseSidebar } = useProSidebar();
 
   return (
     <GraphQLContextProvider>
       <BrowserRouter>
         <div className="App">
-        <Sidebar
-        onMouseOver={() => collapseSidebar}
+        {/* <Sidebar
         style={{ maxWidth: "15%", border: "1px solid black", position: "absolute", height: "100%", overflow: "hidden" }}
       >
-        <Menu>
-          <SubMenu label="Charts">
-            <MenuItem> Pie charts </MenuItem>
-            <MenuItem> Line charts </MenuItem>
-          </SubMenu>
-          <MenuItem> Documentation </MenuItem>
-          <MenuItem> Calendar </MenuItem>
-        </Menu>
-      </Sidebar>
+      </Sidebar> */}
+      <ToggleSidebar
+        closeOnClick= "true"
+      />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
@@ -64,28 +59,11 @@ const App = () => {
 }
 
 const Layout = () => {
-  // const { collapseSidebar } = useProSidebar();
 
   return (
-    <div
-      className="sidebar-wrapper"
-      // style={{ display: "flex", height: "100%" }}
-    >
-      {/* <Sidebar
-        onMouseOver={() => collapseSidebar}
-        style={{ maxWidth: "15%", border: "1px solid black" }}
-      >
-        <Menu>
-          <SubMenu label="Charts">
-            <MenuItem> Pie charts </MenuItem>
-            <MenuItem> Line charts </MenuItem>
-          </SubMenu>
-          <MenuItem> Documentation </MenuItem>
-          <MenuItem> Calendar </MenuItem>
-        </Menu>
-      </Sidebar> */}
+    <>
       <Outlet />
-    </div>
+    </>
   );
 };
 
