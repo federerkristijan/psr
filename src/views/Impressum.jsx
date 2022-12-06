@@ -25,7 +25,7 @@ const Impressum = () => {
 
   return (
     <div className="impressum">
-      <Sidebar/>
+      {/* <Sidebar/> */}
       <Back />
       <div className="impressum-header">
         <h1>Here comes impressum</h1>

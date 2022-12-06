@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
+import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 
 import "./App.css";
 import About from "../src/views/About";
@@ -22,6 +23,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Routes>
+            <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
@@ -32,11 +34,31 @@ function App() {
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/cart" element={<Cart />} />
               <Route path="/team" element={<Team />} />
+            </Route>
           </Routes>
         </div>
       </BrowserRouter>
     </GraphQLContextProvider>
   );
 }
+
+const Layout = () => {
+  const { collapseSidebar } = useProSidebar();
+
+  return (
+    <>
+      <Sidebar onMouseOver={() => collapseSidebar}>
+        <Menu>
+          <SubMenu label="Charts">
+            <MenuItem> Pie charts </MenuItem>
+            <MenuItem> Line charts </MenuItem>
+          </SubMenu>
+          <MenuItem> Documentation </MenuItem>
+          <MenuItem> Calendar </MenuItem>
+        </Menu>
+      </Sidebar>
+    </>
+  );
+};
 
 export default App;
