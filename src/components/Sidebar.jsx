@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 // import navData from "../lib/navData";
 
 import Left from "../assets/icons/double-left-arrow.png";
+import Right from "../assets/icons/double-right-arrow.png";
 // import styles from "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -23,13 +24,12 @@ const ToggleSidebar = () => {
 
   return (
     <div className="sidebar-wrapper">
-      <Sidebar closeOnClick="true">
+      <Sidebar >
         {/* <RightArrowIcon /> */}
         <button onClick={() => collapseSidebar()}>
-          {" "}
-          <i src={Left} />{" "}
+            {collapseSidebar !== true ? <img src={Left} alt="left" />: <img src={Right} alt="right" />}
         </button>
-        <Menu>
+        <Menu menuItemStyles={{ padding: "1rem" }}>
           <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>
           <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
           <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
