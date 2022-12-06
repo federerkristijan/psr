@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from 'react-pro-sidebar';
 
@@ -46,8 +46,8 @@ const Layout = () => {
   const { collapseSidebar } = useProSidebar();
 
   return (
-    <>
-      <Sidebar onMouseOver={() => collapseSidebar}>
+    <div className="sidebar-wrapper" style={{ display: 'flex', height: '100%' }}>>
+      {/* <Sidebar onMouseOver={() => collapseSidebar}>
         <Menu>
           <SubMenu label="Charts">
             <MenuItem> Pie charts </MenuItem>
@@ -56,8 +56,11 @@ const Layout = () => {
           <MenuItem> Documentation </MenuItem>
           <MenuItem> Calendar </MenuItem>
         </Menu>
-      </Sidebar>
-    </>
+      </Sidebar> */}
+      <main>
+        <Outlet/>
+      </main>
+    </div>
   );
 };
 
