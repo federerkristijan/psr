@@ -1,6 +1,13 @@
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
+// import {
+//   Sidebar,
+//   Menu,
+//   MenuItem,
+//   SubMenu,
+//   useProSidebar,
+// } from "react-pro-sidebar";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -13,15 +20,26 @@ import Partners from "../src/views/Partners";
 import Cart from "../src/components/Cart";
 import Shop from "../src/views/Shop";
 import Team from "../src/views/Team";
+import ToggleSidebar from "./components/Sidebar";
 
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 
-function App() {
+const App = () => {
+  // const { collapseSidebar } = useProSidebar();
+
   return (
     <GraphQLContextProvider>
       <BrowserRouter>
         <div className="App">
+        {/* <Sidebar
+        style={{ maxWidth: "15%", border: "1px solid black", position: "absolute", height: "100%", overflow: "hidden" }}
+      >
+      </Sidebar> */}
+      <ToggleSidebar
+        closeOnClick= "true"
+      />
           <Routes>
+            <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
@@ -32,11 +50,21 @@ function App() {
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/cart" element={<Cart />} />
               <Route path="/team" element={<Team />} />
+            </Route>
           </Routes>
         </div>
       </BrowserRouter>
     </GraphQLContextProvider>
   );
 }
+
+const Layout = () => {
+
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+};
 
 export default App;
