@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Sidebar,
   Menu,
@@ -32,7 +32,7 @@ const ToggleSidebar = () => {
     <div className="sidebar-wrapper">
       <Sidebar defaultCollapsed="true" breakPoint="md">
         <button onClick={() => {collapseSidebar()}}>
-          <img src={Vinyl} alt="vinyl" style={{ width: "40px", background: "none", border: "none" }}/>
+          <img src={Vinyl} alt="vinyl" />
         </button>
         <Menu menuItemStyles={{ padding: "1rem", button: {} }}>
           <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>

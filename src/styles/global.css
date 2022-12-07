@@ -14,11 +14,18 @@ span {
 
 .sidebar-wrapper {
   height: 100%;
-  width: 150px;
   position: absolute;
   left: 0;
   top: 0;
   padding-top: 40px;
+}
+
+img[alt="vinyl"] {
+  width: 40px;
+}
+
+img[alt="vinyl"]:active {
+  transform: rotate(120deg);
 }
 
 /* Home */
