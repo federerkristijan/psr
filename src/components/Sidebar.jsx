@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Sidebar,
   Menu,
@@ -7,29 +7,34 @@ import {
   useProSidebar,
 } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
-// import { NavLink } from "react-router-dom";
 
-// import navData from "../lib/navData";
-
-import Left from "../assets/icons/double-left-arrow.png";
-import Right from "../assets/icons/double-right-arrow.png";
-// import styles from "../styles/global.css";
+import Vinyl from "../assets/icons/vinyl-record.png";
+import "../styles/global.css";
 
 const ToggleSidebar = () => {
   const { collapseSidebar } = useProSidebar();
-  const [open, setOpen] = useState(true);
-  const toggleOpen = () => {
-    setOpen(!open);
-  };
+
+  // const [open, setOpen] = useState(false);
+
+  // useEffect(() => {
+  //   if(open) {
+  //     <img src={Right} alt="right"/>
+  //   } else {
+  //     <img src={Left} alt= "left"/>
+  //   }
+  // }, [])
+
+  // const closeButtonHandler = () => {
+  //   setOpen(!open)
+  // }
 
   return (
     <div className="sidebar-wrapper">
-      <Sidebar >
-        {/* <RightArrowIcon /> */}
-        <button onClick={() => collapseSidebar()}>
-            {collapseSidebar !== true ? <img src={Left} alt="left" />: <img src={Right} alt="right" />}
+      <Sidebar defaultCollapsed="true" breakPoint="md">
+        <button onClick={() => {collapseSidebar()}}>
+          <img src={Vinyl} alt="vinyl" style={{ width: "40px", background: "none", border: "none" }}/>
         </button>
-        <Menu menuItemStyles={{ padding: "1rem" }}>
+        <Menu menuItemStyles={{ padding: "1rem", button: {} }}>
           <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>
           <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
           <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
