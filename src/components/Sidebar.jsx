@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Vinyl from "../assets/icons/vinyl-record.png";
 import About from "../assets/icons/about.png";
 import Contact from "../assets/icons/contact.png";
+import Event from "../assets/icons/event.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -43,7 +44,9 @@ const ToggleSidebar = () => {
           <MenuItem routerLink={<Link to="/contact" />}>
             <img src={Contact} alt="contact" />
           </MenuItem>
-          <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
+          <MenuItem routerLink={<Link to="/events" />}>
+          <img src={Event} alt="events" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/impressum" />}>impressum</MenuItem>
           <MenuItem routerLink={<Link to="/media" />}>media</MenuItem>
           <MenuItem routerLink={<Link to="/partners" />}>partners</MenuItem>

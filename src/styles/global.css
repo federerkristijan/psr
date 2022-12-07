@@ -24,7 +24,7 @@ img[alt="vinyl"]{
   width: 40px;
 }
 
-img[alt="about"], img[alt="contact"] {
+img[alt="about"], img[alt="contact"], img[alt="events"] {
   width: 30px;
   padding-top: 3rem;
 }
