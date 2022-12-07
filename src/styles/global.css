@@ -33,7 +33,10 @@ img[alt="contact"],
 img[alt="events"],
 img[alt="impress"],
 img[alt="media"],
-img[alt="partners"] {
+img[alt="partners"],
+img[alt="shop"],
+img[alt="team"],
+img[alt="members"] {
   width: 30px;
   padding-top: 2rem;
 }

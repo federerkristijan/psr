@@ -15,6 +15,9 @@ import event from "../assets/icons/event.png";
 import impress from "../assets/icons/impressum.png";
 import media from "../assets/icons/media.png";
 import partners from "../assets/icons/partners.png";
+import shop from "../assets/icons/shop.png";
+import team from "../assets/icons/team.png";
+// import members from "../assets/icons/members.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -59,9 +62,15 @@ const ToggleSidebar = () => {
           <MenuItem routerLink={<Link to="/partners" />}>
           <img src={partners} alt="partners" />
           </MenuItem>
-          <MenuItem routerLink={<Link to="/shop" />}>shop</MenuItem>
-          <MenuItem routerLink={<Link to="/team" />}>team</MenuItem>
-          <MenuItem routerLink={<Link to="/members" />}>members</MenuItem>
+          <MenuItem routerLink={<Link to="/shop" />}>
+          <img src={shop} alt="shop" />
+          </MenuItem>
+          <MenuItem routerLink={<Link to="/team" />}>
+          <img src={team} alt="team" />
+          </MenuItem>
+          <MenuItem routerLink={<Link to="/members" />}>
+          <img src={team} alt="team" />
+          </MenuItem>
         </Menu>
       </Sidebar>
     </div>
