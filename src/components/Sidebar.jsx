@@ -12,6 +12,7 @@ import Vinyl from "../assets/icons/vinyl-record.png";
 import About from "../assets/icons/about.png";
 import Contact from "../assets/icons/contact.png";
 import Event from "../assets/icons/event.png";
+import Impress from "../assets/icons/impressum.png"
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -47,7 +48,9 @@ const ToggleSidebar = () => {
           <MenuItem routerLink={<Link to="/events" />}>
           <img src={Event} alt="events" />
           </MenuItem>
-          <MenuItem routerLink={<Link to="/impressum" />}>impressum</MenuItem>
+          <MenuItem routerLink={<Link to="/impressum" />}>
+          <img src={Impress} alt="impress" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/media" />}>media</MenuItem>
           <MenuItem routerLink={<Link to="/partners" />}>partners</MenuItem>
           <MenuItem routerLink={<Link to="/shop" />}>shop</MenuItem>
