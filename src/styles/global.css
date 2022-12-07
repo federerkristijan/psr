@@ -17,10 +17,10 @@ span {
   position: absolute;
   left: 0;
   top: 0;
-  padding-top: 40px;
 }
 
 img[alt="vinyl"] {
+  padding-top: 1rem;
   width: 45px;
 }
 
@@ -31,9 +31,11 @@ img[alt="vinyl"]:active {
 img[alt="about"],
 img[alt="contact"],
 img[alt="events"],
-img[alt="impress"] {
+img[alt="impress"],
+img[alt="media"],
+img[alt="partners"] {
   width: 30px;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 

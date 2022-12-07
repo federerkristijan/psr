@@ -8,11 +8,13 @@ import {
 } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 
-import Vinyl from "../assets/icons/vinyl-record.png";
-import About from "../assets/icons/about.png";
-import Contact from "../assets/icons/contact.png";
-import Event from "../assets/icons/event.png";
-import Impress from "../assets/icons/impressum.png"
+import vinyl from "../assets/icons/vinyl-record.png";
+import about from "../assets/icons/about.png";
+import contact from "../assets/icons/contact.png";
+import event from "../assets/icons/event.png";
+import impress from "../assets/icons/impressum.png";
+import media from "../assets/icons/media.png";
+import partners from "../assets/icons/partners.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -36,23 +38,27 @@ const ToggleSidebar = () => {
     <div className="sidebar-wrapper">
       <Sidebar defaultCollapsed="true" breakPoint="md">
         <button onClick={() => {collapseSidebar()}} style={{ border: "none", background: "none" }}>
-          <img src={Vinyl} alt="vinyl" />
+          <img src={vinyl} alt="vinyl" />
         </button>
         <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
           <MenuItem routerLink={<Link to="/about" />}>
-            <img src={About} alt="about" />
+            <img src={about} alt="about" />
           </MenuItem>
           <MenuItem routerLink={<Link to="/contact" />}>
-            <img src={Contact} alt="contact" />
+            <img src={contact} alt="contact" />
           </MenuItem>
           <MenuItem routerLink={<Link to="/events" />}>
-          <img src={Event} alt="events" />
+          <img src={event} alt="events" />
           </MenuItem>
           <MenuItem routerLink={<Link to="/impressum" />}>
-          <img src={Impress} alt="impress" />
+          <img src={impress} alt="impress" />
           </MenuItem>
-          <MenuItem routerLink={<Link to="/media" />}>media</MenuItem>
-          <MenuItem routerLink={<Link to="/partners" />}>partners</MenuItem>
+          <MenuItem routerLink={<Link to="/media" />}>
+          <img src={media} alt="media" />
+          </MenuItem>
+          <MenuItem routerLink={<Link to="/partners" />}>
+          <img src={partners} alt="partners" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/shop" />}>shop</MenuItem>
           <MenuItem routerLink={<Link to="/team" />}>team</MenuItem>
           <MenuItem routerLink={<Link to="/members" />}>members</MenuItem>
