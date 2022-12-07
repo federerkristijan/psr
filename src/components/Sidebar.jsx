@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 import Vinyl from "../assets/icons/vinyl-record.png";
 import About from "../assets/icons/about.png";
+import Contact from "../assets/icons/contact.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -35,11 +36,13 @@ const ToggleSidebar = () => {
         <button onClick={() => {collapseSidebar()}} style={{ border: "none", background: "none" }}>
           <img src={Vinyl} alt="vinyl" />
         </button>
-        <Menu menuItemStyles={{ padding: "1rem", button: {} }}>
+        <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
           <MenuItem routerLink={<Link to="/about" />}>
             <img src={About} alt="about" />
           </MenuItem>
-          <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
+          <MenuItem routerLink={<Link to="/contact" />}>
+            <img src={Contact} alt="contact" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
           <MenuItem routerLink={<Link to="/impressum" />}>impressum</MenuItem>
           <MenuItem routerLink={<Link to="/media" />}>media</MenuItem>

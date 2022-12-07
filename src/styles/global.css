@@ -20,8 +20,13 @@ span {
   padding-top: 40px;
 }
 
-img[alt="vinyl"], img[alt="about"] {
+img[alt="vinyl"]{
   width: 40px;
+}
+
+img[alt="about"], img[alt="contact"] {
+  width: 30px;
+  padding-top: 3rem;
 }
 
 img[alt="vinyl"]:active {
