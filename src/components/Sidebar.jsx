@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 
 import Vinyl from "../assets/icons/vinyl-record.png";
+import About from "../assets/icons/about.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -31,11 +32,13 @@ const ToggleSidebar = () => {
   return (
     <div className="sidebar-wrapper">
       <Sidebar defaultCollapsed="true" breakPoint="md">
-        <button onClick={() => {collapseSidebar()}}>
+        <button onClick={() => {collapseSidebar()}} style={{ border: "none", background: "none" }}>
           <img src={Vinyl} alt="vinyl" />
         </button>
         <Menu menuItemStyles={{ padding: "1rem", button: {} }}>
-          <MenuItem routerLink={<Link to="/about" />}>About</MenuItem>
+          <MenuItem routerLink={<Link to="/about" />}>
+            <img src={About} alt="about" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/contact" />}>Contact</MenuItem>
           <MenuItem routerLink={<Link to="/events" />}>events</MenuItem>
           <MenuItem routerLink={<Link to="/impressum" />}>impressum</MenuItem>
