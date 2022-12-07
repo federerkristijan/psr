@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
-import Back from "../components/Back";
+// import Back from "../components/Back";
 
 const Media = () => {
   const [media, setMedia] = useState(null);
@@ -23,7 +23,7 @@ const Media = () => {
 
   return (
     <div className="media" taget="true">
-      <Back />
+      {/* <Back /> */}
       <div className="media-header">
         <h1>Here you can find us in other media</h1>
       </div>

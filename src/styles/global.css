@@ -14,12 +14,33 @@ span {
 
 .sidebar-wrapper {
   height: 100%;
-  width: 150px;
   position: absolute;
   left: 0;
   top: 0;
-  padding-top: 40px;
 }
+
+img[alt="vinyl"] {
+  padding-top: 1rem;
+  width: 45px;
+}
+
+img[alt="vinyl"]:active {
+  transform: rotate(120deg);
+}
+
+img[alt="about"],
+img[alt="contact"],
+img[alt="events"],
+img[alt="impress"],
+img[alt="media"],
+img[alt="partners"],
+img[alt="shop"],
+img[alt="team"],
+img[alt="members"] {
+  width: 30px;
+  padding-top: 2rem;
+}
+
 
 /* Home */
 

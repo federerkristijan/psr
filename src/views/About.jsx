@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../lib/client";
 import "../styles/global.css";
-import Back from "../components/Back";
+// import Back from "../components/Back";
 
 const About = () => {
   const [about, setAbout] = useState(null);
@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <div className="about">
-      <Back />
+      {/* <Back /> */}
       {about &&
         about.map((about) => (
           <div className="about-data" key={about.title}>

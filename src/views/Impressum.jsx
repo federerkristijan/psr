@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
-import Back from '../components/Back';
-import Sidebar from "../components/Sidebar";
+// import Back from '../components/Back';
 
-// todo Sanity block
 
 const Impressum = () => {
   const [impressum, setImpressum] = useState(null);
@@ -25,8 +23,7 @@ const Impressum = () => {
 
   return (
     <div className="impressum">
-      {/* <Sidebar/> */}
-      <Back />
+      {/* <Back /> */}
       <div className="impressum-header">
         <h1>Here comes impressum</h1>
       </div>
