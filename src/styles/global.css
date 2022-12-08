@@ -21,7 +21,7 @@ span {
 
 img[alt="vinyl"] {
   padding-top: 1rem;
-  width: 45px;
+  width: 40px;
 }
 
 img[alt="vinyl"]:active {
@@ -37,7 +37,7 @@ img[alt="partners"],
 img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
-  width: 30px;
+  width: 26px;
   padding-top: 2rem;
 }
 
@@ -47,7 +47,7 @@ img[alt="members"] {
 .home {
   display: block;
   max-width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 .image-map__content__img:not(.active) ~ *:after {
