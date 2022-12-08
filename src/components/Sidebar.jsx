@@ -17,7 +17,7 @@ import media from "../assets/icons/media.png";
 import partners from "../assets/icons/partners.png";
 import shop from "../assets/icons/shop.png";
 import team from "../assets/icons/team.png";
-// import members from "../assets/icons/members.png";
+import members from "../assets/icons/user.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
@@ -39,7 +39,7 @@ const ToggleSidebar = () => {
 
   return (
     <div className="sidebar-wrapper">
-      <Sidebar defaultCollapsed="true" breakPoint="md">
+      <Sidebar defaultCollapsed="true" breakPoint="md" collapsedWidth="100px">
         <button onClick={() => {collapseSidebar()}} style={{ border: "none", background: "none" }}>
           <img src={vinyl} alt="vinyl" />
         </button>
@@ -69,7 +69,7 @@ const ToggleSidebar = () => {
           <img src={team} alt="team" />
           </MenuItem>
           <MenuItem routerLink={<Link to="/members" />}>
-          <img src={team} alt="team" />
+          <img src={members} alt="members" />
           </MenuItem>
         </Menu>
       </Sidebar>
