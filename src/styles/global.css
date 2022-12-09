@@ -26,7 +26,8 @@ span {
 }
 
 img[alt="vinyl"] {
-  padding-top: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
   width: 40px;
 }
 
@@ -44,7 +45,7 @@ img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
   width: 26px;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
 
