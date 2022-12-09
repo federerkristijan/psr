@@ -14,20 +14,29 @@ span {
 
 .sidebar-wrapper {
   height: 100%;
+  /* liek sticky but not breaking the page */
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
 }
 
-img[alt="vinyl"] {
-  padding-top: 1rem;
+.css-1se900q.ps-collapsed, .css-1se900q {
+  width: 100px;
+  height: inherit;
+  min-width: 100px;
+}
+
+/* img[alt="vinyl"] {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
   width: 40px;
-}
+} */
 
-img[alt="vinyl"]:active {
+/* img[alt="vinyl"]:active {
   transform: rotate(120deg);
-}
+} */
 
+img[alt="vinyl"],
 img[alt="about"],
 img[alt="contact"],
 img[alt="events"],
@@ -38,7 +47,7 @@ img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
   width: 26px;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
 
@@ -47,6 +56,10 @@ img[alt="members"] {
 .home {
   display: block;
   max-width: 100%;
+  min-height: 100vh;
+}
+
+.image-map__content__img {
   height: 100%;
 }
 
