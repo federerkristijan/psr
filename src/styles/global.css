@@ -47,6 +47,10 @@ img[alt="members"] {
 .home {
   display: block;
   max-width: 100%;
+  min-height: 100vh;
+}
+
+.image-map__content__img {
   height: 100%;
 }
 
