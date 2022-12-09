@@ -26,16 +26,17 @@ span {
   min-width: 100px;
 }
 
-img[alt="vinyl"] {
+/* img[alt="vinyl"] {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
   width: 40px;
-}
+} */
 
-img[alt="vinyl"]:active {
+/* img[alt="vinyl"]:active {
   transform: rotate(120deg);
-}
+} */
 
+img[alt="vinyl"],
 img[alt="about"],
 img[alt="contact"],
 img[alt="events"],

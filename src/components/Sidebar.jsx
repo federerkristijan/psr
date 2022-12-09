@@ -21,7 +21,7 @@ import members from "../assets/icons/user.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
-  const { collapseSidebar } = useProSidebar();
+  const { toggleSidebar } = useProSidebar();
 
   // const [open, setOpen] = useState(false);
 
@@ -40,15 +40,18 @@ const ToggleSidebar = () => {
   return (
     <div className="sidebar-wrapper">
       <Sidebar defaultCollapsed="true" breakPoint="md" collapsedWidth="100px" height="100%">
-        <button
+        {/* <button
           onClick={() => {
-            collapseSidebar();
+            toggleSidebar();
           }}
           style={{ border: "none", background: "none" }}
         >
           <img src={vinyl} alt="vinyl" />
-        </button>
+        </button> */}
         <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
+        <MenuItem routerLink={<Link to="/" />}>
+            <img src={vinyl} alt="vinyl" />
+          </MenuItem>
           <MenuItem routerLink={<Link to="/members" />}>
             <img src={members} alt="members" />
           </MenuItem>
