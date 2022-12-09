@@ -6,7 +6,7 @@ const Back = () => {
   return (
     <div className="back">
       <button type="button" className="back-btn">
-        <a href="/" style={{ textDecoration: "none", color: "black" }}>
+        <a href="/" style={{ textDecoration: "none", color: "black", paddingLeft:"7rem" }}>
           🢦
         </a>
       </button>
