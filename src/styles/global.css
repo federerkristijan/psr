@@ -13,11 +13,15 @@ span {
 /* Sidebar */
 
 .sidebar-wrapper {
+  /* display: none; */
   height: 100%;
-  /* liek sticky but not breaking the page */
   position: fixed;
   right: 0;
   top: 0;
+}
+
+.sidebar-wrapper:hover {
+  display: block;
 }
 
 .css-1se900q.ps-collapsed,
@@ -173,6 +177,7 @@ img[alt="members"] {
 /* About */
 .about {
   margin: 8rem;
+
 }
 
 .about-data {
@@ -417,6 +422,7 @@ img[alt="members"] {
   .shop,
   .team {
     margin: 2rem;
+    overflow: visible;
   }
 
   a, h1, h2, h3, h4, p, span {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Sidebar,
   Menu,
@@ -23,33 +23,26 @@ import "../styles/global.css";
 const ToggleSidebar = () => {
   const { toggleSidebar } = useProSidebar();
 
-  // const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  // useEffect(() => {
-  //   if(open) {
-  //     <img src={Right} alt="right"/>
-  //   } else {
-  //     <img src={Left} alt= "left"/>
-  //   }
-  // }, [])
-
-  // const closeButtonHandler = () => {
-  //   setOpen(!open)
-  // }
+  // const ToggleSidebar = () => {
+  //   isOpen ? setIsOpen(false) : setIsOpen(true);
+  //   console.log(toggleSidebar);
+  // };
 
   return (
-    <div className="sidebar-wrapper">
-      <Sidebar defaultCollapsed="true" collapsedWidth="100px" height="100%">
-        {/* <button
-          onClick={() => {
-            toggleSidebar();
-          }}
-          style={{ border: "none", background: "none" }}
-        >
-          <img src={vinyl} alt="vinyl" />
-        </button> */}
+    <div className="sidebar-wrapper"
+    onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+    >
+      {isOpen && <Sidebar
+        defaultCollapsed="true"
+        collapsedWidth="80px"
+        height="100%"
+
+      >
         <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
-        <MenuItem routerLink={<Link to="/" />}>
+          <MenuItem routerLink={<Link to="/" />}>
             <img src={vinyl} alt="vinyl" />
           </MenuItem>
           <MenuItem routerLink={<Link to="/members" />}>
@@ -80,7 +73,7 @@ const ToggleSidebar = () => {
             <img src={impress} alt="impress" />
           </MenuItem>
         </Menu>
-      </Sidebar>
+      </Sidebar>}
     </div>
   );
 };
