@@ -13,15 +13,10 @@ span {
 /* Sidebar */
 
 .sidebar-wrapper {
-  /* display: none; */
   height: 100%;
   position: fixed;
   right: 0;
   top: 0;
-}
-
-.sidebar-wrapper:hover {
-  display: block;
 }
 
 .css-1se900q.ps-collapsed,
