@@ -15,7 +15,7 @@ span {
 .sidebar-wrapper {
   height: 100%;
   /* liek sticky but not breaking the page */
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
 }
