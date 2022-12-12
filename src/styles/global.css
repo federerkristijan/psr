@@ -418,4 +418,8 @@ img[alt="members"] {
   .team {
     margin: 2rem;
   }
+
+  a, h1, h2, h3, h4, p, span {
+    font-size: 18px;
+  }
 }
