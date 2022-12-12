@@ -39,7 +39,7 @@ const ToggleSidebar = () => {
 
   return (
     <div className="sidebar-wrapper">
-      <Sidebar defaultCollapsed="true" breakPoint="md" collapsedWidth="100px" height="100%">
+      <Sidebar defaultCollapsed="true" collapsedWidth="100px" height="100%">
         {/* <button
           onClick={() => {
             toggleSidebar();
