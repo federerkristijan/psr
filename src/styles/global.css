@@ -20,7 +20,8 @@ span {
   top: 0;
 }
 
-.css-1se900q.ps-collapsed, .css-1se900q {
+.css-1se900q.ps-collapsed,
+.css-1se900q {
   width: 100px;
   height: inherit;
   min-width: 100px;
@@ -49,7 +50,6 @@ img[alt="members"] {
   width: 26px;
   padding-top: 2.5rem;
 }
-
 
 /* Home */
 
@@ -172,7 +172,7 @@ img[alt="members"] {
 
 /* About */
 .about {
-  margin: 3rem;
+  margin: 8rem;
 }
 
 .about-data {
@@ -391,7 +391,7 @@ img[alt="members"] {
   margin: 1rem;
 }
 
-/* back */
+/* back
 .back {
   display: flex;
 }
@@ -404,4 +404,18 @@ img[alt="members"] {
 
 .back-btn > a {
   font-size: 40px;
+} */
+
+@media screen and (max-width: 720px) {
+  /* wrappers */
+  .about,
+  .contact,
+  .events,
+  .impressum,
+  .media,
+  .partners,
+  .shop,
+  .team {
+    margin: 2rem;
+  }
 }
