@@ -4,7 +4,7 @@ import {
   Menu,
   MenuItem,
   SubMenu,
-  useProSidebar,
+
 } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 
@@ -23,7 +23,7 @@ import "../styles/global.css";
 const ToggleSidebar = () => {
   // const { toggleSidebar } = useProSidebar();
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   // const ToggleSidebar = () => {
   //   isOpen ? setIsOpen(false) : setIsOpen(true);
