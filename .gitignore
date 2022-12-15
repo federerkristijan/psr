@@ -6,6 +6,13 @@
 /.pnp
 .pnp.js
 
+
+# server
+/server/.env
+server//node_modules
+/server/.pnp
+/server/.pnp.js
+
 # testing
 /coverage
 
