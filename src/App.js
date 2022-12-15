@@ -25,18 +25,12 @@ import ToggleSidebar from "./components/Sidebar";
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 
 const App = () => {
-  // const { collapseSidebar } = useProSidebar();
 
   return (
     <GraphQLContextProvider>
       <BrowserRouter>
         <div className="App">
-        {/* <Sidebar
-        style={{ maxWidth: "15%", border: "1px solid black", position: "absolute", height: "100%", overflow: "hidden" }}
-      >
-      </Sidebar> */}
       <ToggleSidebar
-        closeOnClick= "true"
       />
           <Routes>
             <Route path="/" element={<Layout />}>
