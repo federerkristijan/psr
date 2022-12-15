@@ -33,11 +33,11 @@ export const GraphQLContextProvider = (props) => {
     const requestList = [
       `mutation {
   createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}"    })
-  
+
   {
     _id
     email
-    
+
   }}
 `,
       `{

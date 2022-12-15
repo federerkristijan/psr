@@ -1,43 +1,26 @@
-import React, { useEffect, useState } from "react";
-// https://github.com/notrab/react-use-cart
-import { CartProvider, useCart } from "react-use-cart";
+import React, { useEffect, useRef, useState } from "react";
 
-import sanityClient from "../lib/client";
+import { GraphQLContext } from "./GraphQLContext";
 
 // todo sanity and stripe
 
 const Cart = (tracks) => {
-  const { addItem } = useCart();
-  const [cart, setCart] = useState(false);
+  const cartRef = useRef();
+  const { userData, setUserData } = GraphQLContext;
 
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "record"] {
-          _id,
-          title,
-          artist,
-          cover,
-          price,
-          singleTrack,
-          multiTrack
-        }`
-      )
-      .then((data) => setCart(data))
-      .catch(console.error);
-  }, []);
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.strigify(cartItems);
+    });
+  };
 
-  return (
-    <div className="cart-wrapper">
-      {cart &&
-        cart.map((item) => (
-          <div className="cart-data" key={item.id}>
-            <div className="cart-display"></div>
-            <button onClick={() => addItem(item)}>Add to cart</button>
-          </div>
-        ))}
-    </div>
-  );
+  return <div className="cart-wrapper">I am cart, fear me</div>;
 };
 
 export default Cart;
