@@ -33,11 +33,11 @@ export const GraphQLContextProvider = (props) => {
     const requestList = [
       `mutation {
   createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}"    })
-  
+
   {
     _id
     email
-    
+
   }}
 `,
       `{
@@ -67,6 +67,8 @@ export const GraphQLContextProvider = (props) => {
       .then((res) => res.json())
       .then((resData) => console.log(resData));
   };
+
+  
 
   return (
     <GraphQLContext.Provider value={{ GraphQLHandler, userData, setUserData }}>

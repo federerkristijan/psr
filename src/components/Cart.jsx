@@ -7,11 +7,7 @@ import sanityClient from "../lib/client";
 
 const Cart = (tracks) => {
   const cartRef = useRef();
-  const {
-    token,
-    productId,
-    userId
-  } = GraphQLContext;
+  const { token, productId, userId } = GraphQLContext;
   // const [cart, setCart] = useState(false);
 
   // useEffect(() => {
@@ -32,14 +28,18 @@ const Cart = (tracks) => {
   // }, []);
 
   const handleCheckout = async () => {
-    const stripe = await getStripe(); 
-  }
+    const stripe = await getStripe();
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.strigify(cartItems);
+    });
+  };
 
-  return (
-    <div className="cart-wrapper">
-      I am cart, fear me
-    </div>
-  );
+  return <div className="cart-wrapper">I am cart, fear me</div>;
 };
 
 export default Cart;
