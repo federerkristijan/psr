@@ -68,8 +68,6 @@ export const GraphQLContextProvider = (props) => {
       .then((resData) => console.log(resData));
   };
 
-  
-
   return (
     <GraphQLContext.Provider value={{ GraphQLHandler, userData, setUserData }}>
       {props.children}

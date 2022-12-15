@@ -1,31 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { GraphQLContext } from "./GraphQLContext";
-import sanityClient from "../lib/client";
 
 // todo sanity and stripe
 
 const Cart = (tracks) => {
   const cartRef = useRef();
-  const { token, productId, userId } = GraphQLContext;
-  // const [cart, setCart] = useState(false);
-
-  // useEffect(() => {
-  //   sanityClient
-  //     .fetch(
-  //       `*[_type == "record"] {
-  //         _id,
-  //         title,
-  //         artist,
-  //         cover,
-  //         price,
-  //         singleTrack,
-  //         multiTrack
-  //       }`
-  //     )
-  //     .then((data) => setCart(data))
-  //     .catch(console.error);
-  // }, []);
+  const { userData, setUserData } = GraphQLContext;
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
