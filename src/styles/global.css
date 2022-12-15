@@ -17,14 +17,15 @@ span {
   position: fixed;
   right: 0;
   top: 0;
+  width: 80px;
 }
 
-.css-1se900q.ps-collapsed,
+/* .css-1se900q.ps-collapsed,
 .css-1se900q {
   width: 100px;
   height: inherit;
   min-width: 100px;
-}
+} */
 
 /* img[alt="vinyl"] {
   padding-top: 2.5rem;

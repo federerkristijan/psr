@@ -25,21 +25,14 @@ const ToggleSidebar = () => {
 
   const [isOpen, setIsOpen] = useState(true);
 
-  // const ToggleSidebar = () => {
-  //   isOpen ? setIsOpen(false) : setIsOpen(true);
-  //   console.log(toggleSidebar);
-  // };
-
   return (
-    <div className="sidebar-wrapper">
+    <div className="sidebar-wrapper"
+    onMouseEnter={() => setIsOpen(true)}
+    onMouseLeave={() => setIsOpen(false)}
+    >
+      {isOpen && (
       <Sidebar
-        defaultCollapsed="true"
-        collapsedWidth="80px"
-        height="100%"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
       >
-        {isOpen && (
           <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
             <MenuItem routerLink={<Link to="/" />}>
               <img src={vinyl} alt="vinyl" />
@@ -72,8 +65,8 @@ const ToggleSidebar = () => {
               <img src={impress} alt="impress" />
             </MenuItem>
           </Menu>
-        )}
       </Sidebar>
+        )}
     </div>
   );
 };
