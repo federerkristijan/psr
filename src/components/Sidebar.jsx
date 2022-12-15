@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 
 import vinyl from "../assets/icons/vinyl-record.png";
@@ -21,23 +15,18 @@ import members from "../assets/icons/user.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
-  // const { toggleSidebar } = useProSidebar();
-
-  const [isOpen, setIsOpen] = useState(true);
-
-  // const ToggleSidebar = () => {
-  //   isOpen ? setIsOpen(false) : setIsOpen(true);
-  //   console.log(toggleSidebar);
-  // };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sidebar-wrapper">
+    <div
+      className="sidebar-wrapper"
+      onMouseOver={() => setIsOpen(true)}
+      onMouseExit={() => setIsOpen(false)}
+    >
       <Sidebar
         defaultCollapsed="true"
         collapsedWidth="80px"
-        height="100%"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
+        height="inherit"
       >
         {isOpen && (
           <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>

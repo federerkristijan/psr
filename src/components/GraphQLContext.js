@@ -3,13 +3,26 @@ import { createContext, useState } from "react";
 export const GraphQLContext = createContext();
 
 export const GraphQLContextProvider = (props) => {
-  let returnData = [];
+  const [userData, setUserData] = useState({
+    firstName: "",
+    password: "",
+    email: "",
+    country: "",
+    lastName: "",
+    city: "",
+    street: "",
+    streetNumber: "",
+    zipCode: "",
+    loginPassword: "",
+    loginEmail: "",
+    token: "",
+  });
 
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 15:20 ////////////
-  // personalData is grouped as:
-  // 0. firstname
-  // 1. country
-  //
+  // GraphQLHandler
+  // 0. CreateUser
+  // 1. LoginUser
+  // 2. shoppingCard
   //
   //
   //
@@ -19,16 +32,23 @@ export const GraphQLContextProvider = (props) => {
     console.log(userData[1]);
     const requestList = [
       `mutation {
-  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}" })
+  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}"    })
   
   {
     _id
     email
-    name
+    
   }}
 `,
       `{
         login(email: "${userData.email}", password: "${userData.password}"){
+          token
+          userId
+        }
+      }
+`,
+      `{
+        shoppingCard(token: "${userData.token}", productId: "${userData.productId}", userId: "${userData.productId}"){
           token
           userId
         }
@@ -49,7 +69,7 @@ export const GraphQLContextProvider = (props) => {
   };
 
   return (
-    <GraphQLContext.Provider value={{ GraphQLHandler }}>
+    <GraphQLContext.Provider value={{ GraphQLHandler, userData, setUserData }}>
       {props.children}
     </GraphQLContext.Provider>
   );
