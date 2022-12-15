@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-// https://github.com/notrab/react-use-cart
-// import { CartProvider, useCart } from "react-use-cart";
+import React, { useEffect, useRef, useState } from "react";
 
 import { GraphQLContext } from "./GraphQLContext";
 import sanityClient from "../lib/client";
@@ -8,27 +6,38 @@ import sanityClient from "../lib/client";
 // todo sanity and stripe
 
 const Cart = (tracks) => {
-  const [cart, setCart] = useState(false);
+  const cartRef = useRef();
+  const {
+    token,
+    productId,
+    userId
+  } = GraphQLContext;
+  // const [cart, setCart] = useState(false);
 
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "record"] {
-          _id,
-          title,
-          artist,
-          cover,
-          price,
-          singleTrack,
-          multiTrack
-        }`
-      )
-      .then((data) => setCart(data))
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   sanityClient
+  //     .fetch(
+  //       `*[_type == "record"] {
+  //         _id,
+  //         title,
+  //         artist,
+  //         cover,
+  //         price,
+  //         singleTrack,
+  //         multiTrack
+  //       }`
+  //     )
+  //     .then((data) => setCart(data))
+  //     .catch(console.error);
+  // }, []);
+
+  const handleCheckout = async () => {
+    const stripe = await getStripe(); 
+  }
 
   return (
     <div className="cart-wrapper">
+      I am cart, fear me
     </div>
   );
 };
