@@ -20,12 +20,16 @@ span {
   width: 80px;
 }
 
-/* .css-1se900q.ps-collapsed,
+.css-1k88rtw.ps-collapsed {
+  height: 100%;
+}
+
+.css-1se900q.ps-collapsed,
 .css-1se900q {
   width: 100px;
-  height: inherit;
+  height: 100%;
   min-width: 100px;
-} */
+}
 
 /* img[alt="vinyl"] {
   padding-top: 2.5rem;
@@ -61,6 +65,12 @@ img[alt="members"] {
 
 .image-map__content__img {
   height: 100%;
+}
+
+.image-map__content usage-map {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .image-map__content__img:not(.active) ~ *:after {
