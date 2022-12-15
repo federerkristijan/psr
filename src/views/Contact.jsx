@@ -11,21 +11,8 @@ const Contact = () => {
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
   const [contact, setContact] = useState("");
-  const [userData, setUserData] = useState({
-    firstName: "",
-    password: "",
-    email: "",
-    country: "",
-    lastName: "",
-    city: "",
-    street: "",
-    streetNumber: "",
-    zipCode: "",
-    loginPassword: "",
-    loginEmail: "",
-  });
 
-  const { GraphQLHandler } = useContext(GraphQLContext);
+  const { GraphQLHandler, userData, setUserData } = useContext(GraphQLContext);
 
   const textInputHandler = (e) => {
     setUserData({ ...userData, [e.target.id]: e.target.value });
@@ -85,7 +72,7 @@ const Contact = () => {
         <input key={"sore"} id="street" onChange={textInputHandler} />
         streetNumber:
         <input key={"stre"} id="streetNumber" onChange={textInputHandler} />
-        ZipCode:
+        zipCode:
         <input key={"zipC"} id="zipCode" onChange={textInputHandler} />
       </div>
       <hr
@@ -115,8 +102,7 @@ const Contact = () => {
           height: "3px",
         }}
       />
-      ;
-      {/* <Back /> */}
+      ;{/* <Back /> */}
       {contact &&
         contact.map((item) => (
           <div className="contact-data">

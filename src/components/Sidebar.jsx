@@ -26,7 +26,7 @@ const ToggleSidebar = () => {
 
   return (
     <div
-      style={{ width: "20px", height: "100%" }}
+      style={{ position: "right", width: "20px", height: "100%" }}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
