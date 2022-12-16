@@ -13,7 +13,7 @@ const Cart = (tracks) => {
     cartItems,
     setShowCart,
     toggleCartItemQuantity,
-    onRemove
+    onRemove,
   } = useCartContext;
 
   const handleCheckout = async () => {
@@ -21,8 +21,8 @@ const Cart = (tracks) => {
     const response = await fetch("/api/stripe", {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.strigify(cartItems),
     });
@@ -31,10 +31,17 @@ const Cart = (tracks) => {
 
     const data = await response.json();
 
-    stripe.redirectToCheckout({ sessionId: data.id })
+    stripe.redirectToCheckout({ sessionId: data.id });
   };
 
-  return <div className="cart-wrapper">I am cart, fear me</div>;
+  return (
+  <div className="cart-wrapper" ref={cartRef}>
+    <div className="cart-container">
+      <button>
+        
+      </button>
+    </div>
+  </div>);
 };
 
 export default Cart;

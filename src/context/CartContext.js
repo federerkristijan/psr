@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const Context = createContext();
 
@@ -110,6 +110,7 @@ export const CartContext = ({ children }) => {
         incQty,
         decQty,
         onAdd,
+        toggleCartItemQuantity,
         onRemove,
         setCartItems,
         setTotalPrice,
