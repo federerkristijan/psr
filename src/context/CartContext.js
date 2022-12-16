@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const Context = createContext();
 
-export const CartContext = ({ children }) => {
+export const CartContextProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -79,9 +79,47 @@ export const CartContext = ({ children }) => {
           ...newCartItems,
           { ...foundProduct, quantity: foundProduct.quantity - 1 },
         ]);
-        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price)
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuantites((prevTotalQuantites) => prevTotalQuantites - 1);
       }
     }
   };
+
+  // increasing quantity
+  const incQty = () => {
+    setQty((prevQty) => prevQty + 1);
+  };
+
+  // descreasing quantity
+  const decQty = () => {
+    setQty((prevQty) => {
+      // setting the minQty to 1
+      if (prevQty - 1 < 1) return 1;
+      return prevQty - 1;
+    });
+  };
+
+  return (
+    <Context.Provider
+      value={{
+        showCart,
+        setShowCart,
+        totalPrice,
+        totalQuantites,
+        qty,
+        incQty,
+        decQty,
+        onAdd,
+        toggleCartItemQuantity,
+        onRemove,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantites,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
+
+export const useCartContext = () => useContext(CartContextProvider);
