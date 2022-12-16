@@ -26,6 +26,12 @@ const Cart = (tracks) => {
       },
       body: JSON.strigify(cartItems),
     });
+
+    if (response.statusCode === 500) return;
+
+    const data = await response.json();
+
+    stripe.redirectToCheckout({ sessionId: data.id })
   };
 
   return <div className="cart-wrapper">I am cart, fear me</div>;
