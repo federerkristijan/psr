@@ -98,6 +98,27 @@ export const CartContext = ({ children }) => {
       return prevQty - 1;
     });
   };
+
+  return (
+    <Context.Provider
+      value={{
+        showCart,
+        setShowCart,
+        totalPrice,
+        totalQuantites,
+        qty,
+        incQty,
+        decQty,
+        onAdd,
+        onRemove,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantites,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
 
 export const useCartContext = () => useContext(CartContext);
