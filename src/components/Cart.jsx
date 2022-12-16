@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { AiOutlineLeft } from "react-icons/ai";
+
+// credits to https://notiflix.github.io/documentation
 
 import { useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
@@ -37,8 +40,14 @@ const Cart = (tracks) => {
   return (
   <div className="cart-wrapper" ref={cartRef}>
     <div className="cart-container">
-      <button>
-        
+      <button
+        type="button"
+        className="cart-heading"
+        onClick={() => setShowCart(false)}
+      >
+        <AiOutlineLeft/>
+        <span className="cart-heading">Your Cart</span>
+        <span className="cart-num-items">({totalQuantites} items)</span>
       </button>
     </div>
   </div>);
