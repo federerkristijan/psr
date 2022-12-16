@@ -1,13 +1,7 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
-// import {
-//   Sidebar,
-//   Menu,
-//   MenuItem,
-//   SubMenu,
-//   useProSidebar,
-// } from "react-pro-sidebar";
+import { CartContextProvider } from "./context/CartContext";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -25,35 +19,34 @@ import ToggleSidebar from "./components/Sidebar";
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 
 const App = () => {
-
   return (
     <GraphQLContextProvider>
-      <BrowserRouter>
-        <div className="App">
-      <ToggleSidebar
-      />
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/impressum" element={<Impressum />} />
-              <Route path="/media" element={<Media />} />
-              <Route path="/partners" element={<Partners />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/shop/cart" element={<Cart />} />
-              <Route path="/team" element={<Team />} />
-            </Route>
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <div className="App">
+            <ToggleSidebar />
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/impressum" element={<Impressum />} />
+                <Route path="/media" element={<Media />} />
+                <Route path="/partners" element={<Partners />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/shop/cart" element={<Cart />} />
+                <Route path="/team" element={<Team />} />
+              </Route>
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </CartContextProvider>
     </GraphQLContextProvider>
   );
-}
+};
 
 const Layout = () => {
-
   return (
     <>
       <Outlet />
