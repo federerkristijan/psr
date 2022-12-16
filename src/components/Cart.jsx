@@ -1,12 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { GraphQLContext } from "./GraphQLContext";
+import { useCartContext } from "../context/CartContext";
+import getStripe from "../lib/getStripe";
 
 // todo sanity and stripe
 
 const Cart = (tracks) => {
   const cartRef = useRef();
-  const { userData, setUserData } = GraphQLContext;
+  const {
+    totalPrice,
+    totalQuantites,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuantity,
+    onRemove
+  } = useCartContext;
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
@@ -16,7 +24,7 @@ const Cart = (tracks) => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.strigify(cartItems);
+      body: JSON.strigify(cartItems),
     });
   };
 
