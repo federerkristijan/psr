@@ -6,6 +6,7 @@ import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
 import { useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 // todo sanity and stripe
 
@@ -34,6 +35,8 @@ const Cart = (tracks) => {
     if (response.statusCode === 500) return;
 
     const data = await response.json();
+
+    toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
