@@ -6,13 +6,13 @@ import {
   AiOutlinePlus,
   AiOutlineShopping,
 } from "react-icons/ai";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 // credits to https://notiflix.github.io/documentation
 
 import { useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
-import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
