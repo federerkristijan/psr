@@ -6,13 +6,13 @@ import {
   AiOutlinePlus,
   AiOutlineShopping,
 } from "react-icons/ai";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 // credits to https://notiflix.github.io/documentation
 
 import { useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
-import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
@@ -60,8 +60,7 @@ const Cart = (tracks) => {
           <span className="cart-heading">Your Cart</span>
           <span className="cart-num-items">({totalQuantites} items)</span>
         </button>
-        {/* empty cart - not active yet */}
-        {/* {cartItems.length < 1 && (
+        {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
             <h3>Your shopping is empty</h3>
@@ -75,7 +74,7 @@ const Cart = (tracks) => {
               </button>
             </Link>
           </div>
-        )} */}
+        )}
         <div className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
@@ -123,6 +122,19 @@ const Cart = (tracks) => {
               </div>
             ))}
         </div>
+        {cartItems.length >= 1 && (
+          <div className="cart-bottom">
+            <div className="total">
+              <h3>Subtotal</h3>
+              <h3>{totalPrice}</h3>
+            </div>
+            <div className="btn-container">
+              <button type="button" className="btn" onClick={handleCheckout}>
+                Pay
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
