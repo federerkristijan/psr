@@ -60,8 +60,7 @@ const Cart = (tracks) => {
           <span className="cart-heading">Your Cart</span>
           <span className="cart-num-items">({totalQuantites} items)</span>
         </button>
-        {/* empty cart - not active yet */}
-        {/* {cartItems.length < 1 && (
+        {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
             <h3>Your shopping is empty</h3>
@@ -75,7 +74,7 @@ const Cart = (tracks) => {
               </button>
             </Link>
           </div>
-        )} */}
+        )}
         <div className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
