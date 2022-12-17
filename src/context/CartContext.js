@@ -61,7 +61,7 @@ export const CartContextProvider = ({ children }) => {
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id);
 
-    if (value === "increase") {
+    if (value === "inc") {
       // updating the current cart items and adding a new element
       setCartItems([
         ...newCartItems,
@@ -72,7 +72,7 @@ export const CartContextProvider = ({ children }) => {
       ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
       setTotalQuantites((prevTotalQuantites) => prevTotalQuantites + 1);
-    } else if (value === "decrease") {
+    } else if (value === "dec") {
       // stops the counter at 0
       if (foundProduct.quantity > 1) {
         setCartItems([
