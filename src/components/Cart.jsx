@@ -1,11 +1,19 @@
 import React, { useRef } from "react";
-import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
+import {
+  AiOutlineDelete,
+  AiOutlineLeft,
+  AiOutlineMinus,
+  AiOutlinePlus,
+  AiOutlineShopping,
+} from "react-icons/ai";
 
 // credits to https://notiflix.github.io/documentation
 
 import { useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
 
@@ -34,6 +42,8 @@ const Cart = (tracks) => {
     if (response.statusCode === 500) return;
 
     const data = await response.json();
+
+    toast.loading("Redirecting...");
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
@@ -66,6 +76,53 @@ const Cart = (tracks) => {
             </Link>
           </div>
         )} */}
+        <div className="product-container">
+          {cartItems.length >= 1 &&
+            cartItems.map((item) => (
+              <div className="product" key={item._id}>
+                <img
+                  src={urlFor(item?.image[0])}
+                  className="cart-product-image"
+                  alt="record_img"
+                />
+                <div className="item-desc">
+                  <div className="flex-top">
+                    <h5>{item.name}</h5>
+                    <h4>{item.price}</h4>
+                  </div>
+                  <div className="flex-bottom">
+                    <div>
+                      <p className="quantity-desc">
+                        <span
+                          className="minus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "dec")
+                          }
+                        >
+                          <AiOutlineMinus />
+                        </span>
+                        <span
+                          className="plus"
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, "inc")
+                          }
+                        >
+                          <AiOutlinePlus />
+                        </span>
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
+                      <AiOutlineDelete />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
