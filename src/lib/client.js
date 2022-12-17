@@ -1,4 +1,5 @@
 import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default sanityClient({
   projectId: "pyenle2m",
@@ -7,3 +8,7 @@ export default sanityClient({
   useCdn: true,
   token: process.env.SANITY_AUTH_TOKEN,
 })
+
+const builder = imageUrlBuilder(sanityClient);
+
+export const urlFor = (source) => builder.image(source);
