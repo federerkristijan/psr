@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-hot-toast";
 
 const Context = createContext();
 
@@ -42,6 +43,7 @@ export const CartContextProvider = ({ children }) => {
       product.quantity = quantity;
       setCartItems([...cartItems, { ...product }]);
     }
+    toast.success(`${qty} ${product.name} added to the cart.`);
   };
 
   // remove button

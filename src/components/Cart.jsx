@@ -17,7 +17,7 @@ import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
 
-const Cart = (tracks) => {
+const Cart = (shop) => {
   const cartRef = useRef();
   const {
     totalPrice,
@@ -46,6 +46,7 @@ const Cart = (tracks) => {
     toast.loading("Redirecting...");
 
     stripe.redirectToCheckout({ sessionId: data.id });
+    console.log(data, "stripe date");
   };
 
   return (
@@ -60,7 +61,8 @@ const Cart = (tracks) => {
           <span className="cart-heading">Your Cart</span>
           <span className="cart-num-items">({totalQuantites} items)</span>
         </button>
-        {cartItems.length < 1 && (
+
+        {/* {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
             <h3>Your shopping is empty</h3>
@@ -74,8 +76,8 @@ const Cart = (tracks) => {
               </button>
             </Link>
           </div>
-        )}
-        <div className="product-container">
+        )} */}
+        {/* <div className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div className="product" key={item._id}>
@@ -121,8 +123,8 @@ const Cart = (tracks) => {
                 </div>
               </div>
             ))}
-        </div>
-        {cartItems.length >= 1 && (
+        </div> */}
+        {/* {cartItems.length >= 1 && (
           <div className="cart-bottom">
             <div className="total">
               <h3>Subtotal</h3>
@@ -134,7 +136,7 @@ const Cart = (tracks) => {
               </button>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
