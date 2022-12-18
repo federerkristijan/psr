@@ -17,7 +17,7 @@ import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
 
-const Cart = (tracks) => {
+const Cart = (shop) => {
   const cartRef = useRef();
   const {
     totalPrice,
