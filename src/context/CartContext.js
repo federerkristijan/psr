@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import { createContext, useState } from "react";
 // import { toast } from "react-hot-toast";
+import { getProductData } from "../store/ProductsStore";
 
 export const CartContext = createContext({
   items: [],
