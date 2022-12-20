@@ -1,7 +1,14 @@
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 
-const Context = createContext();
+const Context = createContext({
+  items: [],
+  getProductQuantity: () => {},
+  addItemToCart: () => {},
+  removeItemFromCart: () => {},
+  deleteFromCart: () => {},
+  getTotalCost: () => {}
+});
 
 export const CartContextProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
