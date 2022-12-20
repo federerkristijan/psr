@@ -13,9 +13,19 @@ export const Context = createContext({
 export const CartContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
-  const getProductQuantity = () => {
+  const getProductQuantity = (id) => {
     const quantity = cartProducts.find(product => product.id === id)?.quantity;
+
+    if (quantity === undefined) {
+      return 0;
+    }
+
+    return quantity;
   }
+
+  
+
+
 
   // add button
   // const onAdd = (product, quantity) => {
