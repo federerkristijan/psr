@@ -1,8 +1,8 @@
 /* eslint-disable array-callback-return */
-import { createContext, useContext, useState } from "react";
-import { toast } from "react-hot-toast";
+import { createContext, useState } from "react";
+// import { toast } from "react-hot-toast";
 
-export const Context = createContext({
+export const CartContext = createContext({
   items: [],
   getProductQuantity: () => {},
   addItemToCart: () => {},
@@ -11,7 +11,7 @@ export const Context = createContext({
   getTotalCost: () => {}
 });
 
-export const CartContextProvider = ({ children }) => {
+const CartContextProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
   const getProductQuantity = (id) => {
@@ -172,26 +172,14 @@ export const CartContextProvider = ({ children }) => {
   // };
 
   return (
-    <Context.Provider
-      value={{
-        showCart,
-        setShowCart,
-        totalPrice,
-        totalQuantites,
-        qty,
-        incQty,
-        decQty,
-        onAdd,
-        toggleCartItemQuantity,
-        onRemove,
-        setCartItems,
-        setTotalPrice,
-        setTotalQuantites,
-      }}
+    <CartContext.Provider
+      value={contextValue}
     >
       {children}
-    </Context.Provider>
+    </CartContext.Provider>
   );
 };
 
-export const useCartContext = () => useContext(CartContextProvider);
+export default CartContextProvider;
+
+// export const useCartContext = () => useContext(CartContextProvider);
