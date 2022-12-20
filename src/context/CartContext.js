@@ -59,6 +59,14 @@ export const CartContextProvider = ({ children }) => {
     }
   }
 
+   const deleteFromCart = (id) => {
+    setCartProducts(
+      cartProducts => cartProducts.filter(currentProduct => {
+        return currentProduct.id !== id;
+      })
+    )
+   }
+
 
 
   // add button
