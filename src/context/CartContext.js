@@ -78,6 +78,15 @@ export const CartContextProvider = ({ children }) => {
     return totalCost;
   }
 
+  const contextValue = {
+    items: cartProducts,
+    getProductQuantity,
+    addItemToCart,
+    removeItemFromCart,
+    deleteFromCart,
+    getTotalCost
+  }
+
   // add button
   // const onAdd = (product, quantity) => {
   //   const checkProductInCart = cartItems.find(
