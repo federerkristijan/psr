@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 
@@ -59,7 +60,7 @@ export const CartContextProvider = ({ children }) => {
     }
   }
 
-   const deleteFromCart = (id) => {
+  const deleteFromCart = (id) => {
     setCartProducts(
       cartProducts => cartProducts.filter(currentProduct => {
         return currentProduct.id !== id;
@@ -67,7 +68,15 @@ export const CartContextProvider = ({ children }) => {
     )
    }
 
+  const getTotalCost = (id) => {
+    let totalCost = 0;
 
+    cartProducts.map(cartItem => {
+      const productData = getProductData(cartItem.id);
+      totalCost += (productData.price * cartItem.quantity);
+    })
+    return totalCost;
+  }
 
   // add button
   // const onAdd = (product, quantity) => {
