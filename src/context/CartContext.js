@@ -45,6 +45,20 @@ export const CartContextProvider = ({ children }) => {
     }
   }
 
+  const removeItemFromCart = (id) => {
+    const quantity = getProductQuantity(id);
+
+    if (quantity === 1) {
+      deleteFromCart(id);
+    } else {
+      setCartProducts(
+        cartProducts.map(
+          product => product.id ===id ? { ...product, product: quantity - 1 } : product
+        )
+      )
+    }
+  }
+
 
 
   // add button
