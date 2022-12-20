@@ -1,6 +1,9 @@
+import { id, title, price } from "../views/Shop";
 // fetch Sanity products
 
-const productsArray = (id, title, price) => {};
+// const productsArray = () => {
+//   const product = {id, title, price}
+// };
 
 const getProductData = (id) => {
   let ProductData = productsArray.find(product => product.id === id);
