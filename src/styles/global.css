@@ -37,6 +37,11 @@ span {
   gap: 2.5rem;
 }
 
+.css-mf2zkt {
+  padding-top: 1.4rem;
+  padding-bottom: 0.7rem;
+}
+
 /* img[alt="vinyl"] {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
@@ -57,7 +62,7 @@ img[alt="partners"],
 img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
-  width: 26px;
+  width: 75%;
   padding-top: 2.5rem;
 }
 
