@@ -73,6 +73,12 @@ img[alt="members"] {
   position: relative;
 }
 
+.image-map__content__img active {
+  height: auto;
+  max-width: 90%;
+  margin-top: 3rem;
+}
+
 .image-map__content__img:not(.active) ~ *:after {
   display: none;
 }
@@ -401,21 +407,6 @@ img[alt="members"] {
 .team-data {
   margin: 1rem;
 }
-
-/* back
-.back {
-  display: flex;
-}
-
-.back-btn {
-  border: none;
-  background: none;
-  border-radius: 9px;
-}
-
-.back-btn > a {
-  font-size: 40px;
-} */
 
 @media screen and (max-width: 720px) {
   /* wrappers */

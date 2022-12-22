@@ -3,7 +3,6 @@ import sanityClient from "../lib/client";
 import { GraphQLContext } from "../components/GraphQLContext";
 
 import "../styles/global.css";
-// import Back from "../components/Back";
 
 const Contact = () => {
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 14:32 ////////////
@@ -102,7 +101,7 @@ const Contact = () => {
           height: "3px",
         }}
       />
-      ;{/* <Back /> */}
+      ;
       {contact &&
         contact.map((item) => (
           <div className="contact-data">

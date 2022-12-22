@@ -3,7 +3,6 @@ import sanityClient from "../lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 import "../styles/global.css";
-// import Back from '../components/Back';
 
 const Team = () => {
   const [team, setTeam] = useState(null);
@@ -29,7 +28,6 @@ const Team = () => {
 
   return (
     <div className="team">
-      {/* <Back /> */}
       <div className="team-title">
         <h2>Our Team</h2>
       </div>

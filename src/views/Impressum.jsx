@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../lib/client";
 
 import "../styles/global.css";
-// import Back from '../components/Back';
 
 
 const Impressum = () => {
@@ -23,7 +22,6 @@ const Impressum = () => {
 
   return (
     <div className="impressum">
-      {/* <Back /> */}
       <div className="impressum-header">
         <h1>Here comes impressum</h1>
       </div>

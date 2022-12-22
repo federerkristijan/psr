@@ -174,7 +174,7 @@ const Home = () => {
         src={PartyStore}
         map={mapArea}
         onMapClick={imageMap_click}
-        style={{ height: "auto", maxWidth: "90%", marginTop: "1rem"}}
+        style={{ height: "auto", maxWidth: "95%", marginTop: "5rem"}}
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       />
