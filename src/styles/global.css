@@ -7,28 +7,41 @@ h4,
 p,
 span {
   letter-spacing: 0.5rem;
-  font-size: 26px;
+  /* font-size: 26px; */
 }
 
 /* Sidebar */
 
 .sidebar-wrapper {
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   right: 0;
   top: 0;
   width: 80px;
-}
-
-.css-1k88rtw.ps-collapsed {
-  height: 100%;
+  border: 1px solid green;
 }
 
 .css-1se900q.ps-collapsed,
 .css-1se900q {
   width: 100px;
-  height: 100%;
+  /* height: 100%; */
   min-width: 100px;
+}
+
+.ps-sidebar-root.css-1k88rtw.ps-collapsed {
+  width: 6rem;
+  min-width: 6rem;
+}
+
+.css-ewdv3l {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.css-mf2zkt {
+  padding-top: 1.4rem;
+  padding-bottom: 0.7rem;
 }
 
 /* img[alt="vinyl"] {
@@ -51,7 +64,7 @@ img[alt="partners"],
 img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
-  width: 26px;
+  width: 75%;
   padding-top: 2.5rem;
 }
 
@@ -60,7 +73,7 @@ img[alt="members"] {
 .home {
   display: block;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .image-map__content__img {
@@ -71,6 +84,12 @@ img[alt="members"] {
   height: 100%;
   width: 100%;
   position: relative;
+}
+
+.image-map__content__img active {
+  height: auto;
+  max-width: 90%;
+  margin-top: 3rem;
 }
 
 .image-map__content__img:not(.active) ~ *:after {
@@ -183,7 +202,6 @@ img[alt="members"] {
 /* About */
 .about {
   margin: 8rem;
-
 }
 
 .about-data {
@@ -402,23 +420,9 @@ img[alt="members"] {
   margin: 1rem;
 }
 
-/* back
-.back {
-  display: flex;
-}
-
-.back-btn {
-  border: none;
-  background: none;
-  border-radius: 9px;
-}
-
-.back-btn > a {
-  font-size: 40px;
-} */
-
 @media screen and (max-width: 720px) {
   /* wrappers */
+  .home,
   .about,
   .contact,
   .events,
@@ -427,11 +431,24 @@ img[alt="members"] {
   .partners,
   .shop,
   .team {
-    margin: 2rem;
+    /* margin: 2rem; */
+    overflow: visible;
+    transform: scale(0.8);
+  }
+
+  .sidebar-wrapper {
+    transform: scale(0.6);
+    height: 100%;
     overflow: visible;
   }
 
-  a, h1, h2, h3, h4, p, span {
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
     font-size: 18px;
   }
 }

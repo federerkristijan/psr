@@ -6,7 +6,6 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
-// import Back from "../components/Back";
 import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
 
@@ -51,7 +50,6 @@ const Shop = () => {
               <AiOutlineShoppingCart />
             </Link>
           </div>
-          {/* <Back /> */}
           <div className="shop-header">
             <div className="shop-title">
               <h1>Shop</h1>

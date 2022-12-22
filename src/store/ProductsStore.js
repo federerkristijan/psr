@@ -1,9 +1,9 @@
-import { id, title, price } from "../views/Shop";
+// import { title, price } from "../views/Shop";
 // fetch Sanity products
 
-// const productsArray = () => {
-//   const product = {id, title, price}
-// };
+const productsArray = (props) => {
+  let product = [props];
+};
 
 const getProductData = (id) => {
   let ProductData = productsArray.find(product => product.id === id);
@@ -16,4 +16,4 @@ const getProductData = (id) => {
   return ProductData;
 }
 
-export { productsArray, getProductData };
+export { getProductData };
