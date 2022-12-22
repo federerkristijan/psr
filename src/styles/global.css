@@ -421,6 +421,7 @@ img[alt="members"] {
 
 @media screen and (max-width: 720px) {
   /* wrappers */
+  .home,
   .about,
   .contact,
   .events,
@@ -431,6 +432,7 @@ img[alt="members"] {
   .team {
     margin: 2rem;
     overflow: visible;
+    transform: scale(0.8);
   }
 
   a, h1, h2, h3, h4, p, span {
