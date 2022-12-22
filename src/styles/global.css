@@ -7,28 +7,30 @@ h4,
 p,
 span {
   letter-spacing: 0.5rem;
-  font-size: 26px;
+  /* font-size: 26px; */
 }
 
 /* Sidebar */
 
 .sidebar-wrapper {
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   right: 0;
   top: 0;
   width: 80px;
-}
-
-.css-1k88rtw.ps-collapsed {
-  height: 100%;
+  border: 1px solid green;
 }
 
 .css-1se900q.ps-collapsed,
 .css-1se900q {
   width: 100px;
-  height: 100%;
+  /* height: 100%; */
   min-width: 100px;
+}
+
+.ps-sidebar-root.css-1k88rtw.ps-collapsed {
+  width: 6rem;
+  min-width: 6rem;
 }
 
 .css-ewdv3l {
@@ -71,7 +73,7 @@ img[alt="members"] {
 .home {
   display: block;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .image-map__content__img {
@@ -200,7 +202,6 @@ img[alt="members"] {
 /* About */
 .about {
   margin: 8rem;
-
 }
 
 .about-data {
@@ -430,12 +431,24 @@ img[alt="members"] {
   .partners,
   .shop,
   .team {
-    margin: 2rem;
+    /* margin: 2rem; */
     overflow: visible;
     transform: scale(0.8);
   }
 
-  a, h1, h2, h3, h4, p, span {
+  .sidebar-wrapper {
+    transform: scale(0.6);
+    height: 100%;
+    overflow: visible;
+  }
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
     font-size: 18px;
   }
 }
