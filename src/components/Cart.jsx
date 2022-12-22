@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext } from "react";
 import {
   AiOutlineDelete,
   AiOutlineLeft,
@@ -11,22 +11,22 @@ import { Link } from "react-router-dom";
 
 // credits to https://notiflix.github.io/documentation
 
-import { useCartContext } from "../context/CartContext";
+import { CartContext, useCartContext } from "../context/CartContext";
 import getStripe from "../lib/getStripe";
 import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
 
 const Cart = (shop) => {
-  const cartRef = useRef();
-  const {
-    totalPrice,
-    totalQuantites,
-    cartItems,
-    setShowCart,
-    toggleCartItemQuantity,
-    onRemove,
-  } = useCartContext;
+  const cart = useContext(CartContext);
+  // const {
+  //   totalPrice,
+  //   totalQuantites,
+  //   cartItems,
+  //   setShowCart,
+  //   toggleCartItemQuantity,
+  //   onRemove,
+  // } = useCartContext;
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
@@ -50,16 +50,15 @@ const Cart = (shop) => {
   };
 
   return (
-    <div className="cart-wrapper" ref={cartRef}>
+    <div className="cart-wrapper">
       <div className="cart-container">
         <button
           type="button"
           className="cart-heading"
-          onClick={() => setShowCart(false)}
         >
           <AiOutlineLeft />
           <span className="cart-heading">Your Cart</span>
-          <span className="cart-num-items">({totalQuantites} items)</span>
+          <span className="cart-num-items">(items)</span>
         </button>
 
         {/* {cartItems.length < 1 && (
