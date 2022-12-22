@@ -31,6 +31,12 @@ span {
   min-width: 100px;
 }
 
+.css-ewdv3l {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
 /* img[alt="vinyl"] {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
