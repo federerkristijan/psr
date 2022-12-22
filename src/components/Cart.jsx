@@ -17,8 +17,11 @@ import { urlFor } from "../lib/client";
 
 // todo sanity and stripe
 
-const Cart = (shop) => {
+const Cart = (props) => {
   const cart = useContext(CartContext);
+  const id = props.id;
+  const quantity = props.quantity;
+  const productData = props.productData(id);
   // const {
   //   totalPrice,
   //   totalQuantites,
@@ -28,37 +31,39 @@ const Cart = (shop) => {
   //   onRemove,
   // } = useCartContext;
 
-  const handleCheckout = async () => {
-    const stripe = await getStripe();
-    const response = await fetch("/api/stripe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.strigify(cartItems),
-    });
+  // const handleCheckout = async () => {
+  //   const stripe = await getStripe();
+  //   const response = await fetch("/api/stripe", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //     body: JSON.strigify(cartItems),
+  //   });
 
-    if (response.statusCode === 500) return;
+  //   if (response.statusCode === 500) return;
 
-    const data = await response.json();
+  //   const data = await response.json();
 
-    toast.loading("Redirecting...");
+  //   toast.loading("Redirecting...");
 
-    stripe.redirectToCheckout({ sessionId: data.id });
-    console.log(data, "stripe date");
-  };
+  //   stripe.redirectToCheckout({ sessionId: data.id });
+  //   console.log(data, "stripe date");
+  // };
 
   return (
     <div className="cart-wrapper">
       <div className="cart-container">
-        <button
-          type="button"
-          className="cart-heading"
-        >
+        <button type="button" className="cart-heading">
           <AiOutlineLeft />
           <span className="cart-heading">Your Cart</span>
-          <span className="cart-num-items">(items)</span>
+          <span className="cart-num-items">
+            <h3>{productData.title}</h3>
+            <p>{quantity} total</p>
+            <p>${ (quantity * productData.price).toFixed(2)}</p>
+            <button type="button" onClick={() => cart.deleteFromCart(id)}>Remove</button>
+          </span>
         </button>
 
         {/* {cartItems.length < 1 && (
