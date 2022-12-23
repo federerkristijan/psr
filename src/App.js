@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
-import { CartContextProvider } from "./context/CartContext";
+// import { CartContextProvider } from "./context/CartContext";
+import { CartProvider } from "use-shopping-cart";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -21,7 +22,16 @@ import ToggleSidebar from "./components/Sidebar";
 const App = () => {
   return (
     <GraphQLContextProvider>
-      <CartContextProvider>
+      <CartProvider
+        mode="payment"
+        cartMode="client-only"
+        stripe={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
+        successUrl="stripe.com"
+        cancelUrl="facebook.com"
+        currency="EUR"
+        allowedCountries={['US', 'GB', 'DE']}
+        billingAddressCollection={true}
+      >
         <BrowserRouter>
           <div className="App">
             <ToggleSidebar />
@@ -41,7 +51,7 @@ const App = () => {
             </Routes>
           </div>
         </BrowserRouter>
-      </CartContextProvider>
+      </CartProvider>
     </GraphQLContextProvider>
   );
 };
