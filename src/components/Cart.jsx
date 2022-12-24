@@ -32,6 +32,15 @@ const Cart = ({children}) => {
   //   onRemove,
   // } = useCartContext;
 
+  // fetching and storing data
+  // const data = await sanityAPI.fetch(
+  //   `*[_TYPE == "shop" && _id == '${id}]{
+  //       _id,
+  //       title,
+  //       price
+  //   }`
+  // )
+
   // const handleCheckout = async () => {
   //   const stripe = await getStripe();
   //   const response = await fetch("/api/stripe", {
