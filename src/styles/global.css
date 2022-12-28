@@ -18,13 +18,13 @@ span {
   right: 0;
   top: 0;
   width: 80px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .css-1se900q.ps-collapsed,
 .css-1se900q {
   width: 100px;
-  /* height: 100%; */
+  min-height: 100%;
   min-width: 100px;
 }
 
@@ -36,7 +36,8 @@ span {
 .css-ewdv3l {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .css-mf2zkt {
@@ -64,8 +65,8 @@ img[alt="partners"],
 img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
-  width: 75%;
-  padding-top: 2.5rem;
+  width: 40%;
+  padding-top: 2rem;
 }
 
 /* Home */
