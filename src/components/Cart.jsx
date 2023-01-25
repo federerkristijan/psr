@@ -17,6 +17,7 @@ import { urlFor } from "../lib/client";
 import { CartProvider } from "use-shopping-cart";
 
 // todo sanity and stripe
+const stripe_key = process.env.STRIPE_SECRET_KEY
 
 const Cart = ({children}) => {
   // const cart = useContext(CartContext);
@@ -65,7 +66,7 @@ const Cart = ({children}) => {
   return (
     <CartProvider
       mode="checkout-session"
-      stripe={getStripe()}
+      stripe={stripe_key}
       currency={"EUR"}
     >
       {children}
