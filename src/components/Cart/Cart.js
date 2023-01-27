@@ -2,7 +2,6 @@ import { Fragment, useContext, useState } from "react";
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import classes from "./Cart.module.css";
 import CartContext from "../../store/CartContext";
 import Checkout from "./Checkout";
 
@@ -74,7 +73,7 @@ const Cart = (props) => {
   );
 
   const modalActions = (
-    <div className={classes.actions}>
+    <div className="actions">
       <button className="cart-btn" onClick={props.onClose}>
         Close
       </button>
@@ -105,7 +104,7 @@ const Cart = (props) => {
   const didSubmitModalContent = (
   <Fragment>
     <p>Your order has been placed!</p>
-    <div className={classes.actions}>
+    <div className="actions">
       <button className="cart-btn" onClick={props.onClose}>
         Close
       </button>

@@ -460,6 +460,10 @@ img[alt="members"] {
   overflow: auto;
 }
 
+.actions {
+  text-align: right;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
