@@ -45,7 +45,7 @@ const Shop = () => {
     <>
       <AudioContextProvider>
         <div className="shop">
-          <div className="cart">
+          <div className="cart-icon">
             <Link to="/shop/cart">
               <AiOutlineShoppingCart />
             </Link>

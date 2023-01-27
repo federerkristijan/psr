@@ -358,7 +358,8 @@ img[alt="members"] {
   color: white;
 }
 
-.cart {
+/* Cart Icon */
+.cart-icon {
   float: right;
   top: 2rem;
   font-size: 2rem;
@@ -400,6 +401,39 @@ img[alt="members"] {
   list-style: none;
 }
 
+/* Card */
+
+.card {
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+}
+
+/* Modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 15vh;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+
 /* Cart */
 
 .cart-wrapper {
@@ -408,7 +442,73 @@ img[alt="members"] {
   border: 1px solid red;
 }
 
-/* team */
+.cart-btn {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #8a2b06;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.actions {
+  text-align: right;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Cart-Item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8a2b06;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.summary {
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #8a2b06;
+}
+
+.amount {
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: #363636;
+}
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Team */
 .team {
   display: block;
 }
@@ -451,5 +551,28 @@ img[alt="members"] {
   p,
   span {
     font-size: 18px;
+  }
+
+  /* Modal */
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
+
+  /* Cart Item */
+
+  .cart-item-actions {
+    flex-direction: row;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

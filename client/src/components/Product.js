@@ -23,3 +23,5 @@ const Product = ({ products }) => {
     </section>
   )
 }
+
+export default Product;
