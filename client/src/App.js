@@ -12,7 +12,7 @@ import Home from "../src/views/Home";
 import Impressum from "../src/views/Impressum";
 import Media from "../src/views/Media";
 import Partners from "../src/views/Partners";
-import Cart from "../client/src/components/Cart/Cart";
+import Cart from "../src/components/Cart/Cart";
 import Shop from "../src/views/Shop";
 import Team from "../src/views/Team";
 import ToggleSidebar from "./components/Sidebar";

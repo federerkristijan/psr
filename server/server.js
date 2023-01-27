@@ -4,8 +4,8 @@ import graphqlSchema from "./graphql/schema.js";
 import { graphqlResolver } from "./graphql/resolvers.js";
 import cors from "cors";
 import mongoose from "mongoose";
-const app = express();
 import * as dotenv from "dotenv";
+const app = express();
 
 dotenv.config();
 
