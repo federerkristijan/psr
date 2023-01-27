@@ -1,9 +1,11 @@
+// imports
 import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import validator from "validator";
 import jwt from "jsonwebtoken";
 import * as dontenv from "dotenv";
 
+// Create a user
 const createUser = async function ({ userInput }) {
   const errors = [];
   if (!validator.isEmail(userInput.email)) {
