@@ -374,6 +374,7 @@ img[alt="members"] {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 1rem 1rem;
 }
 
 .Tabs {
