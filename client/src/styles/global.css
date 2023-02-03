@@ -299,17 +299,21 @@ img[alt="members"] {
 }
 
 .record-cover {
-  min-width: 20vw;
+  max-width: 20rem;
+  height: auto;
 }
 
 .record-cover > img {
   border-radius: 9px;
+  width: 50%;
+  height: auto;
 }
 
 .card-middle {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   max-width: fit-content;
   border: 1.5px solid yellow;
 }
@@ -317,6 +321,7 @@ img[alt="members"] {
 .card-right {
   display: flex;
   flex-direction: column;
+
   border: 1.5px solid red;
 }
 
@@ -324,8 +329,6 @@ img[alt="members"] {
   display: inherit;
   align-items: baseline;
   gap: 1.5rem;
-  min-width: 40vw;
-  height: 50%;
   color: white;
   white-space: nowrap;
 }
@@ -352,9 +355,10 @@ img[alt="members"] {
   font-size: larger;
   position: relative;
   display: block;
-  left: 4rem;
+  left: 2rem;
   top: 3rem;
   color: white;
+  align-self: center;
 }
 
 /* Cart Icon */
@@ -377,10 +381,11 @@ img[alt="members"] {
 }
 
 .Tabs {
-  width: 10vw;
-  max-height: 15vh;
+  width: 10rem;
+  height: auto;
   border-radius: 0.3rem;
   border: 1px solid black;
+  margin-top: 1rem;
 }
 
 .Nav {
@@ -537,18 +542,21 @@ img[alt="members"] {
   .impressum,
   .media,
   .partners,
-  .shop,
   .team {
-    /* margin: 2rem; */
-    overflow: hidden;
+    margin: 2rem;
+    overflow: visible;
     transform: scale(0.8);
     margin-right: 2rem;
   }
 
   .sidebar-wrapper {
-    transform: scale(0.6);
-    height: 100%;
+    transform: scale(0.7);
+    min-height: 100%;
     overflow: visible;
+  }
+
+  .shop {
+    padding-right: 3rem;
   }
 
   a,
@@ -561,35 +569,56 @@ img[alt="members"] {
     font-size: 18px;
   }
 
-  .card-left {
-    display: contents;
-    float: left;
+  .shop-data {
+    margin: 0;
+    margin-top: 1rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: auto;
   }
 
-  .record-cover {
-    max-width: 15vw;
-    transform: scale(0.6);
+  .card-left {
+    transform: scale(0.7);
+    min-width: 20%;
+    border: 1px solid red;
   }
+
 
   .card-middle {
-    display: block;
-    max-width: fit-content;
-    transform: scale(0.8)
+    transform: scale(0.7);
+    min-width: 30%;
+    border: 1px solid green;
   }
 
   .card-right {
-    float: right;
+    transform: scale(0.7);
+    min-width: 30%;
+    border: 1px solid yellow;
+  }
+
+  .record-cover > img {
+    border-radius: 5px;
+    width: 80%;
+    height: auto;
+  }
+
+  .record-text {
+    transform: scale(0.9);
+    gap: 1rem;
+  }
+
+  .tracks {
+    display: flex;
+    gap: 0;
+    min-width: fit-content;
   }
 
   .track {
-    display: inline-flex;
-    margin: 1rem;
-    max-width: fit-content;
+    transform: scale(0.7);
   }
+
   .price {
-    left: 0;
-    top: 0;
-  }
+    left: 0;  }
 
   /* Modal */
   .modal {

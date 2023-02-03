@@ -50,5 +50,10 @@ export default {
         },
       ],
     },
+    {
+      name: "currency",
+      title: "Currency",
+      type: "string"
+    }
   ],
 };
