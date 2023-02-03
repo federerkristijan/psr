@@ -318,8 +318,8 @@ img[alt="members"] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-width: 60%;
-  flex: 2;
+  align-items: baseline;
+  min-width: 50%;
 }
 
 .card-right {
@@ -333,7 +333,6 @@ img[alt="members"] {
   display: inherit;
   align-items: baseline;
   gap: 1.5rem;
-  height: 50%;
   color: white;
   white-space: nowrap;
 }
@@ -359,7 +358,7 @@ img[alt="members"] {
   font-size: larger;
   position: relative;
   display: block;
-  left: 4rem;
+  left: 2rem;
   top: 3rem;
   color: white;
   align-self: center;
@@ -388,6 +387,7 @@ img[alt="members"] {
   height: auto;
   border-radius: 0.3rem;
   border: 1px solid black;
+  margin-top: 1rem;
 }
 
 .Nav {
