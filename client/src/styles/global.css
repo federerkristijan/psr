@@ -306,6 +306,8 @@ img[alt="members"] {
 
 .record-cover > img {
   border-radius: 9px;
+  width: 50%;
+  height: auto;
 }
 
 .card-middle {

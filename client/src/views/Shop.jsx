@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
+import CartItem from "../components/Cart/CartItem";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -33,6 +34,7 @@ const Shop = () => {
           price,
           singleTrack,
           multiTrack,
+          currency
         }`
       )
       .then((data) => setShop(data))
@@ -62,7 +64,7 @@ const Shop = () => {
                 <div className="card-left">
                   <div className="record-cover">
                     <img
-                      src={urlFor(item.cover).width(140).url()}
+                      src={urlFor(item.cover).url()}
                       alt={item.title}
                     />
                   </div>
@@ -96,7 +98,8 @@ const Shop = () => {
                     ))}
                   </div>
                 </div>
-                <CustomTabs item={item} />
+                {/* click addHandler goes inside  */}
+                  <CustomTabs item={item} />
               </div>
             ))}
         </div>
