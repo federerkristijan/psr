@@ -299,7 +299,6 @@ img[alt="members"] {
 .card-left {
   display: inherit;
   align-items: center;
-  flex: 2;
   max-width: fit-content;
 }
 
@@ -325,7 +324,6 @@ img[alt="members"] {
 .card-right {
   display: flex;
   flex-direction: column;
-  flex: 1;
   padding-right: 1rem;
 }
 
@@ -539,17 +537,20 @@ img[alt="members"] {
   .impressum,
   .media,
   .partners,
-  .shop,
   .team {
-    /* margin: 2rem; */
+    margin: 2rem;
     overflow: visible;
     transform: scale(0.8);
   }
 
   .sidebar-wrapper {
-    transform: scale(0.6);
-    height: 100%;
+    transform: scale(0.7);
+    min-height: 100%;
     overflow: visible;
+  }
+
+  .shop {
+    padding-right: 3rem;
   }
 
   a,
@@ -563,7 +564,21 @@ img[alt="members"] {
   }
 
   .shop-data {
-    margin: 1rem;
+    margin: 0;
+    margin-top: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .card-left {
+    transform: scale(0.7);
+  }
+
+  .card-middle {
+    transform: scale(0.7);
+    min-width: 0;
+  }
+
+  .card-right {
     transform: scale(0.7);
   }
 
