@@ -274,7 +274,6 @@ img[alt="members"] {
 
 /* shop */
 .shop {
-  padding: 3rem;
   box-sizing: border-box;
 }
 
@@ -286,18 +285,17 @@ img[alt="members"] {
 
 .shop-data {
   display: flex;
-  flex-wrap: wrap;
-  margin: 4rem;
+  margin: 1.5rem 0;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  height: 28vh;
+  border: 1.5px solid blue;
 }
 
 .card-left {
   display: inherit;
   align-items: center;
-  flex: 2;
   max-width: fit-content;
+  border: 1.5px solid blue;
 }
 
 .record-cover {
@@ -313,13 +311,13 @@ img[alt="members"] {
   flex-direction: column;
   justify-content: space-around;
   max-width: fit-content;
-  flex: 2;
+  border: 1.5px solid yellow;
 }
 
 .card-right {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  border: 1.5px solid red;
 }
 
 .record-text {
@@ -335,6 +333,7 @@ img[alt="members"] {
 .tracks {
   display: flex;
   gap: 1rem;
+
 }
 
 .track {
@@ -525,6 +524,11 @@ img[alt="members"] {
 }
 
 @media screen and (max-width: 720px) {
+
+  .App {
+    flex-direction: row;
+  }
+
   /* wrappers */
   .home,
   .about,
@@ -536,8 +540,9 @@ img[alt="members"] {
   .shop,
   .team {
     /* margin: 2rem; */
-    overflow: visible;
+    overflow: hidden;
     transform: scale(0.8);
+    margin-right: 2rem;
   }
 
   .sidebar-wrapper {
@@ -554,6 +559,36 @@ img[alt="members"] {
   p,
   span {
     font-size: 18px;
+  }
+
+  .card-left {
+    display: contents;
+    float: left;
+  }
+
+  .record-cover {
+    max-width: 15vw;
+    transform: scale(0.6);
+  }
+
+  .card-middle {
+    display: block;
+    max-width: fit-content;
+    transform: scale(0.8)
+  }
+
+  .card-right {
+    float: right;
+  }
+
+  .track {
+    display: inline-flex;
+    margin: 1rem;
+    max-width: fit-content;
+  }
+  .price {
+    left: 0;
+    top: 0;
   }
 
   /* Modal */
