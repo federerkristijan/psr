@@ -10,6 +10,7 @@ type User {
     password: String
     status: String
     token: String
+    shoppingCart: String
 }
 
 
@@ -30,6 +31,7 @@ input UserInputData {
     zipCode: String
     loginPassword: String
     loginEmail: String
+    addToShoppingCart: String
 }
 
 
