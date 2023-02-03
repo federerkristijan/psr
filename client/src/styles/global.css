@@ -291,6 +291,9 @@ img[alt="members"] {
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
   height: 28vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 100%;
 }
 
 .card-left {
@@ -315,7 +318,7 @@ img[alt="members"] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: fit-content;
+  min-width: 60%;
   flex: 2;
 }
 
@@ -323,13 +326,13 @@ img[alt="members"] {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-right: 1rem;
 }
 
 .record-text {
   display: inherit;
   align-items: baseline;
   gap: 1.5rem;
-  min-width: 40vw;
   height: 50%;
   color: white;
   white-space: nowrap;
@@ -359,6 +362,7 @@ img[alt="members"] {
   left: 4rem;
   top: 3rem;
   color: white;
+  align-self: center;
 }
 
 /* Cart Icon */
@@ -380,8 +384,8 @@ img[alt="members"] {
 }
 
 .Tabs {
-  width: 10vw;
-  max-height: 15vh;
+  width: 10rem;
+  height: auto;
   border-radius: 0.3rem;
   border: 1px solid black;
 }
@@ -556,6 +560,11 @@ img[alt="members"] {
   p,
   span {
     font-size: 18px;
+  }
+
+  .shop-data {
+    margin: 1rem;
+    transform: scale(0.7);
   }
 
   /* Modal */
