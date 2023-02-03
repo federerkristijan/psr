@@ -274,7 +274,6 @@ img[alt="members"] {
 
 /* shop */
 .shop {
-  padding: 3rem;
   box-sizing: border-box;
 }
 
@@ -286,20 +285,17 @@ img[alt="members"] {
 
 .shop-data {
   display: flex;
-  flex-wrap: wrap;
-  margin: 4rem;
+  margin: 1.5rem 0;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  height: 28vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-width: 100%;
+  border: 1.5px solid blue;
 }
 
 .card-left {
   display: inherit;
   align-items: center;
   max-width: fit-content;
+  border: 1.5px solid blue;
 }
 
 .record-cover {
@@ -317,14 +313,16 @@ img[alt="members"] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: baseline;
-  min-width: 50%;
+
+  max-width: fit-content;
+  border: 1.5px solid yellow;
 }
 
 .card-right {
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+
+  border: 1.5px solid red;
 }
 
 .record-text {
@@ -338,6 +336,7 @@ img[alt="members"] {
 .tracks {
   display: flex;
   gap: 1rem;
+
 }
 
 .track {
@@ -378,6 +377,7 @@ img[alt="members"] {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 1rem 1rem;
 }
 
 .Tabs {
@@ -529,6 +529,11 @@ img[alt="members"] {
 }
 
 @media screen and (max-width: 720px) {
+
+  .App {
+    flex-direction: row;
+  }
+
   /* wrappers */
   .home,
   .about,
@@ -541,6 +546,7 @@ img[alt="members"] {
     margin: 2rem;
     overflow: visible;
     transform: scale(0.8);
+    margin-right: 2rem;
   }
 
   .sidebar-wrapper {
@@ -612,8 +618,7 @@ img[alt="members"] {
   }
 
   .price {
-    left: 0;
-  }
+    left: 0;  }
 
   /* Modal */
   .modal {

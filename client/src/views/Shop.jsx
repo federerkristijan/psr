@@ -81,20 +81,22 @@ const Shop = () => {
                   {/* multi file player, for now it just puts out as much players as there are files */}
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
-                      <div className="track" key={song._id}>
+                      <ul>
+                      <li className="track" key={song._id}>
                         <HomeMadeAudioPlayer
                           onclick={clickCheck}
                           src={
                             song
-                              ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                  .toString()
-                                  .slice(5)
-                                  .replace("-", ".")}`
-                              : "nope"
+                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                            .toString()
+                            .slice(5)
+                            .replace("-", ".")}`
+                            : "nope"
                           }
-                        />
+                          />
                         {song.artist}
-                      </div>
+                      </li>
+                          </ul>
                     ))}
                   </div>
                 </div>
