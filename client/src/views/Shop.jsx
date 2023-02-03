@@ -64,7 +64,7 @@ const Shop = () => {
                 <div className="card-left">
                   <div className="record-cover">
                     <img
-                      src={urlFor(item.cover).width(140).url()}
+                      src={urlFor(item.cover).url()}
                       alt={item.title}
                     />
                   </div>
@@ -98,9 +98,8 @@ const Shop = () => {
                     ))}
                   </div>
                 </div>
-                {/* <CartItem>
+                {/* click addHandler goes inside  */}
                   <CustomTabs item={item} />
-                </CartItem> */}
               </div>
             ))}
         </div>
