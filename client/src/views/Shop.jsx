@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
+import CartItem from "../components/Cart/CartItem";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -97,7 +98,9 @@ const Shop = () => {
                     ))}
                   </div>
                 </div>
-                <CustomTabs item={item} />
+                {/* <CartItem>
+                  <CustomTabs item={item} />
+                </CartItem> */}
               </div>
             ))}
         </div>
