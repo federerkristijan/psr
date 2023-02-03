@@ -567,19 +567,52 @@ img[alt="members"] {
     margin: 0;
     margin-top: 1rem;
     flex-wrap: nowrap;
+    justify-content: space-between;
+    height: auto;
   }
 
   .card-left {
     transform: scale(0.7);
+    min-width: 20%;
+    border: 1px solid red;
   }
+
 
   .card-middle {
     transform: scale(0.7);
-    min-width: 0;
+    min-width: 30%;
+    border: 1px solid green;
   }
 
   .card-right {
     transform: scale(0.7);
+    min-width: 30%;
+    border: 1px solid yellow;
+  }
+
+  .record-cover > img {
+    border-radius: 5px;
+    width: 80%;
+    height: auto;
+  }
+
+  .record-text {
+    transform: scale(0.9);
+    gap: 1rem;
+  }
+
+  .tracks {
+    display: flex;
+    gap: 0;
+    min-width: fit-content;
+  }
+
+  .track {
+    transform: scale(0.7);
+  }
+
+  .price {
+    left: 0;
   }
 
   /* Modal */
