@@ -301,7 +301,8 @@ img[alt="members"] {
 }
 
 .record-cover {
-  min-width: 20vw;
+  max-width: 20rem;
+  height: auto;
 }
 
 .record-cover > img {
