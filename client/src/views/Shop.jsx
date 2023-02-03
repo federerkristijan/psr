@@ -39,8 +39,6 @@ const Shop = () => {
       .catch(console.error);
   }, []);
 
-  console.log("tracks", shop);
-
   return (
     <>
       <AudioContextProvider>

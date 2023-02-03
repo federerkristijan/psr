@@ -7,11 +7,11 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: false,
   },
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   country: {
     type: String,
@@ -43,6 +43,10 @@ const userSchema = new mongoose.Schema({
   },
   loginEmail: {
     type: String,
+    required: false,
+  },
+  shoppingCart: {
+    type: [String],
     required: false,
   },
 });
