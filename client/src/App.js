@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
 // import { CartContextProvider } from "./context/CartContext";
 import { CartProvider } from "use-shopping-cart";
+import SignUpLogin from "./views/SignUpLogin";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -29,7 +30,7 @@ const App = () => {
         successUrl="stripe.com"
         cancelUrl="facebook.com"
         currency="EUR"
-        allowedCountries={['US', 'GB', 'DE']}
+        allowedCountries={["US", "GB", "DE"]}
         billingAddressCollection={true}
       >
         <BrowserRouter>
@@ -47,6 +48,7 @@ const App = () => {
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/shop/cart" element={<Cart />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/signuplogin" element={<SignUpLogin />} />
               </Route>
             </Routes>
           </div>
