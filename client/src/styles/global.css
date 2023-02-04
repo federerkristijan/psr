@@ -556,7 +556,7 @@ img[alt="members"] {
   }
 
   .shop {
-    margin: 2rem 3rem 1rem 3rem;
+    margin: 2rem 4.5rem 1rem 3rem;
   }
 
   a,
@@ -600,8 +600,10 @@ img[alt="members"] {
   }
 
   .card-right {
-    display: block;
+    display: inline-flex;
     border: 1.5px solid red;
+    min-width: 40vw;
+    flex-direction: row;
   }
 
   .record-text {
@@ -629,6 +631,10 @@ img[alt="members"] {
     margin: 0.2rem 0;
   }
 
+  .record-tabs {
+    flex: 2;
+    min-width: inherit;
+  }
 
   .price {
     border: 1px solid green;
@@ -639,6 +645,7 @@ img[alt="members"] {
     color: white;
     left: 0;
     top: 0;
+    flex: 1;
   }
 
   /* Custom tabs */
@@ -672,6 +679,7 @@ img[alt="members"] {
   .Nav > li {
     width: 33.33%;
     border: 1px solid grey;
+    padding: 0 1rem 0 1rem;
   }
 
   .outlet {
