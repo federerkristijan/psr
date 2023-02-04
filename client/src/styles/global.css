@@ -393,7 +393,7 @@ img[alt="members"] {
   list-style: none;
   align-items: center;
   justify-content: space-between;
-  background: lightslategray;
+
   cursor: pointer;
   padding: 0;
   border-radius: 0.6rem;
@@ -402,6 +402,7 @@ img[alt="members"] {
 .Nav > li {
   width: 5vw;
   border: 1px solid grey;
+  background: lightslategray;
 }
 
 .outlet {
@@ -556,7 +557,7 @@ img[alt="members"] {
   }
 
   .shop {
-    padding-right: 3rem;
+    margin: 2rem 4.5rem 1rem 3rem;
   }
 
   a,
@@ -600,8 +601,10 @@ img[alt="members"] {
   }
 
   .card-right {
-    display: block;
+    display: inline-flex;
     border: 1.5px solid red;
+    min-width: 40vw;
+    flex-direction: row;
   }
 
   .record-text {
@@ -629,14 +632,21 @@ img[alt="members"] {
     margin: 0.2rem 0;
   }
 
+  .record-tabs {
+    flex: 2;
+    min-width: inherit;
+  }
 
   .price {
     border: 1px solid green;
     width: 100%;
-    font-size: larger;
+    font-size: 1.5rem;
     display: block;
     text-align: center;
     color: white;
+    left: 0;
+    top: 0;
+    flex: 1;
   }
 
   /* Custom tabs */
@@ -653,23 +663,28 @@ img[alt="members"] {
     width: 80%;
     max-height: 20vh;
     border-radius: 0.3rem;
-    border: 1px solid black;
+    border: none;
+    margin-top: 0;
   }
 
   .Nav {
     display: flex;
     list-style: none;
     align-items: center;
-    justify-content: space-between;
-    background: lightslategray;
+    justify-content: space-around;
+
     cursor: pointer;
     padding: 0;
     border-radius: 0.6rem;
+    text-decoration: underline;
   }
 
   .Nav > li {
-    width: 33.33%;
+    width: auto;
+    padding: 2px;
     border: 1px solid grey;
+    background: lightslategray;
+    border-radius: 5px;
   }
 
   .outlet {
