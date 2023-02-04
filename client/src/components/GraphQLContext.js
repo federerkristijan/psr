@@ -16,6 +16,8 @@ export const GraphQLContextProvider = (props) => {
     loginPassword: "",
     loginEmail: "",
     token: "",
+    productId: "",
+    shoppingCart: "",
   });
 
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 15:20 ////////////
@@ -48,7 +50,7 @@ export const GraphQLContextProvider = (props) => {
       }
 `,
       `{
-        shoppingCard(token: "${userData.token}", productId: "${userData.productId}", userId: "${userData.productId}"){
+        shoppingCart(token: "${userData.token}", productId: "${userData.productId}", userId: "${userData.productId}"){
           token
           userId
         }
