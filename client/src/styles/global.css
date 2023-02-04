@@ -570,55 +570,111 @@ img[alt="members"] {
   }
 
   .shop-data {
-    margin: 0;
-    margin-top: 1rem;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    height: auto;
+    display: block;
+    margin: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.417);
+    border-radius: 9px;
+    border: 1.5px solid blue;
   }
 
   .card-left {
-    transform: scale(0.7);
-    min-width: 20%;
-    border: 1px solid red;
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    border: 1.5px solid blue;
   }
 
-
-  .card-middle {
-    transform: scale(0.7);
-    min-width: 30%;
-    border: 1px solid green;
-  }
-
-  .card-right {
-    transform: scale(0.7);
-    min-width: 30%;
-    border: 1px solid yellow;
+  .record-cover {
+    min-width: 100%;
   }
 
   .record-cover > img {
-    border-radius: 5px;
-    width: 80%;
-    height: auto;
+    border-radius: 9px;
+    width: 100%;
+  }
+
+  .card-middle {
+    display: block;
+    max-width: 100%;
+    border: 1.5px solid yellow;
+  }
+
+  .card-right {
+    display: block;
+    border: 1.5px solid red;
   }
 
   .record-text {
-    transform: scale(0.9);
-    gap: 1rem;
+    display: inline-flex;
+    color: white;
   }
 
   .tracks {
-    display: flex;
-    gap: 0;
-    min-width: fit-content;
+    display: inline-flex;
+    transform: scale(0.8);
+    gap: 2rem;
+  }
+
+  .tracks > ul, .tracks > li {
+    margin: 0;
+    padding: 0;
   }
 
   .track {
-    transform: scale(0.7);
+    display: flex;
+    background: rgb(163, 160, 160);
+    border: 1px solid rgb(107, 105, 105);
+    border-radius: 9px;
+    padding: 0.4rem;
+    margin: 0.2rem 0;
   }
 
+
   .price {
-    left: 0;  }
+    border: 1px solid green;
+    width: 100%;
+    font-size: larger;
+    display: block;
+    text-align: center;
+    color: white;
+  }
+
+  /* Custom tabs */
+
+  .Tabs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+
+  .Tabs {
+    width: 80%;
+    max-height: 20vh;
+    border-radius: 0.3rem;
+    border: 1px solid black;
+  }
+
+  .Nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    background: lightslategray;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 0.6rem;
+  }
+
+  .Nav > li {
+    width: 33.33%;
+    border: 1px solid grey;
+  }
+
+  .outlet {
+    list-style: none;
+  }
 
   /* Modal */
   .modal {
