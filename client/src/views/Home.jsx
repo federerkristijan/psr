@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { GraphQLContext } from "../components/GraphQLContext";
 
 // ImageMaps credits to Qiuziz, @ https://github.com/qiuziz/react-image-map
 import { ImageMap } from "@qiuz/react-image-map";
@@ -149,10 +150,8 @@ function onMouseOver(argument) {
   argument.target.classList.add("active");
 }
 
-
 function onMouseLeave(argument) {
-  if (argument.relatedTarget.classList.contains("image-map__content")){
-
+  if (argument.relatedTarget.classList.contains("image-map__content")) {
     argument.target.classList.remove("active");
   }
 }
@@ -167,6 +166,16 @@ function imageMap_click(area, index) {
 }
 
 const Home = () => {
+  const { GraphQLHandler } = useContext(GraphQLContext);
+
+  //Check iftoken exists
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      GraphQLHandler(2);
+      console.log("check if done");
+    }
+  }, []);
+
   return (
     <div className="home">
       <ImageMap
@@ -174,7 +183,7 @@ const Home = () => {
         src={PartyStore}
         map={mapArea}
         onMapClick={imageMap_click}
-        style={{ height: "95%", maxWidth: "95%", marginTop: "5rem"}}
+        style={{ height: "95%", maxWidth: "95%", marginTop: "5rem" }}
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       />

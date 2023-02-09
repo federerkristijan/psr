@@ -1,72 +1,67 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useState, useEffect } from "react";
 
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import CartContext from "../../store/CartContext";
+import { CartContext } from "../../store/CartContext";
 import Checkout from "./Checkout";
+import sanityClient from "../../lib/client";
+import { GraphQLContext } from "../GraphQLContext";
+import { convertShopping } from "../../helper/convertAndFetch";
 
 const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
-  const cartCtx = useContext(CartContext);
 
-  const totalAmount = `€${cartCtx.totalAmount.toFixed(2)}`;
-  const hasItems = cartCtx.items.length > 0;
+  const { items, setItems, totalAmount, setTotalAmount } =
+    useContext(CartContext);
+
+  const { userData } = useContext(GraphQLContext);
+  console.log(userData);
+
+  //const totalAmount = `€${totalAmount.toFixed(2)}`;
+  const hasItems = items.length > 0;
+
+  useEffect(() => {
+    (async () => {
+      const shoppingList = await convertShopping(
+        userData.shoppingCart,
+        sanityClient
+      );
+      setItems(shoppingList);
+      const sum = shoppingList.reduce(
+        (accumulator, currentItem) =>
+          accumulator + currentItem.price * currentItem.quantity,
+        0
+      );
+      setTotalAmount(sum);
+    })();
+  }, [userData.shoppingCart]);
 
   const cartItemRemoveHandler = (id) => {
-    cartCtx.removeItem(id);
+    console.log(id);
   };
 
-  const cartItemAddHandler = (item) => {
-    cartCtx.addItem(item);
+  const cartItemAddHandler = (id) => {
+    console.log(id);
   };
 
   const orderHandler = () => {
     setIsCheckout(true);
   };
 
-  // const submitOrderHandler = async (userData) => {
-  //   setIsSubmitting(true);
-  //   const response = await fetch(
-  //     "https://udemy-react-21466-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
-  //     {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         user: userData,
-  //         orderedItems: cartCtx.items,
-  //       }),
-  //     }
-  //   );
-  //   // v. 1
-  //   const responseData = await response.json();
-
-  //   const submittedOrder = [];
-
-  //   for (const key in responseData) {
-  //     submittedOrder.push({
-  //       id: key,
-  //       user: responseData.user,
-  //       orderedItems: responseData.orderedItems,
-  //     });
-  //   }
-  //   setIsSubmitting(false);
-  //   setDidSubmit(true);
-  //   cartCtx.clearCart();
-  // };
-
   const submitOrderHandler = () => {};
 
   const cartItems = (
     <ul className="cart-items">
-      {cartCtx.items.map((item) => (
+      {items.map((item) => (
         <CartItem
-          key={item.id}
-          name={item.name}
-          amount={item.amount}
+          key={item._id}
+          name={item.artist}
+          amount={item.quantity}
           price={item.price}
-          onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          onAdd={cartItemAddHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler.bind(null, item._id)}
+          onAdd={cartItemAddHandler.bind(null, item._id)}
         />
       ))}
     </ul>
@@ -89,7 +84,7 @@ const Cart = (props) => {
     <Fragment>
       <div className="total">
         <span>Total Amount</span>
-        <span>{totalAmount}</span>
+        <span>€{totalAmount.toFixed(2)}</span>
       </div>
       {isCheckout && (
         <Checkout onSubmit={submitOrderHandler} onCancel={props.onClose} />
@@ -99,23 +94,26 @@ const Cart = (props) => {
     </Fragment>
   );
 
-  const isSubmittingModalContent = <p>Placing your order...</p>
+  const isSubmittingModalContent = <p>Placing your order...</p>;
 
   const didSubmitModalContent = (
-  <Fragment>
-    <p>Your order has been placed!</p>
-    <div className="actions">
-      <button className="cart-btn" onClick={props.onClose}>
-        Close
-      </button>
-    </div>
-  </Fragment>)
+    <Fragment>
+      <p>Your order has been placed!</p>
+      <div className="actions">
+        <button className="cart-btn" onClick={props.onClose}>
+          Close
+        </button>
+      </div>
+    </Fragment>
+  );
 
-  return <Modal onClose={props.onClose}>
-    {!isSubmitting && !didSubmit && CartModalContent}
-    {isSubmitting && isSubmittingModalContent}
-    {!isSubmitting && didSubmit && didSubmitModalContent}
-  </Modal>;
+  return (
+    <Modal onClose={props.onClose}>
+      {!isSubmitting && !didSubmit && CartModalContent}
+      {isSubmitting && isSubmittingModalContent}
+      {!isSubmitting && didSubmit && didSubmitModalContent}
+    </Modal>
+  );
 };
 
 export default Cart;

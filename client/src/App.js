@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
+import { useEffect } from "react";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
+
 // import { CartContextProvider } from "./context/CartContext";
 import { CartProvider } from "use-shopping-cart";
 import SignUpLogin from "./views/SignUpLogin";
+import { CartContextProvider } from "./store/CartContext";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -46,7 +49,14 @@ const App = () => {
                 <Route path="/media" element={<Media />} />
                 <Route path="/partners" element={<Partners />} />
                 <Route path="/shop" element={<Shop />} />
-                <Route path="/shop/cart" element={<Cart />} />
+                <Route
+                  path="/shop/cart"
+                  element={
+                    <CartContextProvider>
+                      <Cart />
+                    </CartContextProvider>
+                  }
+                />
                 <Route path="/team" element={<Team />} />
                 <Route path="/signuplogin" element={<SignUpLogin />} />
               </Route>
