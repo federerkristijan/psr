@@ -21,7 +21,7 @@ const ToggleSidebar = () => {
     <div
       className="sidebar-wrapper"
       onMouseOver={() => setIsOpen(true)}
-      onMouseExit={() => setIsOpen(false)}
+      onMouseLeave={() => setIsOpen(false)}
     >
       <Sidebar
         defaultCollapsed="true"

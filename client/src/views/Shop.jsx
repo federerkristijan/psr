@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
+import CartItem from "../components/Cart/CartItem";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -33,6 +34,7 @@ const Shop = () => {
           price,
           singleTrack,
           multiTrack,
+          currency
         }`
       )
       .then((data) => setShop(data))
@@ -60,7 +62,7 @@ const Shop = () => {
                 <div className="card-left">
                   <div className="record-cover">
                     <img
-                      src={urlFor(item.cover).width(140).url()}
+                      src={urlFor(item.cover).url()}
                       alt={item.title}
                     />
                   </div>
@@ -77,24 +79,27 @@ const Shop = () => {
                   {/* multi file player, for now it just puts out as much players as there are files */}
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
-                      <div className="track" key={song._id}>
+                      <ul>
+                      <li className="track" key={song._id}>
                         <HomeMadeAudioPlayer
                           onclick={clickCheck}
                           src={
                             song
-                              ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                  .toString()
-                                  .slice(5)
-                                  .replace("-", ".")}`
-                              : "nope"
+                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                            .toString()
+                            .slice(5)
+                            .replace("-", ".")}`
+                            : "nope"
                           }
-                        />
+                          />
                         {song.artist}
-                      </div>
+                      </li>
+                          </ul>
                     ))}
                   </div>
                 </div>
-                <CustomTabs item={item} />
+                {/* click addHandler goes inside  */}
+                  <CustomTabs item={item} />
               </div>
             ))}
         </div>
