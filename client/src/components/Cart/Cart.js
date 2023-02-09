@@ -39,11 +39,29 @@ const Cart = (props) => {
   }, [userData.shoppingCart]);
 
   const cartItemRemoveHandler = (id) => {
-    console.log(id);
+    setItems(
+      items.map((item) => {
+        if (item._id === id) {
+          if (item.quantity === 1) {
+            return {};
+          } else {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+        }
+        return item;
+      })
+    );
   };
 
   const cartItemAddHandler = (id) => {
-    console.log(id);
+    setItems(
+      items.map((item) => {
+        if (item._id === id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      })
+    );
   };
 
   const orderHandler = () => {
