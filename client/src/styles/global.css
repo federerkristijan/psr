@@ -296,6 +296,7 @@ img[alt="members"] {
   align-items: center;
   max-width: fit-content;
   border: 1.5px solid blue;
+  flex: 1;
 }
 
 .record-cover {
@@ -313,6 +314,7 @@ img[alt="members"] {
   display: flex;
   flex-direction: row-reverse;
   border: 1.5px solid red;
+  flex: 2;
 }
 
 .record-text {
