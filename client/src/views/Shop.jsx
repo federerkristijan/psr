@@ -63,45 +63,44 @@ const Shop = () => {
               <div className="shop-data" key={item._id}>
                 <div className="card-left">
                   <div className="record-cover">
-                    <img
-                      src={urlFor(item.cover).url()}
-                      alt={item.title}
-                    />
+                    <img src={urlFor(item.cover).url()} alt={item.title} />
                   </div>
                 </div>
-                <div className="card-middle">
-                  <div className="record-text">
-                    <div className="record-artist">
-                      <h3>{item.artist}</h3>
-                    </div>
-                    <div className="record-title">
-                      <h4>{item.title}</h4>
-                    </div>
-                  </div>
-                  {/* multi file player, for now it just puts out as much players as there are files */}
-                  <div className="tracks">
-                    {item.multiTrack.map((song) => (
-                      <ul>
-                      <li className="track" key={song._id}>
-                        <HomeMadeAudioPlayer
-                          onclick={clickCheck}
-                          src={
-                            song
-                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                            .toString()
-                            .slice(5)
-                            .replace("-", ".")}`
-                            : "nope"
-                          }
-                          />
-                        {song.artist}
-                      </li>
-                          </ul>
-                    ))}
-                  </div>
-                </div>
-                {/* click addHandler goes inside  */}
+                <div className="card-right">
+                  {/* click addHandler goes inside  */}
                   <CustomTabs item={item} />
+                  <div className="text-audio">
+                    <div className="record-text">
+                      <div className="record-artist">
+                        <h3>{item.artist}</h3>
+                      </div>
+                      <div className="record-title">
+                        <h4>{item.title}</h4>
+                      </div>
+                    </div>
+                    {/* multi file player, for now it just puts out as much players as there are files */}
+                    <div className="tracks">
+                      {item.multiTrack.map((song) => (
+                        <ul>
+                          <li className="track" key={song._id}>
+                            <HomeMadeAudioPlayer
+                              onclick={clickCheck}
+                              src={
+                                song
+                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                      .toString()
+                                      .slice(5)
+                                      .replace("-", ".")}`
+                                  : "nope"
+                              }
+                            />
+                            {song.artist}
+                          </li>
+                        </ul>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
         </div>

@@ -296,6 +296,7 @@ img[alt="members"] {
   align-items: center;
   max-width: fit-content;
   border: 1.5px solid blue;
+  flex: 1;
 }
 
 .record-cover {
@@ -309,24 +310,16 @@ img[alt="members"] {
   height: auto;
 }
 
-.card-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  max-width: fit-content;
-  border: 1.5px solid yellow;
-}
-
 .card-right {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row-reverse;
+  justify-content: space-between;
   border: 1.5px solid red;
+  flex: 2;
 }
 
 .record-text {
-  display: inherit;
+  display: inline-flex;
   align-items: baseline;
   gap: 1.5rem;
   color: white;
@@ -340,7 +333,7 @@ img[alt="members"] {
 }
 
 .track {
-  display: inherit;
+  display: inline-flex;
   align-items: center;
   background: rgb(163, 160, 160);
   border: 1px solid rgb(107, 105, 105);
@@ -356,7 +349,6 @@ img[alt="members"] {
   position: relative;
   display: block;
   left: 2rem;
-  top: 3rem;
   color: white;
   align-self: center;
 }
@@ -371,13 +363,19 @@ img[alt="members"] {
 /* Checkout -> module.css  */
 
 /* CustomTabs */
+.custom-tabs {
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
 
 .Tabs-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 1rem 1rem;
+  margin: 0 1rem;
 }
 
 .Tabs {
@@ -594,17 +592,11 @@ img[alt="members"] {
     width: 100%;
   }
 
-  .card-middle {
-    display: block;
-    max-width: 100%;
-    border: 1.5px solid yellow;
-  }
-
   .card-right {
     display: inline-flex;
     border: 1.5px solid red;
     min-width: 40vw;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .record-text {
