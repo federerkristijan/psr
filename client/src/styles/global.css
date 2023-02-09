@@ -583,17 +583,11 @@ img[alt="members"] {
     width: 100%;
   }
 
-  .card-middle {
-    display: block;
-    max-width: 100%;
-    border: 1.5px solid yellow;
-  }
-
   .card-right {
     display: inline-flex;
     border: 1.5px solid red;
     min-width: 40vw;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .record-text {
