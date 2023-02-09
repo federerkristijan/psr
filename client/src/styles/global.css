@@ -313,6 +313,7 @@ img[alt="members"] {
 .card-right {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
   border: 1.5px solid red;
   flex: 2;
 }
@@ -362,13 +363,19 @@ img[alt="members"] {
 /* Checkout -> module.css  */
 
 /* CustomTabs */
+.custom-tabs {
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
 
 .Tabs-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 1rem 1rem;
+  margin: 0 1rem;
 }
 
 .Tabs {
