@@ -309,19 +309,9 @@ img[alt="members"] {
   height: auto;
 }
 
-.card-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  max-width: fit-content;
-  border: 1.5px solid yellow;
-}
-
 .card-right {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row-reverse;
   border: 1.5px solid red;
 }
 
@@ -356,7 +346,6 @@ img[alt="members"] {
   position: relative;
   display: block;
   left: 2rem;
-  top: 3rem;
   color: white;
   align-self: center;
 }

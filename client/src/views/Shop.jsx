@@ -63,13 +63,12 @@ const Shop = () => {
               <div className="shop-data" key={item._id}>
                 <div className="card-left">
                   <div className="record-cover">
-                    <img
-                      src={urlFor(item.cover).url()}
-                      alt={item.title}
-                    />
+                    <img src={urlFor(item.cover).url()} alt={item.title} />
                   </div>
                 </div>
-                <div className="card-middle">
+                <div className="card-right">
+                  {/* click addHandler goes inside  */}
+                  <CustomTabs item={item} />
                   <div className="record-text">
                     <div className="record-artist">
                       <h3>{item.artist}</h3>
@@ -82,26 +81,24 @@ const Shop = () => {
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
                       <ul>
-                      <li className="track" key={song._id}>
-                        <HomeMadeAudioPlayer
-                          onclick={clickCheck}
-                          src={
-                            song
-                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                            .toString()
-                            .slice(5)
-                            .replace("-", ".")}`
-                            : "nope"
-                          }
+                        <li className="track" key={song._id}>
+                          <HomeMadeAudioPlayer
+                            onclick={clickCheck}
+                            src={
+                              song
+                                ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                    .toString()
+                                    .slice(5)
+                                    .replace("-", ".")}`
+                                : "nope"
+                            }
                           />
-                        {song.artist}
-                      </li>
-                          </ul>
+                          {song.artist}
+                        </li>
+                      </ul>
                     ))}
                   </div>
                 </div>
-                {/* click addHandler goes inside  */}
-                  <CustomTabs item={item} />
               </div>
             ))}
         </div>
