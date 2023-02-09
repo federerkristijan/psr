@@ -569,14 +569,12 @@ img[alt="members"] {
     margin: 1.5rem 0;
     background: rgba(0, 0, 0, 0.417);
     border-radius: 9px;
-    border: 1.5px solid blue;
   }
 
   .card-left {
     display: block;
     text-align: center;
     max-width: 100%;
-    border: 1.5px solid blue;
   }
 
   .record-cover {
@@ -590,7 +588,6 @@ img[alt="members"] {
 
   .card-right {
     display: inline-flex;
-    border: 1.5px solid red;
     min-width: 40vw;
     flex-direction: column;
   }
