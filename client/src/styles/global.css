@@ -288,14 +288,12 @@ img[alt="members"] {
   margin: 1.5rem 0;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  border: 1.5px solid blue;
 }
 
 .card-left {
   display: inherit;
   align-items: center;
   max-width: fit-content;
-  border: 1.5px solid blue;
   flex: 1;
 }
 
@@ -314,7 +312,6 @@ img[alt="members"] {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  border: 1.5px solid red;
   flex: 2;
 }
 
@@ -343,7 +340,6 @@ img[alt="members"] {
 }
 
 .price {
-  border: 1px solid green;
   width: 3vw;
   font-size: larger;
   position: relative;
@@ -356,7 +352,7 @@ img[alt="members"] {
 /* Cart Icon */
 .cart-icon {
   float: right;
-  top: 2rem;
+  padding-top: 2rem;
   font-size: 2rem;
 }
 
