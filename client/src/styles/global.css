@@ -319,7 +319,7 @@ img[alt="members"] {
 }
 
 .record-text {
-  display: inherit;
+  display: inline-flex;
   align-items: baseline;
   gap: 1.5rem;
   color: white;
@@ -333,7 +333,7 @@ img[alt="members"] {
 }
 
 .track {
-  display: inherit;
+  display: inline-flex;
   align-items: center;
   background: rgb(163, 160, 160);
   border: 1px solid rgb(107, 105, 105);
