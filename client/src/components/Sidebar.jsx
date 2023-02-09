@@ -15,20 +15,16 @@ import members from "../assets/icons/user.png";
 import "../styles/global.css";
 
 const ToggleSidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
       className="sidebar-wrapper"
-      onMouseOver={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
     >
       <Sidebar
-        defaultCollapsed="true"
+        defaultCollapsed="false"
         collapsedWidth="80px"
         height="inherit"
       >
-        {isOpen && (
           <Menu menuItemStyles={{ padding: "1rem", gap: "1rem" }}>
             <MenuItem routerLink={<Link to="/" />}>
               <img src={vinyl} alt="vinyl" />
@@ -61,7 +57,6 @@ const ToggleSidebar = () => {
               <img src={impress} alt="impress" />
             </MenuItem>
           </Menu>
-        )}
       </Sidebar>
     </div>
   );
