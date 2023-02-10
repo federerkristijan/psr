@@ -93,6 +93,13 @@ const SignUpLogin = () => {
           <br />
           <br /> Sign up
         </button>
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+          }}
+        >
+          remove token
+        </button>
       </div>
       <hr
         style={{

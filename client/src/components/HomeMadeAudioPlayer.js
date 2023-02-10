@@ -28,9 +28,7 @@ const HomeMadeAudioPlayer = (props) => {
     setAudioStatus(false);
   };
 
-  useEffect(() => {
-    console.log(myRef.current);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>

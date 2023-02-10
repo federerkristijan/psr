@@ -17,7 +17,7 @@ export const GraphQLContextProvider = (props) => {
     loginEmail: "",
     token: "",
     productId: "",
-    shoppingCart: "",
+    shoppingCart: [],
   });
 
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 15:20 ////////////
@@ -31,16 +31,15 @@ export const GraphQLContextProvider = (props) => {
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
   const GraphQLHandler = async (request, userData) => {
-    console.log(userData[1]);
+    console.log("prio", userData.shoppingCart);
     const requestList = [
       `mutation {
-  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}"    })
+  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}" ,shoppingCart:"${userData.shoppingCart}"})
 
   {
-    _id
-    email
-
-  }}
+    token
+    shoppingCart
+}}
 `,
       `{
         login(email: "${userData.email}", password: "${userData.password}"){
@@ -49,10 +48,11 @@ export const GraphQLContextProvider = (props) => {
         }
       }
 `,
-      `{
-        shoppingCart(token: "${userData.token}", productId: "${userData.productId}", userId: "${userData.productId}"){
-          token
-          userId
+      `mutation {
+        shoppingCart(token: "${localStorage.getItem("token")}",shoppingCart:"${
+        userData.shoppingCart
+      }"){
+          shoppingCart
         }
       }
 `,
@@ -67,7 +67,23 @@ export const GraphQLContextProvider = (props) => {
       body: JSON.stringify(graphglQuery),
     })
       .then((res) => res.json())
-      .then((resData) => console.log(resData));
+      .then((resData) => {
+        console.log(resData);
+        if (request === 0) {
+          localStorage.setItem("token", resData.data.createUser.token);
+          console.log(resData);
+          setUserData({
+            ...userData,
+            shoppingCart: resData.data.createUser.shoppingCart,
+          });
+        }
+        if (request === 2) {
+          setUserData({
+            ...userData,
+            shoppingCart: resData.data.shoppingCart.shoppingCart[0].split(","),
+          });
+        }
+      });
   };
 
   return (
