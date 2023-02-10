@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 export const GraphQLContext = createContext();
 
@@ -20,6 +20,14 @@ export const GraphQLContextProvider = (props) => {
     shoppingCart: [],
   });
 
+  useEffect(() => {
+    if (props.dataLoaded === "request") {
+      GraphQLHandler(1, userData);
+      //temporary to repvent loop
+      props.setDataLoaded(true);
+    }
+  }, [props.dataLoaded, userData]);
+
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 15:20 ////////////
   // GraphQLHandler
   // 0. CreateUser
@@ -30,11 +38,10 @@ export const GraphQLContextProvider = (props) => {
   //
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
-  const GraphQLHandler = async (request, userData) => {
-    console.log("prio", userData.shoppingCart);
+  const GraphQLHandler = async (request, GraphQLUserData) => {
     const requestList = [
       `mutation {
-  createUser(userInput: {email: "${userData.email}", firstName: "${userData.firstName}", country: "${userData.country}", password:"${userData.password}", lastName:"${userData.lastName}", city:"${userData.city}", street:"${userData.street}", streetNumber:"${userData.streetNumber}"  , zipCode:"${userData.zipCode}" ,shoppingCart:"${userData.shoppingCart}"})
+  createUser(userInput: {email: "${GraphQLUserData.email}", firstName: "${GraphQLUserData.firstName}", country: "${GraphQLUserData.country}", password:"${GraphQLUserData.password}", lastName:"${GraphQLUserData.lastName}", city:"${GraphQLUserData.city}", street:"${GraphQLUserData.street}", streetNumber:"${GraphQLUserData.streetNumber}"  , zipCode:"${GraphQLUserData.zipCode}" ,shoppingCart:"${GraphQLUserData.shoppingCart}"})
 
   {
     token
@@ -42,15 +49,18 @@ export const GraphQLContextProvider = (props) => {
 }}
 `,
       `{
-        login(email: "${userData.email}", password: "${userData.password}"){
+        login(email: "${GraphQLUserData.email}", password: "${
+        GraphQLUserData.password
+      }", token: "${localStorage.getItem("token")}"){
           token
           userId
+          shoppingCart
         }
       }
 `,
       `mutation {
         shoppingCart(token: "${localStorage.getItem("token")}",shoppingCart:"${
-        userData.shoppingCart
+        GraphQLUserData.shoppingCart
       }"){
           shoppingCart
         }
@@ -68,19 +78,21 @@ export const GraphQLContextProvider = (props) => {
     })
       .then((res) => res.json())
       .then((resData) => {
-        console.log(resData);
         if (request === 0) {
           localStorage.setItem("token", resData.data.createUser.token);
-          console.log(resData);
+          console.log("check");
           setUserData({
             ...userData,
             shoppingCart: resData.data.createUser.shoppingCart,
           });
         }
-        if (request === 2) {
+        if (request === 1) {
+          console.log(Boolean(resData.data.login.shoppingCart[0]));
           setUserData({
             ...userData,
-            shoppingCart: resData.data.shoppingCart.shoppingCart[0].split(","),
+            shoppingCart: Boolean(resData.data.login.shoppingCart[0])
+              ? resData.data.login.shoppingCart[0].split(",")
+              : [],
           });
         }
       });

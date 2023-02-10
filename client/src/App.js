@@ -7,6 +7,7 @@ import { GraphQLContextProvider } from "./components/GraphQLContext";
 import { CartProvider } from "use-shopping-cart";
 import SignUpLogin from "./views/SignUpLogin";
 import { CartContextProvider } from "./store/CartContext";
+import { useState } from "react";
 
 import "./App.css";
 import About from "../src/views/About";
@@ -24,8 +25,19 @@ import ToggleSidebar from "./components/Sidebar";
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
 
 const App = () => {
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  useEffect(() => {
+    if (dataLoaded === false && localStorage.getItem("token")) {
+      setDataLoaded("request");
+    }
+  }, [dataLoaded]);
+
   return (
-    <GraphQLContextProvider>
+    <GraphQLContextProvider
+      dataLoaded={dataLoaded}
+      setDataLoaded={setDataLoaded}
+    >
       <CartProvider
         mode="payment"
         cartMode="client-only"

@@ -58,13 +58,10 @@ const Shop = () => {
           </div>
           {shop &&
             shop.map((item) => (
-              <div className="shop-data" key={item._id}>
+              <div className="shop-data" key={`${item._id}tsi`}>
                 <div className="card-left">
                   <div className="record-cover">
-                    <img
-                      src={urlFor(item.cover).url()}
-                      alt={item.title}
-                    />
+                    <img src={urlFor(item.cover).url()} alt={item.title} />
                   </div>
                 </div>
                 <div className="card-middle">
@@ -79,27 +76,31 @@ const Shop = () => {
                   {/* multi file player, for now it just puts out as much players as there are files */}
                   <div className="tracks">
                     {item.multiTrack.map((song) => (
-                      <ul>
-                      <li className="track" key={song._id}>
-                        <HomeMadeAudioPlayer
-                          onclick={clickCheck}
-                          src={
-                            song
-                            ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                            .toString()
-                            .slice(5)
-                            .replace("-", ".")}`
-                            : "nope"
-                          }
+                      <ul key={`${item._id}fl${song.artist}tspfix`}>
+                        <li
+                          className="track"
+                          key={`${item._id}sp${song.artist}tggsix`}
+                        >
+                          <HomeMadeAudioPlayer
+                            key={`${item._id}ps${song.artist}tsfix`}
+                            onclick={clickCheck}
+                            src={
+                              song
+                                ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                    .toString()
+                                    .slice(5)
+                                    .replace("-", ".")}`
+                                : "nope"
+                            }
                           />
-                        {song.artist}
-                      </li>
-                          </ul>
+                          {song.artist}
+                        </li>
+                      </ul>
                     ))}
                   </div>
                 </div>
                 {/* click addHandler goes inside  */}
-                  <CustomTabs item={item} />
+                <CustomTabs item={item} />
               </div>
             ))}
         </div>

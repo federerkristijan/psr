@@ -1,4 +1,5 @@
 export const convertShopping = async (shoppingCart, sanityClient) => {
+  console.log(shoppingCart.length, shoppingCart);
   if (shoppingCart.length === 0) {
     return [];
   } else {
@@ -50,7 +51,7 @@ export const convertShopping = async (shoppingCart, sanityClient) => {
         foundObject.quantity = element.value;
       }
     });
-    console.log(pulledAlbums);
+
     return pulledAlbums;
   }
 };

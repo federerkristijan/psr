@@ -51,7 +51,7 @@ const createUser = async function ({ userInput }) {
   console.log(user);
 
   const createdUser = await user.save();
-
+  console.log("secret key", process.env.JWT);
   const token = jwt.sign(
     {
       userId: createdUser._id.toString(),
@@ -68,27 +68,42 @@ const createUser = async function ({ userInput }) {
   };
 };
 
-const loginUser = async function ({ loginEmail, loginPassword }) {
-  const user = await User.findOne({ email: loginEmail });
-  console.log("rwest", loginEmail, loginPassword);
-  console.log(user);
-  if (!user) {
-    const error = new Error("user not found");
-    error.code = 401;
-    throw error;
+const loginUser = async function ({ loginEmail, loginPassword, token }) {
+  console.log(token);
+  let userId = false;
+  if (token !== "") {
+    userId = jwt.verify(token, process.env.JWT).userId;
   }
-  const isEqual = await bcrypt.compare(loginPassword, user.password);
-  if (!isEqual) {
-    const error = new Error("Password is incorrect.");
-    error.code = 401;
-    throw error;
+  const user = await User.findOne(
+    userId ? { _id: userId } : { email: loginEmail }
+  );
+  if (!userId) {
+    if (!user) {
+      const error = new Error("user not found");
+      error.code = 401;
+      throw error;
+    }
+    const isEqual = await bcrypt.compare(loginPassword, user.password);
+    if (!isEqual) {
+      const error = new Error("Password is incorrect.");
+      error.code = 401;
+      throw error;
+    }
   }
+  console.log(user.shoppingCart);
 
-  return { userId: user._id.toString() };
+  return { userId: user._id.toString(), shoppingCart: user.shoppingCart };
 };
 
 const shoppingCart = async function ({ token, shoppingCart }) {
-  console.log("token:", token, "shoppingcart", shoppingCart);
+  console.log(
+    "token:",
+    token,
+    "shoppingcart",
+    shoppingCart,
+    "secret key",
+    process.env.JWT
+  );
 
   const decoded = jwt.verify(token, process.env.JWT);
   console.log("message", decoded);
@@ -98,7 +113,7 @@ const shoppingCart = async function ({ token, shoppingCart }) {
     { shoppingCart: shoppingCart }
   );
 
-  console.log(user);
+  console.log("user", user);
 
   if (!user) {
     const error = new Error("user not found");

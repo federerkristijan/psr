@@ -1,40 +1,49 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+import { GraphQLContext } from "../components/GraphQLContext";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = (props) => {
+  const { GraphQLHandler, userData, setUserData } = useContext(GraphQLContext);
   const [items, setItems] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
+  const [fetchTImeoutID, setFetchTImeoutID] = useState("");
 
-  const cartItemAddHandler = (id) => {
-    setItems(
-      items.map((item) => {
-        if (item._id === id) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      })
+  const cartItemAddHandler = async (id) => {
+    clearTimeout(fetchTImeoutID);
+
+    let temp = await userData.shoppingCart;
+    temp.push(id);
+    console.log(temp);
+    setFetchTImeoutID(
+      setTimeout(() => {
+        GraphQLHandler(2, { ...userData, shoppingCart: temp });
+      }, 1000)
     );
   };
 
-  const cartItemRemoveHandler = (id) => {
-    const tempArray = items.map((item) => {
-      if (item._id === id) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    });
-    setItems(
-      tempArray.filter((item) => {
-        if (item._id === id) {
-          if (item.quantity === 0) {
-            return false;
-          } else {
-            return true;
-          }
-        }
-        return true;
-      })
+  const cartItemRemoveHandler = async (id) => {
+    clearTimeout(fetchTImeoutID);
+
+    let temp = await userData.shoppingCart;
+    console.log(temp.length);
+    if (temp.length === 1) {
+      setUserData({ ...userData, shoppingCart: [] });
+    } else {
+      const index = temp.indexOf(id);
+      temp.splice(index, 1);
+      console.log(temp);
+      await setUserData({ ...userData, shoppingCart: temp });
+    }
+
+    setFetchTImeoutID(
+      setTimeout(() => {
+        console.log(userData);
+        GraphQLHandler(
+          2,
+          temp.length === 1 ? { ...userData, shoppingCart: [] } : userData
+        );
+      }, 1000)
     );
   };
 
