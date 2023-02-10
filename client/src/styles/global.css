@@ -7,7 +7,6 @@ h4,
 p,
 span {
   letter-spacing: 0.5rem;
-  /* font-size: 26px; */
 }
 
 /* Sidebar */
@@ -517,6 +516,17 @@ img[alt="members"] {
     flex-direction: row;
   }
 
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
+    letter-spacing: 0.5rem;
+    transform: scale(0.8);
+  }
+
   /* wrappers */
   .home,
   .about,
@@ -528,7 +538,6 @@ img[alt="members"] {
   .team {
     margin: 2rem;
     overflow: visible;
-    transform: scale(0.8);
     margin-right: 2rem;
   }
 
@@ -569,8 +578,8 @@ img[alt="members"] {
 
   .css-1bdadyq {
     margin-right: 2rem;
-    padding-right: 0!important;
-    padding-left: 0!important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   .teamLink:hover,
@@ -582,6 +591,16 @@ img[alt="members"] {
   .contactLink:hover,
   .impressumLink:hover {
     display: none;
+  }
+
+  /*  About */
+  .about-data {
+    margin: 4rem 1rem 0 0;
+  }
+
+  .about-text {
+    padding: 0;
+    transform: scale(0.9);
   }
 
   .shop {
