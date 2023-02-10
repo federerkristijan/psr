@@ -553,8 +553,8 @@ img[alt="members"] {
   }
 
   /* ImageMap */
-  .usage-map {
-    height: 80vh !important;
+  .image-map__content__img {
+    height: 70vh !important;
   }
 
   .css-ewdv3l {
