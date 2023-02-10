@@ -38,17 +38,34 @@ const Cart = (props) => {
     })();
   }, [userData.shoppingCart]);
 
+  useEffect(() => {
+    (async () => {
+      const sum = items.reduce(
+        (accumulator, currentItem) =>
+          accumulator + currentItem.price * currentItem.quantity,
+        0
+      );
+      setTotalAmount(sum);
+    })();
+  }, [items]);
+
   const cartItemRemoveHandler = (id) => {
+    const tempArray = items.map((item) => {
+      if (item._id === id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
     setItems(
-      items.map((item) => {
+      tempArray.filter((item) => {
         if (item._id === id) {
-          if (item.quantity === 1) {
-            return {};
+          if (item.quantity === 0) {
+            return false;
           } else {
-            return { ...item, quantity: item.quantity - 1 };
+            return true;
           }
         }
-        return item;
+        return true;
       })
     );
   };
