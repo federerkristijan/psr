@@ -7,7 +7,6 @@ h4,
 p,
 span {
   letter-spacing: 0.5rem;
-  /* font-size: 26px; */
 }
 
 /* Sidebar */
@@ -45,16 +44,6 @@ span {
   padding-bottom: 0.7rem;
 }
 
-/* img[alt="vinyl"] {
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
-  width: 40px;
-} */
-
-/* img[alt="vinyl"]:active {
-  transform: rotate(120deg);
-} */
-
 img[alt="vinyl"],
 img[alt="about"],
 img[alt="contact"],
@@ -66,7 +55,7 @@ img[alt="shop"],
 img[alt="team"],
 img[alt="members"] {
   width: 40%;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 /* Home */
@@ -146,7 +135,7 @@ img[alt="members"] {
 
 .eventsArrow::after {
   display: flex;
-  content: "⮤ Events";
+  content: "Events ⮥";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.1rem;
@@ -169,7 +158,7 @@ img[alt="members"] {
 
 .aboutArrow::after {
   display: flex;
-  content: "About ⮦";
+  content: "⮦ About";
   color: rgba(9, 85, 192, 0.992);
   font-weight: 500;
   letter-spacing: 0.3rem;
@@ -288,14 +277,13 @@ img[alt="members"] {
   margin: 1.5rem 0;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  border: 1.5px solid blue;
 }
 
 .card-left {
   display: inherit;
   align-items: center;
   max-width: fit-content;
-  border: 1.5px solid blue;
+  flex: 1;
 }
 
 .record-cover {
@@ -309,24 +297,15 @@ img[alt="members"] {
   height: auto;
 }
 
-.card-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  max-width: fit-content;
-  border: 1.5px solid yellow;
-}
-
 .card-right {
   display: flex;
-  flex-direction: column;
-
-  border: 1.5px solid red;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex: 2;
 }
 
 .record-text {
-  display: inherit;
+  display: inline-flex;
   align-items: baseline;
   gap: 1.5rem;
   color: white;
@@ -336,11 +315,10 @@ img[alt="members"] {
 .tracks {
   display: flex;
   gap: 1rem;
-
 }
 
 .track {
-  display: inherit;
+  display: inline-flex;
   align-items: center;
   background: rgb(163, 160, 160);
   border: 1px solid rgb(107, 105, 105);
@@ -350,13 +328,11 @@ img[alt="members"] {
 }
 
 .price {
-  border: 1px solid green;
   width: 3vw;
   font-size: larger;
   position: relative;
   display: block;
   left: 2rem;
-  top: 3rem;
   color: white;
   align-self: center;
 }
@@ -364,20 +340,26 @@ img[alt="members"] {
 /* Cart Icon */
 .cart-icon {
   float: right;
-  top: 2rem;
+  padding-top: 2rem;
   font-size: 2rem;
 }
 
 /* Checkout -> module.css  */
 
 /* CustomTabs */
+.custom-tabs {
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
 
 .Tabs-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 1rem 1rem;
+  margin: 0 1rem;
 }
 
 .Tabs {
@@ -530,9 +512,19 @@ img[alt="members"] {
 }
 
 @media screen and (max-width: 720px) {
-
   .App {
     flex-direction: row;
+  }
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span {
+    letter-spacing: 0.5rem;
+    transform: scale(0.8);
   }
 
   /* wrappers */
@@ -546,14 +538,69 @@ img[alt="members"] {
   .team {
     margin: 2rem;
     overflow: visible;
-    transform: scale(0.8);
     margin-right: 2rem;
   }
 
+  /* Sidebar */
   .sidebar-wrapper {
-    transform: scale(0.7);
     min-height: 100%;
     overflow: visible;
+    width: 50px;
+  }
+
+  img[alt="vinyl"],
+  img[alt="about"],
+  img[alt="contact"],
+  img[alt="events"],
+  img[alt="impress"],
+  img[alt="media"],
+  img[alt="partners"],
+  img[alt="shop"],
+  img[alt="team"],
+  img[alt="members"] {
+    width: 30%;
+  }
+
+  /* ImageMap */
+  .image-map__content__img {
+    height: 70vh !important;
+  }
+
+  .css-ewdv3l {
+    gap: 0.6rem;
+    width: 90%;
+  }
+
+  .css-mf2zkt {
+    padding-top: 0.2rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .css-1bdadyq {
+    margin-right: 2rem;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .teamLink:hover,
+  .mediaLink:hover,
+  .eventsLink:hover,
+  .aboutLink:hover,
+  .shopLink:hover,
+  .partnersLink:hover,
+  .contactLink:hover,
+  .impressumLink:hover {
+    display: none;
+  }
+
+  /*  About */
+  .about-data {
+    margin: 4rem 1rem 0 0;
+  }
+
+  .about-text {
+    padding: 0;
+    transform: scale(0.9);
   }
 
   .shop {
@@ -575,14 +622,12 @@ img[alt="members"] {
     margin: 1.5rem 0;
     background: rgba(0, 0, 0, 0.417);
     border-radius: 9px;
-    border: 1.5px solid blue;
   }
 
   .card-left {
     display: block;
     text-align: center;
     max-width: 100%;
-    border: 1.5px solid blue;
   }
 
   .record-cover {
@@ -594,17 +639,10 @@ img[alt="members"] {
     width: 100%;
   }
 
-  .card-middle {
-    display: block;
-    max-width: 100%;
-    border: 1.5px solid yellow;
-  }
-
   .card-right {
     display: inline-flex;
-    border: 1.5px solid red;
     min-width: 40vw;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .record-text {
@@ -618,7 +656,8 @@ img[alt="members"] {
     gap: 2rem;
   }
 
-  .tracks > ul, .tracks > li {
+  .tracks > ul,
+  .tracks > li {
     margin: 0;
     padding: 0;
   }
