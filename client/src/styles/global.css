@@ -288,14 +288,13 @@ img[alt="members"] {
   margin: 1.5rem 0;
   background: rgba(0, 0, 0, 0.417);
   border-radius: 9px;
-  border: 1.5px solid blue;
 }
 
 .card-left {
   display: inherit;
   align-items: center;
   max-width: fit-content;
-  border: 1.5px solid blue;
+  flex: 1;
 }
 
 .record-cover {
@@ -309,24 +308,15 @@ img[alt="members"] {
   height: auto;
 }
 
-.card-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-
-  max-width: fit-content;
-  border: 1.5px solid yellow;
-}
-
 .card-right {
   display: flex;
-  flex-direction: column;
-
-  border: 1.5px solid red;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex: 2;
 }
 
 .record-text {
-  display: inherit;
+  display: inline-flex;
   align-items: baseline;
   gap: 1.5rem;
   color: white;
@@ -340,7 +330,7 @@ img[alt="members"] {
 }
 
 .track {
-  display: inherit;
+  display: inline-flex;
   align-items: center;
   background: rgb(163, 160, 160);
   border: 1px solid rgb(107, 105, 105);
@@ -350,13 +340,11 @@ img[alt="members"] {
 }
 
 .price {
-  border: 1px solid green;
   width: 3vw;
   font-size: larger;
   position: relative;
   display: block;
   left: 2rem;
-  top: 3rem;
   color: white;
   align-self: center;
 }
@@ -364,20 +352,26 @@ img[alt="members"] {
 /* Cart Icon */
 .cart-icon {
   float: right;
-  top: 2rem;
+  padding-top: 2rem;
   font-size: 2rem;
 }
 
 /* Checkout -> module.css  */
 
 /* CustomTabs */
+.custom-tabs {
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
 
 .Tabs-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 1rem 1rem;
+  margin: 0 1rem;
 }
 
 .Tabs {
@@ -575,14 +569,12 @@ img[alt="members"] {
     margin: 1.5rem 0;
     background: rgba(0, 0, 0, 0.417);
     border-radius: 9px;
-    border: 1.5px solid blue;
   }
 
   .card-left {
     display: block;
     text-align: center;
     max-width: 100%;
-    border: 1.5px solid blue;
   }
 
   .record-cover {
@@ -594,17 +586,10 @@ img[alt="members"] {
     width: 100%;
   }
 
-  .card-middle {
-    display: block;
-    max-width: 100%;
-    border: 1.5px solid yellow;
-  }
-
   .card-right {
     display: inline-flex;
-    border: 1.5px solid red;
     min-width: 40vw;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .record-text {

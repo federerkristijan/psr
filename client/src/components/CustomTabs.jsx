@@ -51,7 +51,7 @@ const CustomTabs = (props) => {
   };
 
   return (
-    <div className="card-right">
+    <div className="custom-tabs">
       <div className="record-tabs">
         <div className="Tabs-wrapper">
           <div className="Tabs">
