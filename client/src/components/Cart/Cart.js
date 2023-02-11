@@ -13,30 +13,38 @@ const Cart = (props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
 
-  const { items, setItems, totalAmount, setTotalAmount } =
-    useContext(CartContext);
+  const {
+    items,
+    setItems,
+    totalAmount,
+    setTotalAmount,
+    cartItemRemoveHandler,
+    cartItemAddHandler,
+  } = useContext(CartContext);
 
   const { userData } = useContext(GraphQLContext);
-  console.log(userData);
 
-  //const totalAmount = `€${totalAmount.toFixed(2)}`;
   const hasItems = items.length > 0;
 
   useEffect(() => {
     (async () => {
+      console.log(userData.shoppingCart);
       const shoppingList = await convertShopping(
         userData.shoppingCart,
         sanityClient
       );
+      console.log(userData.shoppingCart);
       setItems(shoppingList);
+      console.log(userData.shoppingCart);
       const sum = shoppingList.reduce(
         (accumulator, currentItem) =>
           accumulator + currentItem.price * currentItem.quantity,
         0
       );
       setTotalAmount(sum);
+      console.log(userData.shoppingCart);
     })();
-  }, [userData.shoppingCart]);
+  }, [userData.shoppingCart.length]);
 
   useEffect(() => {
     (async () => {
@@ -48,38 +56,6 @@ const Cart = (props) => {
       setTotalAmount(sum);
     })();
   }, [items]);
-
-  const cartItemRemoveHandler = (id) => {
-    const tempArray = items.map((item) => {
-      if (item._id === id) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    });
-    setItems(
-      tempArray.filter((item) => {
-        if (item._id === id) {
-          if (item.quantity === 0) {
-            return false;
-          } else {
-            return true;
-          }
-        }
-        return true;
-      })
-    );
-  };
-
-  const cartItemAddHandler = (id) => {
-    setItems(
-      items.map((item) => {
-        if (item._id === id) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      })
-    );
-  };
 
   const orderHandler = () => {
     setIsCheckout(true);

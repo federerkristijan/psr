@@ -19,31 +19,32 @@ const CustomTabs = (props) => {
     props.setOpenTab(["digital", props.id]);
   };
 
-  const handleAddCheckout = async (e) => {
+  const handleAddCheckout = async (id) => {
     let temp = await userData.shoppingCart;
 
     if (localStorage.getItem("token")) {
       console.log(
         "temp:",
         temp,
-        "e.target.id:",
-        e.target.id,
+        "id:",
+        id,
         "userdata.shoppingcard",
         userData.shoppingCart
       );
-      console.log(userData.shoppingCart);
-      temp.push(e.target.id);
+
+      temp.push(id);
       console.log(temp);
 
       setTimeout(() => {
         console.log(temp);
       }, 500);
-
+      console.log("check");
       GraphQLHandler(2, { ...userData, shoppingCart: temp });
     } else {
+      console.log(userData);
       temp = {
         ...userData,
-        shoppingCart: [e.target.id],
+        shoppingCart: [id],
       };
 
       GraphQLHandler(0, temp);
@@ -84,10 +85,10 @@ const CustomTabs = (props) => {
       {activeTab === "lp" && (
         <button
           className="price"
-          id={`LP-${props.item._id}`}
+          id={`${props.item._id}`}
           cursor="crosshair"
           onClick={(e) => {
-            handleAddCheckout(e);
+            handleAddCheckout(e.target.id);
           }}
         >
           {props.item.price}€

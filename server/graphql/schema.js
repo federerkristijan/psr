@@ -7,7 +7,7 @@ export default buildSchema(`
 type User {
     _id: ID
     firstName: String
-    email: String!
+    email: String
     password: String
     status: String
     token: String
@@ -16,8 +16,9 @@ type User {
 
 
 type AuthData {
-    token: String!
-    userId: String!
+    token: String
+    userId: String
+    shoppingCart: [String]
 }
 
 
@@ -46,7 +47,7 @@ type RootMutation {
 }
 
 type rootQuery{
-        login(loginEmail: String!, loginPassword:String!): AuthData!
+        login(email: String, password:String, token: String): AuthData!
         
     }
 

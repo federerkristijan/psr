@@ -166,16 +166,6 @@ function imageMap_click(area, index) {
 }
 
 const Home = () => {
-  const { GraphQLHandler } = useContext(GraphQLContext);
-
-  //Check iftoken exists
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      GraphQLHandler(2);
-      console.log("check if done");
-    }
-  }, []);
-
   return (
     <div className="home">
       <ImageMap

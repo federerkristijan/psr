@@ -58,7 +58,7 @@ const Shop = () => {
           </div>
           {shop &&
             shop.map((item) => (
-              <div className="shop-data" key={item._id}>
+              <div className="shop-data" key={`${item._id}tsi`}>
                 <div className="card-left">
                   <div className="record-cover">
                     <img src={urlFor(item.cover).url()} alt={item.title} />
