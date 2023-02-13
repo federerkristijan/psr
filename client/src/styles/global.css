@@ -569,7 +569,7 @@ img[alt="members"] {
   }
 
   .css-ewdv3l {
-    gap: 0.6rem;
+    gap: 1rem;
     width: 90%;
   }
 
@@ -582,6 +582,10 @@ img[alt="members"] {
     margin-right: 2rem;
     padding-right: 0 !important;
     padding-left: 0 !important;
+  }
+
+  .css-dip3t8 {
+    height: 100vh !important;
   }
 
   .teamLink:hover,
