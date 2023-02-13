@@ -49,7 +49,10 @@ const Checkout = (props) => {
     setInputFields(updatedInputFields);
   };
 
-  const clickCheckoutHandler = () => {
+  const clickCheckoutHandler = (e) => {
+    e.preventDefault();
+    console.log("ba");
+
     setCheckoutClicked(true);
   };
 
