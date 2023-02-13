@@ -1,5 +1,5 @@
 import { Fragment, useContext, useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import { CartContext } from "../../store/CartContext";
@@ -9,6 +9,7 @@ import { GraphQLContext } from "../GraphQLContext";
 import { convertShopping } from "../../helper/convertAndFetch";
 
 const Cart = (props) => {
+  const navigate = useNavigate();
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
@@ -28,21 +29,17 @@ const Cart = (props) => {
 
   useEffect(() => {
     (async () => {
-      console.log(userData.shoppingCart);
       const shoppingList = await convertShopping(
         userData.shoppingCart,
         sanityClient
       );
-      console.log(userData.shoppingCart);
       setItems(shoppingList);
-      console.log(userData.shoppingCart);
       const sum = shoppingList.reduce(
         (accumulator, currentItem) =>
           accumulator + currentItem.price * currentItem.quantity,
         0
       );
       setTotalAmount(sum);
-      console.log(userData.shoppingCart);
     })();
   }, [userData.shoppingCart.length]);
 
@@ -80,7 +77,7 @@ const Cart = (props) => {
 
   const modalActions = (
     <div className="actions">
-      <button className="cart-btn" onClick={props.onClose}>
+      <button className="cart-btn" onClick={() => navigate(-1)}>
         Close
       </button>
       {hasItems && (
@@ -111,7 +108,7 @@ const Cart = (props) => {
     <Fragment>
       <p>Your order has been placed!</p>
       <div className="actions">
-        <button className="cart-btn" onClick={props.onClose}>
+        <button className="cart-btn" onClick={() => navigate(-1)}>
           Close
         </button>
       </div>

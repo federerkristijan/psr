@@ -31,7 +31,7 @@ export const GraphQLContextProvider = (props) => {
   /////////////////////////////////////Sven's//Coding/ Date: 22-11-2022 15:20 ////////////
   // GraphQLHandler
   // 0. CreateUser
-  // 1. LoginUser
+  // 1. LoginUser, this can be by token or by user name
   // 2. shoppingCard
   //
   //
@@ -67,11 +67,11 @@ export const GraphQLContextProvider = (props) => {
       }
 `,
     ];
-    console.log(requestList[request]);
+
     const graphglQuery = {
       query: requestList[request],
     };
-    await fetch("http://localhost:8080/graphql", {
+    await fetch("http://localhost:8080/graphql/", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(graphglQuery),
@@ -80,14 +80,13 @@ export const GraphQLContextProvider = (props) => {
       .then((resData) => {
         if (request === 0) {
           localStorage.setItem("token", resData.data.createUser.token);
-          console.log("check");
+
           setUserData({
             ...userData,
             shoppingCart: resData.data.createUser.shoppingCart,
           });
         }
         if (request === 1) {
-          console.log(Boolean(resData.data.login.shoppingCart[0]));
           setUserData({
             ...userData,
             shoppingCart: Boolean(resData.data.login.shoppingCart[0])

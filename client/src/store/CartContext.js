@@ -18,7 +18,7 @@ export const CartContextProvider = (props) => {
     setFetchTImeoutID(
       setTimeout(() => {
         GraphQLHandler(2, { ...userData, shoppingCart: temp });
-      }, 1000)
+      }, 400)
     );
   };
 
@@ -43,7 +43,7 @@ export const CartContextProvider = (props) => {
           2,
           temp.length === 1 ? { ...userData, shoppingCart: [] } : userData
         );
-      }, 1000)
+      }, 400)
     );
   };
 
