@@ -589,7 +589,15 @@ img[alt="members"] {
   .shopLink:hover,
   .partnersLink:hover,
   .contactLink:hover,
-  .impressumLink:hover {
+  .impressumLink:hover,
+  .teamArrow::after,
+  .mediaArrow::after,
+  .partnersArrow::after,
+  .eventsArrow::after,
+  .shopArrow::after,
+  .aboutArrow::after,
+  .contactArrow::after,
+  .impressumArrow::after {
     display: none;
   }
 
