@@ -28,21 +28,17 @@ const Cart = (props) => {
 
   useEffect(() => {
     (async () => {
-      console.log(userData.shoppingCart);
       const shoppingList = await convertShopping(
         userData.shoppingCart,
         sanityClient
       );
-      console.log(userData.shoppingCart);
       setItems(shoppingList);
-      console.log(userData.shoppingCart);
       const sum = shoppingList.reduce(
         (accumulator, currentItem) =>
           accumulator + currentItem.price * currentItem.quantity,
         0
       );
       setTotalAmount(sum);
-      console.log(userData.shoppingCart);
     })();
   }, [userData.shoppingCart.length]);
 
