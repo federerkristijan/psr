@@ -3,12 +3,10 @@ const CartItem = (props) => {
 
   return (
     <li className="cart-item">
-      <div className="cart-item-details">
+      <div className="summary">
         <h2>{props.name}</h2>
-        <div className="summary">
-          <span className="price">{price}</span>
-          <span className="amount">x {props.amount}</span>
-        </div>
+        <span className="price">{price}</span>
+        <span className="amount">x {props.amount}</span>
       </div>
       <div className="cart-item-actions">
         <button onClick={props.onRemove}>−</button>
