@@ -90,15 +90,15 @@ const Cart = (props) => {
 
   const CartModalContent = (
     <Fragment>
+      {isCheckout && (
+        <Checkout onSubmit={submitOrderHandler} onCancel={props.onClose} />
+      )}
+      {cartItems}
       <div className="total">
         <span>Total Amount</span>
         <span>€{totalAmount.toFixed(2)}</span>
       </div>
-      {isCheckout && (
-        <Checkout onSubmit={submitOrderHandler} onCancel={props.onClose} />
-      )}
       {!isCheckout && modalActions}
-      {cartItems}
     </Fragment>
   );
 
@@ -122,6 +122,7 @@ const Cart = (props) => {
       {!isSubmitting && didSubmit && didSubmitModalContent}
     </Modal>
   );
+
 };
 
 export default Cart;
