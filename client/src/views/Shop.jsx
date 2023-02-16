@@ -6,9 +6,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AudioContextProvider } from "../components/AudioContext";
 import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
-import "../styles/global.css";
 import CustomTabs from "../components/CustomTabs";
-import CartItem from "../components/Cart/CartItem";
+// import CartItem from "../components/Cart/CartItem";
+import "../styles/global.css";
+import CartButton from "../components/CartButton";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -46,9 +47,7 @@ const Shop = () => {
       <AudioContextProvider>
         <div className="shop">
           <div className="cart-icon">
-            <Link to="/shop/cart">
-              <AiOutlineShoppingCart />
-            </Link>
+            {/* <CartButton /> */}
           </div>
           <div className="shop-header">
             <div className="shop-title">
