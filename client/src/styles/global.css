@@ -414,8 +414,8 @@ img[alt="members"] {
 .modal {
   position: fixed;
   top: 15vh;
-  left: 5%;
-  width: 90%;
+  left: 15%;
+  width: 70%;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
@@ -452,6 +452,7 @@ img[alt="members"] {
 
 .actions {
   text-align: right;
+  padding-top: 5rem;
 }
 
 .total {
@@ -474,15 +475,14 @@ img[alt="members"] {
 }
 
 .summary {
-  width: 10rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 8rem;
 }
 
 .price {
   font-weight: bold;
   color: #8a2b06;
+  flex: 1;
 }
 
 .amount {
