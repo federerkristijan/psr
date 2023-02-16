@@ -3,7 +3,7 @@ const CartItem = (props) => {
 
   return (
     <li className="cart-item">
-        <h2 className="cart-item-name">{props.name}</h2>
+        <h3 className="cart-item-name">{props.name}</h3>
       <div className="summary">
         <span className="price">{price}</span>
         <span className="amount">x{props.amount}</span>
