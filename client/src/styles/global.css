@@ -475,12 +475,14 @@ img[alt="members"] {
 }
 
 .summary {
-  display: contents;
+  display: flex;
+  gap: 8rem;
 }
 
 .price {
   font-weight: bold;
   color: #8a2b06;
+  flex: 1;
 }
 
 .amount {
