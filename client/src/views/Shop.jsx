@@ -9,7 +9,7 @@ import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import CustomTabs from "../components/CustomTabs";
 // import CartItem from "../components/Cart/CartItem";
 import "../styles/global.css";
-import CartButton from "../components/CartButton";
+import CartButton from "../components/Cart/CartButton";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -47,7 +47,7 @@ const Shop = () => {
       <AudioContextProvider>
         <div className="shop">
           <div className="cart-icon">
-            {/* <CartButton /> */}
+            <CartButton />
           </div>
           <div className="shop-header">
             <div className="shop-title">

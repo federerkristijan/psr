@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-import { CartContext } from "../store/CartContext";
-import "../styles/global.css";
+import { CartContext } from "../../store/CartContext";
+import "../../styles/global.css";
 
 const CartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
@@ -17,7 +17,7 @@ const CartButton = (props) => {
   const btnClasses = `${"cart-btn"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
 
   useEffect(() => {
-    if (items.lenght === 0) {
+    if (items.length === 0) {
       return;
     }
     setBtnIsHighlighted(true);
