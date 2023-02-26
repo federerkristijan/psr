@@ -396,17 +396,19 @@ img[alt="members"] {
 
 /* CartButton */
 
-.cart-btn--icon {
-  width: 1.35rem;
-  height: 1.35rem;
-  margin-right: 0.5rem;
+.cart-btn-icon {
+  padding: 0.5rem 0.65rem;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  gap: 1.3rem;
+  font-size: large;
 }
 
-.badge {
+/* .badge {
   padding: 0.25rem 1rem;
-  border-radius: 25px;
   margin-left: 1rem;
-}
+} */
 
 .bump {
   animation: bump 300ms ease-out;

@@ -14,7 +14,7 @@ const CartButton = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  const btnClasses = `${"cart-btn"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
+  const btnClasses = `${"cart-btn-icon"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
 
   useEffect(() => {
     if (items.length === 0) {
