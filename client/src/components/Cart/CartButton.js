@@ -3,11 +3,13 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 import { CartContext } from "../../store/CartContext";
+import { GraphQLContext } from "../GraphQLContext";
 import "../../styles/global.css";
 
 const CartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-
+  const { GraphQLHandler, userData } = useContext(GraphQLContext);
+  
   const { items } = useContext(CartContext);
 
   const numberOfCartItems = items.reduce((curNumber, item) => {
