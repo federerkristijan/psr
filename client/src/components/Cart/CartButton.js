@@ -35,9 +35,8 @@ const CartButton = (props) => {
     <button className={btnClasses} onClick={props.onClick}>
       <Link to="/shop/cart"className="cart-btn-icon">
         <AiOutlineShoppingCart />
+        <span className="badge">{numberOfCartItems}</span>
       </Link>
-      <span>Your Cart</span>
-      <span className="badge">{numberOfCartItems}</span>
     </button>
   );
 };
