@@ -14,7 +14,7 @@ const CartButton = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  const btnClasses = `${"cart-btn"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
+  const btnClasses = `${"cart-btn-icon"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
 
   useEffect(() => {
     if (items.length === 0) {
@@ -35,9 +35,8 @@ const CartButton = (props) => {
     <button className={btnClasses} onClick={props.onClick}>
       <Link to="/shop/cart"className="cart-btn-icon">
         <AiOutlineShoppingCart />
+        <span className="badge">{numberOfCartItems}</span>
       </Link>
-      <span>Your Cart</span>
-      <span className="badge">{numberOfCartItems}</span>
     </button>
   );
 };

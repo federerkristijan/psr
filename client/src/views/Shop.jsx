@@ -10,6 +10,7 @@ import CustomTabs from "../components/CustomTabs";
 // import CartItem from "../components/Cart/CartItem";
 import "../styles/global.css";
 import CartButton from "../components/Cart/CartButton";
+import { CartContextProvider } from "../store/CartContext";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -45,62 +46,64 @@ const Shop = () => {
   return (
     <>
       <AudioContextProvider>
-        <div className="shop">
-          <div className="cart-icon">
-            <CartButton />
-          </div>
-          <div className="shop-header">
-            <div className="shop-title">
-              <h1>Shop</h1>
-              <h3>check out our collection</h3>
+        <CartContextProvider>
+          <div className="shop">
+            <div className="cart-icon">
+              <CartButton />
             </div>
-          </div>
-          {shop &&
-            shop.map((item) => (
-              <div className="shop-data" key={`${item._id}tsi`}>
-                <div className="card-left">
-                  <div className="record-cover">
-                    <img src={urlFor(item.cover).url()} alt={item.title} />
-                  </div>
-                </div>
-                <div className="card-right">
-                  {/* click addHandler goes inside  */}
-                  <CustomTabs item={item} />
-                  <div className="text-audio">
-                    <div className="record-text">
-                      <div className="record-artist">
-                        <h3>{item.artist}</h3>
-                      </div>
-                      <div className="record-title">
-                        <h4>{item.title}</h4>
-                      </div>
-                    </div>
-                    {/* multi file player, for now it just puts out as much players as there are files */}
-                    <div className="tracks">
-                      {item.multiTrack.map((song) => (
-                        <ul key={`UL${song._key}${item._id}`}>
-                          <li className="track">
-                            <HomeMadeAudioPlayer
-                              onclick={clickCheck}
-                              src={
-                                song
-                                  ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
-                                      .toString()
-                                      .slice(5)
-                                      .replace("-", ".")}`
-                                  : "nope"
-                              }
-                            />
-                            {song.artist}
-                          </li>
-                        </ul>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+            <div className="shop-header">
+              <div className="shop-title">
+                <h1>Shop</h1>
+                <h3>check out our collection</h3>
               </div>
-            ))}
-        </div>
+            </div>
+            {shop &&
+              shop.map((item) => (
+                <div className="shop-data" key={`${item._id}tsi`}>
+                  <div className="card-left">
+                    <div className="record-cover">
+                      <img src={urlFor(item.cover).url()} alt={item.title} />
+                    </div>
+                  </div>
+                  <div className="card-right">
+                    {/* click addHandler goes inside  */}
+                    <CustomTabs item={item} />
+                    <div className="text-audio">
+                      <div className="record-text">
+                        <div className="record-artist">
+                          <h3>{item.artist}</h3>
+                        </div>
+                        <div className="record-title">
+                          <h4>{item.title}</h4>
+                        </div>
+                      </div>
+                      {/* multi file player, for now it just puts out as much players as there are files */}
+                      <div className="tracks">
+                        {item.multiTrack.map((song) => (
+                          <ul key={`UL${song._key}${item._id}`}>
+                            <li className="track">
+                              <HomeMadeAudioPlayer
+                                onclick={clickCheck}
+                                src={
+                                  song
+                                    ? `https://cdn.sanity.io/files/pyenle2m/production/${song.asset._ref
+                                        .toString()
+                                        .slice(5)
+                                        .replace("-", ".")}`
+                                    : "nope"
+                                }
+                              />
+                              {song.artist}
+                            </li>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </CartContextProvider>
       </AudioContextProvider>
     </>
   );
