@@ -10,6 +10,7 @@ import CustomTabs from "../components/CustomTabs";
 // import CartItem from "../components/Cart/CartItem";
 import "../styles/global.css";
 import CartButton from "../components/Cart/CartButton";
+import { CartContextProvider } from "../store/CartContext";
 
 const Shop = () => {
   const [shop, setShop] = useState(false);
@@ -47,7 +48,9 @@ const Shop = () => {
       <AudioContextProvider>
         <div className="shop">
           <div className="cart-icon">
+            <CartContextProvider>
             <CartButton />
+            </CartContextProvider>
           </div>
           <div className="shop-header">
             <div className="shop-title">
