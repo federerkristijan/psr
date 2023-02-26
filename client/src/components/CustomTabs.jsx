@@ -4,6 +4,7 @@ import { GraphQLContext } from "./GraphQLContext";
 
 const CustomTabs = (props) => {
   const { GraphQLHandler, userData, setUserData } = useContext(GraphQLContext);
+
   const [activeTab, setActiveTab] = useState("lp");
 
   const handleLP = (e) => {
@@ -30,26 +31,26 @@ const CustomTabs = (props) => {
         id,
         "userdata.shoppingcard",
         userData.shoppingCart
-      );
+        );
 
-      temp.push(id);
-      console.log(temp);
-
-      setTimeout(() => {
+        temp.push(id);
         console.log(temp);
-      }, 500);
-      console.log("check");
-      GraphQLHandler(2, { ...userData, shoppingCart: temp });
-    } else {
-      console.log(userData);
-      temp = {
-        ...userData,
-        shoppingCart: [id],
-      };
 
-      GraphQLHandler(0, temp);
-    }
-  };
+        setTimeout(() => {
+          console.log(temp);
+        }, 500);
+        console.log("check");
+        GraphQLHandler(2, { ...userData, shoppingCart: temp });
+      } else {
+        console.log(userData);
+        temp = {
+          ...userData,
+          shoppingCart: [id],
+        };
+
+        GraphQLHandler(0, temp);
+      }
+    };
 
   return (
     <div className="custom-tabs">
@@ -88,7 +89,7 @@ const CustomTabs = (props) => {
           id={`${props.item._id}`}
           cursor="crosshair"
           onClick={(e) => {
-            handleAddCheckout(e.target.id);
+            handleAddCheckout(e.target.id)
           }}
         >
           {props.item.price}€
