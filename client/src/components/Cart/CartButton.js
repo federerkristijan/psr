@@ -8,13 +8,9 @@ import "../../styles/global.css";
 
 const CartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-  const { GraphQLHandler, userData } = useContext(GraphQLContext);
-  
-  const { items } = useContext(CartContext);
 
-  const numberOfCartItems = items.reduce((curNumber, item) => {
-    return curNumber + item.amount;
-  }, 0);
+  const { userData } = useContext(GraphQLContext);
+  const items = userData.shoppingCart.length;
 
   const btnClasses = `${"cart-btn-icon"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
 
@@ -35,9 +31,9 @@ const CartButton = (props) => {
 
   return (
     <button className={btnClasses} onClick={props.onClick}>
-      <Link to="/shop/cart"className="cart-btn-icon">
+      <Link to="/shop/cart" className="cart-btn-icon">
         <AiOutlineShoppingCart />
-        <span className="badge">{numberOfCartItems}</span>
+        <span className="badge">{items}</span>
       </Link>
     </button>
   );
