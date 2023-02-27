@@ -58,8 +58,6 @@ const Cart = (props) => {
     setIsCheckout(true);
   };
 
-  const submitOrderHandler = () => {};
-
   const cartItems = (
     <ul className="cart-items">
       {items.map((item) => (
@@ -91,7 +89,7 @@ const Cart = (props) => {
   const CartModalContent = (
     <Fragment>
       {isCheckout && (
-        <Checkout onSubmit={submitOrderHandler} onCancel={props.onClose} />
+        <Checkout onSubmit={orderHandler} onCancel={props.onClose} />
       )}
       {cartItems}
       <div className="total">
