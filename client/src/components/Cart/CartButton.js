@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
 import { CartContext } from "../../store/CartContext";
 import { GraphQLContext } from "../GraphQLContext";
 import "../../styles/global.css";
@@ -10,7 +9,16 @@ const CartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
 
   const { userData } = useContext(GraphQLContext);
-  const items = userData.shoppingCart.length;
+  // const items = userData.shoppingCart.length;
+
+  const {
+    items,
+    setItems,
+    totalAmount,
+    setTotalAmount,
+    cartItemRemoveHandler,
+    cartItemAddHandler,
+  } = useContext(CartContext);
 
   const btnClasses = `${"cart-btn-icon"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
 
@@ -33,7 +41,7 @@ const CartButton = (props) => {
     <button className={btnClasses} onClick={props.onClick}>
       <Link to="/shop/cart" className="cart-btn-icon">
         <AiOutlineShoppingCart />
-        <span className="badge">{items}</span>
+        <span className="badge">{totalAmount}</span>
       </Link>
     </button>
   );
