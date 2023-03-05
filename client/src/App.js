@@ -38,7 +38,7 @@ const App = () => {
       dataLoaded={dataLoaded}
       setDataLoaded={setDataLoaded}
     >
-      <CartProvider
+      <CartContextProvider
         mode="payment"
         cartMode="client-only"
         stripe={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
@@ -64,9 +64,7 @@ const App = () => {
                 <Route
                   path="/shop/cart"
                   element={
-                    <CartContextProvider>
                       <Cart />
-                    </CartContextProvider>
                   }
                 />
                 <Route path="/team" element={<Team />} />
@@ -75,7 +73,7 @@ const App = () => {
             </Routes>
           </div>
         </BrowserRouter>
-      </CartProvider>
+      </CartContextProvider>
     </GraphQLContextProvider>
   );
 };
