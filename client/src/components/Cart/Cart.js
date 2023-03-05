@@ -8,6 +8,28 @@ import sanityClient from "../../lib/client";
 import { GraphQLContext } from "../GraphQLContext";
 import { convertShopping } from "../../helper/convertAndFetch";
 
+let timeoutId;
+
+const updateCartButton = (count) => {
+  const cartButton = document.querySelector(".cart-btn-icon");
+  if (cartButton) {
+    cartButton.classList.add("bump");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      cartButton.classList.remove("bump");
+    }, 300)
+  }
+};
+
+// custom hook
+export const useCartButtonUpdate = (items) => {
+  useEffect(() => {
+    if (items.length > 0) {
+      updateCartButton(items.length);
+    }
+  }, [items])
+}
+
 const Cart = (props) => {
   const navigate = useNavigate();
   const [isCheckout, setIsCheckout] = useState(false);
@@ -41,7 +63,7 @@ const Cart = (props) => {
       );
       setTotalAmount(sum);
     })();
-  }, [userData.shoppingCart.length]);
+  }, [setItems, setTotalAmount, userData.shoppingCart.length]);
 
   useEffect(() => {
     (async () => {
@@ -52,7 +74,7 @@ const Cart = (props) => {
       );
       setTotalAmount(sum);
     })();
-  }, [items]);
+  }, [items, setTotalAmount]);
 
   const orderHandler = () => {
     setIsCheckout(true);
@@ -113,6 +135,8 @@ const Cart = (props) => {
     </Fragment>
   );
 
+  useCartButtonUpdate(items);
+
   return (
     <Modal onClose={props.onClose}>
       {!isSubmitting && !didSubmit && CartModalContent}
@@ -120,7 +144,6 @@ const Cart = (props) => {
       {!isSubmitting && didSubmit && didSubmitModalContent}
     </Modal>
   );
-
 };
 
 export default Cart;

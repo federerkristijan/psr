@@ -1,49 +1,22 @@
-import { useContext, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../store/CartContext";
-import { GraphQLContext } from "../GraphQLContext";
+
 import "../../styles/global.css";
+import { CartContextProvider } from "../../store/CartContext";
 
 const CartButton = (props) => {
-  const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-
-  const { userData } = useContext(GraphQLContext);
-  // const items = userData.shoppingCart.length;
-
-  const {
-    items,
-    setItems,
-    totalAmount,
-    setTotalAmount,
-    cartItemRemoveHandler,
-    cartItemAddHandler,
-  } = useContext(CartContext);
-
-  const btnClasses = `${"cart-btn-icon"} ${btnIsHighlighted} ? ${"bump"} : ''}`;
-
-  useEffect(() => {
-    if (items.length === 0) {
-      return;
-    }
-    setBtnIsHighlighted(true);
-
-    const timer = setTimeout(() => {
-      setBtnIsHighlighted(false);
-    }, 300);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [items]);
+  const { onClick, count } = props;
 
   return (
-    <button className={btnClasses} onClick={props.onClick}>
+    <CartContextProvider>
       <Link to="/shop/cart" className="cart-btn-icon">
-        <AiOutlineShoppingCart />
-        <span className="badge">{totalAmount}</span>
+        <button className="cart-btn" onClick={onClick}>
+          <AiOutlineShoppingCart />
+          {/* {count > 0 && <span className="badge">{count}</span>} */}
+          <span className="badge">{count}</span>
+        </button>
       </Link>
-    </button>
+    </CartContextProvider>
   );
 };
 

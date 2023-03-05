@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import sanityClient from "../lib/client";
+import { useNavigate } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { AudioContextProvider } from "../components/AudioContext";
-import { Link } from "react-router-dom";
 import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import CustomTabs from "../components/CustomTabs";
-// import CartItem from "../components/Cart/CartItem";
-import "../styles/global.css";
 import CartButton from "../components/Cart/CartButton";
-import { CartContextProvider } from "../store/CartContext";
+import { CartContext, CartContextProvider } from "../store/CartContext";
+import "../styles/global.css";
 
-const Shop = () => {
+const Shop = (props) => {
+  const navigate = useNavigate();
   const [shop, setShop] = useState(false);
+  const { items } = useContext(CartContext);
 
   const builder = imageUrlBuilder(sanityClient);
 
@@ -49,7 +49,10 @@ const Shop = () => {
         <CartContextProvider>
           <div className="shop">
             <div className="cart-icon">
-              <CartButton />
+              <CartButton
+                onClick={() => navigate('/shop/cart')}
+                count={items.length}
+              />
             </div>
             <div className="shop-header">
               <div className="shop-title">
