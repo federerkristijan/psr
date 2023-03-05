@@ -51,7 +51,7 @@ const Shop = (props) => {
             <div className="cart-icon">
               <CartButton
                 onClick={() => navigate('/shop/cart')}
-                items={items}
+                count={items.length}
               />
             </div>
             <div className="shop-header">

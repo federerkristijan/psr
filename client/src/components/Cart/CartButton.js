@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 import "../../styles/global.css";
 import { CartContextProvider } from "../../store/CartContext";
 
-const CartButton = ({ itemsCount, onClick }) => {
+const CartButton = (props) => {
+  const { onClick, count } = props;
 
   return (
     <CartContextProvider>
-          <Link to="/shop/cart" className="cart-btn-icon">
-      <button className="cart-btn" onClick={onClick}>
-        <AiOutlineShoppingCart />
-        <span className="badge">{itemsCount}</span>
-      </button>
-    </Link>
+      <Link to="/shop/cart" className="cart-btn-icon">
+        <button className="cart-btn" onClick={onClick}>
+          <AiOutlineShoppingCart />
+          {/* {count > 0 && <span className="badge">{count}</span>} */}
+          <span className="badge">{count}</span>
+        </button>
+      </Link>
     </CartContextProvider>
   );
 };
