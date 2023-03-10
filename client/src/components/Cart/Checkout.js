@@ -58,12 +58,13 @@ const Checkout = (props) => {
 
   return (
     <div className="checkout_form">
-      <form className={classes.form}>
+      <form className="checkout_form">
         {inputFields.map((inputField) => {
           return (
             <div>
-              <label htmlFor={inputField.name}>{inputField.label}</label>
+              <label className="checkout_label" htmlFor={inputField.name}><h4>{inputField.label}</h4></label>
               <input
+                className="checkout_input"
                 type="text"
                 id={inputField.name}
                 onChange={inputChangeHandler}

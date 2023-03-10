@@ -353,6 +353,20 @@ img[alt="members"] {
   overflow: auto;
 }
 
+.checkout_label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.checkout_input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
 /* CustomTabs */
 .custom-tabs {
   display: inherit;
