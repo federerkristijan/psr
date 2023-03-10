@@ -57,7 +57,7 @@ const Checkout = (props) => {
   };
 
   return (
-    <div>
+    <div className="checkout_form">
       <form className={classes.form}>
         {inputFields.map((inputField) => {
           return (

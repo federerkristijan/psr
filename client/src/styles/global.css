@@ -348,6 +348,10 @@ img[alt="members"] {
 }
 
 /* Checkout -> module.css  */
+.checkout_form {
+  margin: 1rem 0;
+  overflow: auto;
+}
 
 /* CustomTabs */
 .custom-tabs {
