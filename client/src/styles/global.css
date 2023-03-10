@@ -363,7 +363,8 @@ img[alt="members"] {
   font: inherit;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 20rem;
+  width: 20vw;
+  height: 2.5vh;
   max-width: 100%;
 }
 
