@@ -76,7 +76,7 @@ const Checkout = (props) => {
             </div>
           );
         })}
-        <button onClick={clickCheckoutHandler} className={classes.submit}>
+        <button onClick={clickCheckoutHandler} className="checkout_button">
           Confirm
         </button>
       </form>
