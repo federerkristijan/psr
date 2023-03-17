@@ -484,7 +484,7 @@ img[alt="members"] {
 
 .modal {
   position: fixed;
-  top: 15vh;
+  top: 6vh;
   left: 25%;
   width: 50%;
   background-color: white;
