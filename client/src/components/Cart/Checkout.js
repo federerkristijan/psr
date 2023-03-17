@@ -1,7 +1,5 @@
 import { useRef, useState } from "react";
 
-import classes from "./Checkout.module.css";
-
 const Checkout = (props) => {
   const [checkoutClicked, setCheckoutClicked] = useState(false);
   const [inputFields, setInputFields] = useState([
