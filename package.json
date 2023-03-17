@@ -1,7 +1,7 @@
 {
   "name": "root",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd server && nodemon start\" \"cd client && npm start\" "
@@ -10,6 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.6.0",
-    "nodemon": "^2.0.20"
-  }
+    "nodemon": "^2.0.20",
+    "stripe": "^11.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/federerkristijan/psr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/federerkristijan/psr/issues"
+  },
+  "homepage": "https://github.com/federerkristijan/psr#readme"
 }

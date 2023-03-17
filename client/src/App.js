@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
 
 // import { CartContextProvider } from "./context/CartContext";
-import { CartProvider } from "use-shopping-cart";
+// import { CartProvider } from "use-shopping-cart";
 import SignUpLogin from "./views/SignUpLogin";
 import { CartContextProvider } from "./store/CartContext";
 import { useState } from "react";
