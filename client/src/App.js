@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { GraphQLContextProvider } from "./components/GraphQLContext";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 // import { CartContextProvider } from "./context/CartContext";
-import { CartProvider } from "use-shopping-cart";
+// import { CartProvider } from "use-shopping-cart";
 import SignUpLogin from "./views/SignUpLogin";
 import { CartContextProvider } from "./store/CartContext";
 import { useState } from "react";
@@ -23,6 +25,8 @@ import Team from "../src/views/Team";
 import ToggleSidebar from "./components/Sidebar";
 
 /*todo: potrudi se da ovo baca 404 not found, a ne 200 OK */
+
+const stripePromise= loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 const App = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
