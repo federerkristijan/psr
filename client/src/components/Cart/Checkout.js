@@ -77,6 +77,9 @@ const Checkout = (props) => {
         <button onClick={clickCheckoutHandler} className="checkout_button">
           Confirm
         </button>
+        <button className="cart-btn" onClick={props.onClose}>
+          Close
+        </button>
       </form>
     </div>
   );
