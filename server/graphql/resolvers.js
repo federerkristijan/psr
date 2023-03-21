@@ -8,7 +8,7 @@ import * as dontenv from "dotenv";
 // Create a user
 const createUser = async function ({ userInput }) {
   const errors = [];
-  console.log(userInput);
+  
   if (userInput.email !== "") {
     if (!validator.isEmail(userInput.email)) {
       errors.push({
@@ -29,7 +29,7 @@ const createUser = async function ({ userInput }) {
     }
     const hashedPw = await bcrypt.hash(userInput.password, 12);
   }
-  console.log("second", userInput);
+ 
   const user = new User({
     email: userInput.email,
     firstName: userInput.firstName,
@@ -48,10 +48,10 @@ const createUser = async function ({ userInput }) {
     error.code = 422;
     throw error;
   }
-  console.log(user);
+  
 
   const createdUser = await user.save();
-  console.log("secret key", process.env.JWT);
+
   const token = jwt.sign(
     {
       userId: createdUser._id.toString(),
@@ -69,7 +69,7 @@ const createUser = async function ({ userInput }) {
 };
 
 const loginUser = async function ({ loginEmail, loginPassword, token }) {
-  console.log(token);
+
   let userId = false;
   if (token !== "") {
     userId = jwt.verify(token, process.env.JWT).userId;
@@ -90,21 +90,13 @@ const loginUser = async function ({ loginEmail, loginPassword, token }) {
       throw error;
     }
   }
-  console.log(user.shoppingCart);
+ 
 
   return { userId: user._id.toString(), shoppingCart: user.shoppingCart };
 };
 
 const shoppingCart = async function ({ token, shoppingCart }) {
-  console.log(
-    "token:",
-    token,
-    "shoppingcart",
-    shoppingCart,
-    "secret key",
-    process.env.JWT
-  );
-
+  
   const decoded = jwt.verify(token, process.env.JWT);
   console.log("message", decoded);
 

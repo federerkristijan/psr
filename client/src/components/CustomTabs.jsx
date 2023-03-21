@@ -14,9 +14,9 @@ const CustomTabs = (props) => {
   };
 
   const handleDigital = (e) => {
-    console.log(e.target.id);
+    
     setActiveTab("digital");
-    console.log("props.id", props.id);
+    
     props.setOpenTab(["digital", props.id]);
   };
 
@@ -24,25 +24,18 @@ const CustomTabs = (props) => {
     let temp = await userData.shoppingCart;
 
     if (localStorage.getItem("token")) {
-      console.log(
-        "temp:",
-        temp,
-        "id:",
-        id,
-        "userdata.shoppingcard",
-        userData.shoppingCart
-        );
+      
 
         temp.push(id);
-        console.log(temp);
+       
 
         setTimeout(() => {
-          console.log(temp);
+          
         }, 500);
-        console.log("check");
+       
         GraphQLHandler(2, { ...userData, shoppingCart: temp });
       } else {
-        console.log(userData);
+        
         temp = {
           ...userData,
           shoppingCart: [id],

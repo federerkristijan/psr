@@ -2,7 +2,9 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 export const GraphQLContext = createContext();
 
+
 export const GraphQLContextProvider = (props) => {
+  const [itemCount, setItemCount] = useState(0)
   const [userData, setUserData] = useState({
     firstName: "",
     password: "",
@@ -25,6 +27,8 @@ export const GraphQLContextProvider = (props) => {
       GraphQLHandler(1, userData);
       //temporary to repvent loop
       props.setDataLoaded(true);
+   
+       setItemCount(userData.shoppingCart.length)
     }
   }, [props.dataLoaded, userData]);
 
@@ -39,6 +43,11 @@ export const GraphQLContextProvider = (props) => {
   /////////////////////////////////////////gnidoC//s'nevS////////////////////////////////
 
   const GraphQLHandler = async (request, GraphQLUserData) => {
+// refresh counter (find better place)
+    setItemCount(userData.shoppingCart.length)
+    
+
+
     const requestList = [
       `mutation {
   createUser(userInput: {email: "${GraphQLUserData.email}", firstName: "${GraphQLUserData.firstName}", country: "${GraphQLUserData.country}", password:"${GraphQLUserData.password}", lastName:"${GraphQLUserData.lastName}", city:"${GraphQLUserData.city}", street:"${GraphQLUserData.street}", streetNumber:"${GraphQLUserData.streetNumber}"  , zipCode:"${GraphQLUserData.zipCode}" ,shoppingCart:"${GraphQLUserData.shoppingCart}"})
@@ -98,7 +107,7 @@ export const GraphQLContextProvider = (props) => {
   };
 
   return (
-    <GraphQLContext.Provider value={{ GraphQLHandler, userData, setUserData }}>
+    <GraphQLContext.Provider value={{ GraphQLHandler, userData, setUserData,itemCount, setItemCount }}>
       {props.children}
     </GraphQLContext.Provider>
   );

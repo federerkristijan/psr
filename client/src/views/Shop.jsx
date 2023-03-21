@@ -8,14 +8,18 @@ import HomeMadeAudioPlayer from "../components/HomeMadeAudioPlayer";
 import CustomTabs from "../components/CustomTabs";
 import CartButton from "../components/Cart/CartButton";
 import { CartContext, CartContextProvider } from "../store/CartContext";
+import { GraphQLContext } from "../components/GraphQLContext";
 import "../styles/global.css";
 
 const Shop = (props) => {
   const navigate = useNavigate();
   const [shop, setShop] = useState(false);
-  const { items } = useContext(CartContext);
+  const { itemCount, setItemCount } = useContext(GraphQLContext);
+ 
 
   const builder = imageUrlBuilder(sanityClient);
+
+
 
   function urlFor(source) {
     return builder.image(source);
@@ -51,7 +55,7 @@ const Shop = (props) => {
             <div className="cart-icon">
               <CartButton
                 onClick={() => navigate('/shop/cart')}
-                count={items.length}
+                count={itemCount}
               />
             </div>
             <div className="shop-header">

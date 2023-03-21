@@ -14,7 +14,7 @@ export const CartContextProvider = (props) => {
 
     let temp = await userData.shoppingCart;
     temp.push(id);
-    console.log(temp);
+    console.log("other temp data",temp);
     setFetchTImeoutID(
       setTimeout(() => {
         GraphQLHandler(2, { ...userData, shoppingCart: temp });
@@ -26,19 +26,19 @@ export const CartContextProvider = (props) => {
     clearTimeout(fetchTImeoutID);
 
     let temp = await userData.shoppingCart;
-    console.log(temp.length);
+  
     if (temp.length === 1) {
       setUserData({ ...userData, shoppingCart: [] });
     } else {
       const index = temp.indexOf(id);
       temp.splice(index, 1);
-      console.log(temp);
+      console.log("temp in cartContext",temp);
       await setUserData({ ...userData, shoppingCart: temp });
     }
 
     setFetchTImeoutID(
       setTimeout(() => {
-        console.log(userData);
+        console.log("userData",userData);
         GraphQLHandler(
           2,
           temp.length === 1 ? { ...userData, shoppingCart: [] } : userData

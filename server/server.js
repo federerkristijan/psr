@@ -5,7 +5,12 @@ import { graphqlResolver } from "./graphql/resolvers.js";
 import cors from "cors";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
-const stripe = require('stripe')('sk_test_51LS2NHHPlnHSj03oZDFss8UUtkiBvZ9cOrHFDaWTOiMpF0XB6WXHBkXOF5hIQsr7LkL38Kgkk4h2fD7hwa0UUFdA007zJirGAV');
+
+import Stripe from "stripe";
+
+const secret = 'sk_test_51LS2NHHPlnHSj03oZDFss8UUtkiBvZ9cOrHFDaWTOiMpF0XB6WXHBkXOF5hIQsr7LkL38Kgkk4h2fD7hwa0UUFdA007zJirGAV'
+const stripe = new Stripe(secret);
+
 const app = express();
 app.use(express.static('public'));
 
