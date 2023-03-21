@@ -68,13 +68,13 @@ export const GraphQLContextProvider = (props) => {
 `,
     ];
 
-    const graphglQuery = {
+    const graphqlQuery = {
       query: requestList[request],
     };
     await fetch("http://localhost:8080/graphql/", {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(graphglQuery),
+      body: JSON.stringify(graphqlQuery),
     })
       .then((res) => res.json())
       .then((resData) => {
